@@ -1,0 +1,246 @@
+//CSS Vars - usage var(--background)
+:root {
+	--hue: 257; 
+	
+    --background: white;
+    --masthead: #1E1E1E;
+	
+    --border:#e5e7e9;
+	
+    --text-color-normal: hsl(257, 2%, 0%);
+    --heading: hsl(257, 2%, 15%);
+	--meta: hsl(257, 2%, 30%);
+
+    --highlight: hsl(257, 100%, 20%);
+	--highlight-dark: hsl(257, 20%, 20%);
+	--highlight-light: hsl(257, 100%, 90%);
+	--hover: hsl(257, 20%, 20%);
+
+    --button-background: hsl(257, 20%, 20%);
+	--button-text-color: white;
+	
+	--spacer: 2rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+//Global
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: $typeface;
+    font-size: $default-font-size;
+    line-height: $default-line-height;
+    font-weight: normal;
+    background-color:var(--textbackground);
+    color: var(--text-color-normal);
+    text-align:left;
+}
+
+
+%dgTitle,
+.dgTitle {
+  font-size:3rem;
+  line-height: 3.2rem;
+  color:var(--text-color-normal);
+  margin: 4rem 0 2rem 0;
+  @media #{$large-up} {
+    font-size:3.8rem;
+    line-height: 4.2rem;
+  }
+}
+
+//Links
+a, a:link {
+ -webkit-transition: all 150ms ease;
+  transition: all 150ms ease;
+  color:var(--highlight);
+  &:hover, &:focus {
+      color:var(--highlight-dark);
+      text-decoration: underline;
+  }
+}
+
+//Blazy
+.b-lazy {
+    filter: blur(2vw);
+    /* this is needed so Safari keeps sharp edges */
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    transform: scale(1.1);
+    opacity: 0;
+    &.b-loaded {
+        transform: scale(1);
+        filter: none;
+        opacity: 1;
+    }
+}
+
+//Typography
+h1,h2,h3,h4,h5,h6{
+  font-weight:$bold;
+  line-height: 1.33;
+  color:var(--heading);
+}
+
+.dg-content h1 {
+    @extend .dgTitle;
+}
+.dg-content h2 {
+    font-size: 2.4rem;
+    line-height: 3rem;
+    font-weight: 600;
+}
+.dg-content h3 {
+    font-size: 2.1rem;
+    font-weight: 600;
+}
+.dg-content h4 {
+    font-size: 15px;
+    font-weight: 600;
+}
+.dg-content h5 {
+   font-size: 14px;
+   font-weight: normal;
+}
+.dg-content h6 {
+   font-size: 14px;
+   font-weight: normal;
+}
+
+/*Layout*/
+.dg-wrapper {
+
+}
+@media only screen and (min-width: 64rem) {
+    .dg-wrapper {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+}
+
+.dg-masthead {
+    overflow: hidden;
+    padding:0;
+    background-color:var(--border);
+    .dg-masthead__container {
+        padding:2rem;
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+}
+
+//Sticky footer
+.dg-container {
+    flex:1;
+}
+
+.dg-footer {
+  background-color: var(--masthead);
+  color:white;
+}
+
+//Nav
+.dg-nav {}
+
+//Logo
+.dg-masthead__logo {
+    svg {
+        width:4.4rem;
+        height:4.4rem;
+    }
+}
+
+.dg-content {
+    padding:0;
+    margin:0;
+    ul {
+      margin:0 0 2rem 0;
+      padding:0;
+      list-style-type: none;
+    }
+    img {
+        margin-top:2rem;
+    }
+    h2 {
+        margin-top:4rem;
+    }
+}
+
+.dg-content__inner {
+    margin:0 auto 4rem;
+    max-width: 80rem;
+    padding:0 2rem;
+    @media #{$large-up} {
+        padding:0;
+    }
+    h2,
+    p {
+        margin-bottom: 2rem;
+    }
+}
+
+//Links
+.dg-content__links {
+    p {margin:0 0 0.25rem;}
+    [class^="fa"] {margin-right:1rem;}
+}
+
+
+//Footer
+.dg-footer {
+    padding:4rem 0;
+    color:var(--border);
+    .nav-social {
+        margin: 2rem auto;
+        padding:0;
+        max-width: 40rem;
+        display: flex;
+        align-items: stretch;
+        justify-content: space-evenly;
+        li {
+            display: block;
+            flex: 0 1 auto;
+        }
+    }
+    .icon-social {
+        width: 3rem;
+        height: 3rem;
+        transition: all .3s ease;
+        fill: var(--border);
+        -webkit-transition: all 150ms ease;
+         transition: all 150ms ease;
+        &:hover {
+            opacity: 1;
+            fill: var(--highlight-light);
+            transform: scale(1.1);
+        }
+    }
+    .icon-social-instagram {
+        fill: url(#rg);
+    }
+    p {
+        color:inherit;
+        font-size:12px;
+        text-align: center;
+        margin:2rem 0;
+    }
+}
+
+//Themes
+$themes: (
+    "light-grey": $dg-light-grey,
+    "dark-grey": $dg-dark-grey,
+    "coal": $dg-coal
+);
+@each $theme, $color in $themes {
+      .theme--#{$theme}  {
+        background-color:$color;
+      }
+}

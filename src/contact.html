@@ -1,0 +1,23 @@
+{% set body_class = "dg-contact" %}
+{% extends "layout/_layout.njk" %}
+
+{% block content %}
+<div class="dg-content__inner" id="about">
+  <h1>Contact</h1>
+  <form name="contact" method="POST" data-netlify="true" class="input-group contact-form">
+    <p>
+      <label>Your Name: <input type="text" name="name" required /></label>   
+    </p>
+    <p>
+      <label>Your Email: <input type="email" name="email" required /></label>
+    </p>
+    <p>
+      <label>Message: <textarea name="message" required></textarea></label>
+    </p>
+    <div data-netlify-recaptcha="true"></div>
+    <p>
+      <button type="submit">Send</button>
+    </p>
+  </form>
+</div>
+{% endblock %}

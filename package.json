@@ -1,0 +1,54 @@
+{
+  "name": "nunjucks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dogwonder/nunjucks.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dogwonder/nunjucks/issues"
+  },
+  "homepage": "https://github.com/dogwonder/nunjucks#readme",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/plugin-transform-template-literals": "^7.4.4",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/preset-es2015": "^7.0.0-beta.53",
+    "ansi-colors": "^4.1.1",
+    "browser-sync": "^2.26.7",
+    "del": "^5.1.0",
+    "fancy-log": "^1.3.3",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-banner": "^0.1.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-file-include": "^2.1.0",
+    "gulp-imagemin": "^6.1.0",
+    "gulp-nunjucks": "^5.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-shell": "^0.7.1",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-terser": "^1.2.0",
+    "markdown": "^0.5.0",
+    "path": "^0.12.7",
+    "postcss-clean": "^1.1.0",
+    "postcss-custom-properties": "^9.0.2",
+    "postcss-object-fit-images": "^1.1.2"
+  },
+  "dependencies": {
+    "gulp-data": "^1.3.1"
+  }
+}

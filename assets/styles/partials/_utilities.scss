@@ -1,0 +1,60 @@
+//Accessibility
+/* Text meant only for screen readers */
+.says,
+.screen-reader-text, 
+.sr-only {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+	/* many screen reader and browser combinations announce broken words as they would appear visually */
+	word-wrap: normal !important;
+}
+.skip-link {
+	background-color: #f1f1f1;
+	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+	color: #21759b;
+	display: block;
+	font-family: $typeface;
+	font-size: 14px;
+	font-weight: 700;
+	left: -9999em;
+	outline: none;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	text-transform: none;
+	top: -9999em;
+}
+
+.skip-link:focus {
+	clip: auto;
+	height: auto;
+	left: 6px;
+	top: 7px;
+	width: auto;
+	z-index: 100000;
+}
+
+//Utilities
+.align-right {
+    float:right;
+    margin:0 0 $spacer $spacer;
+    max-width:12rem;
+    @media #{$large-up} {
+        max-width:30rem;
+    }
+}
+
+//Close button
+.close-button {
+    z-index:100;
+    right: 1.5rem;
+    top: 0.5rem;
+    font-size: 4em;
+    color:#fff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.20);
+}
+
+//Modal
+.reveal {background-color: black;border-color:black}

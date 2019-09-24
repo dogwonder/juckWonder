@@ -1,0 +1,12 @@
+{% set body_class = "dg-home" %}
+{% extends "layout/_layout.njk" %}
+
+{% block content %}
+
+{% from "macros/media.njk" import media %}
+{{ media('./images/Ja8S6Pg.jpg', 'Hello world') }}
+
+<div class="dg-content__inner" id="vision">
+    <h1>Welcome</h1>
+</div>
+{% endblock %} 

@@ -1,0 +1,52 @@
+
+.input-group {
+    
+    display:flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    [type='text'], [type='email'], textarea, select {
+        font-size:1.8rem;
+        width: 100%;
+        font-size: inherit;
+        border:2px solid white;
+        padding:1rem;
+    }
+    [type='submit'] {
+        font-size:1.8rem;
+        font-weight: bold;
+        cursor: pointer;
+        padding:1rem;
+        background-color:white;
+        border:2px solid white;
+        color:black;
+        margin-left:1rem;
+        &:hover {
+            background-color:#333;
+            color:white;
+        }
+    }
+    ::placeholder { /* Firefox 19+ */
+        color: black;
+    }
+    .form-control {flex: 1;}
+
+    &.contact-form {
+        flex-direction: column;
+        [type='text'], [type='email'], textarea, select {
+            border-color: black;
+            margin-top:0.4rem;
+        }
+        [type='submit'] {
+            margin:0;
+            background-color: black;
+            color:white;
+            padding-left:2rem;
+            padding-right:2rem;
+            &:hover, &:focus {
+                background-color:#333;
+                color:white;
+            }
+        }
+    }
+}

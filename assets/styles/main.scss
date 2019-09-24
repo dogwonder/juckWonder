@@ -1,0 +1,32 @@
+@charset 'utf-8';
+
+// RESET
+@import "partials/reset";
+
+// VARIBLES
+@import "partials/vars_funcs_mixins";
+
+// GALLERY
+@import 'gallery/main.scss';
+@import 'gallery/default-skin/default-skin.scss';
+
+// ANIMATION
+// @import "partials/animate";
+
+// FORMS
+@import "partials/forms";
+
+// GALLERY
+@import "partials/gallery";
+
+// BLOCKS
+@import "partials/blocks";
+
+// MENU
+@import "partials/menu";
+
+// CUSTOM
+@import "theme/theme";
+
+// MENU
+@import "partials/utilities";
