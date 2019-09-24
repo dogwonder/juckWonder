@@ -14,6 +14,7 @@
 	backdrop-filter: blur(5px) contrast(.8);
 	padding:$spacer;
 	position: absolute;
+	z-index:998;
 	left:0;
 	top:0;
 	width:100%;

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{% if title %}{{ title }}{% else %}Template{% endif %}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="./scripts/js.cookie.js"></script>
     <script type="module">
     let cookies_vars = {
@@ -22,12 +21,12 @@
 <body class="dg{% if body_class %} {{ body_class }}{% endif %}">
     <div class="dg-wrapper flow">
     {% include "../partials/_header.njk" %}
-    <section class="dg-container" role="document">
-      <div class="dg-content">
+    <section class="dg-container" role="main">
+      <main class="dg-content">
         {% block content %}
             {# Main content goes here. #}
          {% endblock %}
-      </div>
+      </main>
     </section><!--/.container-->
     {% include "../partials/_footer.njk" %}
     </div><!--/.wrapper-->

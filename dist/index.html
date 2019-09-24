@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Template</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="viewport" content="width=device-width,minimum-scale=1.0,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="./scripts/js.cookie.js"></script>
     <script type="module">
     let cookies_vars = {
@@ -47,18 +46,17 @@
 </head>
 <body class="dg dg-home">
     <div class="dg-wrapper flow">
-    <header role="banner" class="dg-masthead">
+    <div class="dg-masthead">
   <div class="dg-masthead__container">
-    <div class="dg-masthead__logo">
+    <header class="dg-masthead__logo" role="banner">
     <a href="./" title="Go to homepage">
       <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m225.87 451.35 215.06-433.49 58.18 27.68-215.06 433.46zm-27.17-297.08-134 104.43v5.72l133.55 103.44-37.7 48.67-156.41-126.84v-55.83l158.8-127.8z" fill-rule="nonzero"/></svg>
     </a>
-    </div>
-    <nav id="site-navigation" class="nav-collapse dg-masthead__nav">
+    </header>
+    <nav id="site-navigation" class="nav-collapse dg-masthead__nav" role="navigation">
 						<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 						<a class="nav-toggle" data-nav-toggle="#nav-menu" href="#">
 							<svg class="🍔" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"/></svg>
-              
 							<span class="show-for-sr">Toggle menu</span>
 						</a>
 						<div id="nav-menu" class="nav-menu">
@@ -75,10 +73,10 @@
 						</div><!-- #nav-menu -->
 		</nav><!-- #site-navigation -->
   </div>
-</header>
+</div>
 
-    <section class="dg-container" role="document">
-      <div class="dg-content">
+    <section class="dg-container" role="main">
+      <main class="dg-content">
         
 
 
@@ -94,10 +92,9 @@
     <h1>Welcome</h1>
 </div>
 
-      </div>
+      </main>
     </section><!--/.container-->
     <footer id="footer" class="dg-footer" role="contentinfo">
-
     
     
 <ul class="nav-social">
@@ -125,7 +122,6 @@
         </a>
     </li>
 </ul>
-
 
     <p>© Copyright 2019</p>
 </footer>

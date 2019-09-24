@@ -103,7 +103,7 @@ gulp.task('watch', () => {
   gulp.watch(path.join(dir.styles, '**/*.scss'), gulp.series('sass'));
   gulp.watch(path.join(dir.scripts, '**/*.js'), gulp.series('scripts'));
   gulp.watch(path.join(dir.src, '**/*.+(html|njk)'), gulp.series('nunjucks'));
-  gulp.watch(path.join(dir.dist, '*html')).on('change', browserSync.reload);
+  gulp.watch(path.join(dir.dist, '*.+(html|njk)')).on('change', browserSync.reload);
 });
 
 
@@ -191,7 +191,7 @@ gulp.task('tests', shell.task('$(npm bin)/cypress run'))
 
 // Init
 // -----------------
-const init = gulp.series('nunjucks', gulp.parallel('sass', 'scripts', 'watch'), 'serve');
+const dev = gulp.series('nunjucks', gulp.parallel('sass', 'scripts', 'serve', 'watch'));
 const build = gulp.series('clean', 'babel', 'nunjucks', gulp.parallel('sass-build', 'scripts-build', 'images'), 'move', 'banner');
-exports.init = init;
+exports.default = dev;
 exports.build = build;
