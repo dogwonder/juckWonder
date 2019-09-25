@@ -17,8 +17,7 @@ context('Actions', () => {
 
   it('Open homepage', () => {
     // https://on.cypress.io/type
-    cy
-      .get('h1')
+    cy.get('h1')
       .should('contain', 'Welcome')
   })
 
@@ -28,6 +27,26 @@ context('Actions', () => {
     //   rules: {}
     // })
     cy.checkA11y()
+  })
+
+  //Cookies
+  it('Set Cookie policy 🍪', () => {
+    cy.getCookie('dg_cookie_policy')
+      .should('have.property', 'value', '{%22essential%22:true%2C%22analytics%22:true%2C%22marketing%22:true}')
+  })
+
+  it('Change Cookie policy 🍪 -- Analytics', () => {
+    cy.visit('/cookies.html')
+      .get('#radio-cookie__analytics-off').check()  
+      .getCookie('dg_cookie_policy')
+      .should('have.property', 'value', '{%22essential%22:true%2C%22analytics%22:false%2C%22marketing%22:true}')
+  })
+
+  it('Change Cookie policy 🍪 -- Marketing', () => {
+    cy.visit('/cookies.html')
+      .get('#radio-cookie__marketing-off').check()  
+      .getCookie('dg_cookie_policy')
+      .should('have.property', 'value', '{%22essential%22:true%2C%22analytics%22:true%2C%22marketing%22:false}')
   })
  
 })

@@ -17,6 +17,7 @@
 	--hover: hsl(257, 20%, 20%);
 
     --button-background: hsl(257, 20%, 20%);
+    --button-background-hover: hsl(257, 20%, 30%);
 	--button-text-color: white;
 	
 	--spacer: 2rem;
@@ -49,8 +50,8 @@ body {
   color:var(--text-color-normal);
   margin: 4rem 0 2rem 0;
   @media #{$large-up} {
-    font-size:3.8rem;
-    line-height: 4.2rem;
+    font-size:4.8rem;
+    line-height: 5rem;
   }
 }
 
@@ -85,32 +86,58 @@ h1,h2,h3,h4,h5,h6{
   font-weight:$bold;
   line-height: 1.33;
   color:var(--heading);
+  margin:calc(var(--spacer) * 2) 0 var(--spacer);
 }
 
 .dg-content h1 {
-    @extend .dgTitle;
+    @extend .dgTitle; //48px
 }
 .dg-content h2 {
-    font-size: 2.4rem;
-    line-height: 3rem;
+    font-size: 3rem;
+    line-height: 3.2rem;
     font-weight: 600;
 }
 .dg-content h3 {
-    font-size: 2.1rem;
+    font-size: 2.4rem;
     font-weight: 600;
 }
 .dg-content h4 {
-    font-size: 15px;
+    font-size: 2rem;
     font-weight: 600;
 }
 .dg-content h5 {
-   font-size: 14px;
+   font-size: 1.8rem;
    font-weight: normal;
 }
 .dg-content h6 {
-   font-size: 14px;
+   font-size: 1.6rem;
    font-weight: normal;
 }
+
+.dg-content p {
+    margin:0 0 var(--spacer);
+}
+
+.dg-content ul {
+    margin:0 0 calc(var(--spacer) * 2) calc(var(--spacer) * 2);
+    list-style-type: disc;
+}
+
+.dg-content ol {
+    list-style-type: lower-alpha;
+    margin:0 0 calc(var(--spacer) * 2) calc(var(--spacer) * 2);
+    ol {
+        margin-top:var(--spacer);
+        list-style-type: lower-roman;
+    }
+}
+
+.dg-content img {
+    margin-top:2rem;
+}
+
+//Siblings
+// h3 ~ h4 {margin-top:calc((var(--spacer) / 2) * -1);}
 
 /*Layout*/
 .dg-wrapper {
@@ -160,17 +187,6 @@ h1,h2,h3,h4,h5,h6{
 .dg-content {
     padding:0;
     margin:0;
-    ul {
-      margin:0 0 2rem 0;
-      padding:0;
-      list-style-type: none;
-    }
-    img {
-        margin-top:2rem;
-    }
-    h2 {
-        margin-top:4rem;
-    }
 }
 
 .dg-content__inner {
@@ -179,10 +195,6 @@ h1,h2,h3,h4,h5,h6{
     padding:0 2rem;
     @media #{$large-up} {
         padding:0;
-    }
-    h2,
-    p {
-        margin-bottom: 2rem;
     }
 }
 
@@ -230,6 +242,12 @@ h1,h2,h3,h4,h5,h6{
         font-size:12px;
         text-align: center;
         margin:2rem 0;
+        > a {
+            color:inherit;
+            &:hover {
+                fill: var(--highlight-light);
+            }
+        }
     }
 }
 

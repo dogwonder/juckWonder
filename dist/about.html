@@ -3,17 +3,38 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>🌵 Nunjucks 🌵</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="./scripts/js.cookie.js"></script>
-    <script type="module">
-    let cookies_vars = {
-        "essential":true,
-        "analytics":true,
-        "marketing":true,
-        "settings":true
-    };
-    Cookies.set('dg_cookie_policy', cookies_vars, { expires: 365, path: '' });
+    <script>
+    
+    (function(){
+        //Set up our 🍪 vars
+        let cookies_vars = {"essential":true,"analytics":true,"marketing":true};
+
+        //If the 🍪 not set, set it 
+        let hasCookie = Cookies.get('dg_cookie_policy');
+        if (!hasCookie) {
+            Cookies.set('dg_cookie_policy', cookies_vars, { expires: 365, path: '' });
+        }
+
+        //Now let's get the 🍪 vars
+        let getCookie = Cookies.getJSON('dg_cookie_policy');
+        //If analytics 🍪 is true 
+        if(getCookie.analytics === true) {
+            //console.log('Analytics 🍪 is set to true');   
+        } else {
+            //console.log('Analytics 🍪 is set to false');   
+        }
+
+        //If marketing 🍪 is true 
+        if(getCookie.marketing === true) {
+            //console.log('Marketing 🍪 is set to true');   
+        } else {
+            //console.log('Marketing 🍪 is set to false');   
+        }
+
+    })();
     </script>
     <link rel="stylesheet" href="./css/main.css">
     <link rel="apple-touch-icon" sizes="57x57" href="./images/fav/apple-icon-57x57.png">
@@ -29,7 +50,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="./images/fav/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="96x96" href="./images/fav/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="./images/fav/favicon-16x16.png">
-<link rel="manifest" href="./manifest.json">
+<link rel="manifest" href="./images/fav/manifest.json">
 <meta name="msapplication-TileImage" content="./images/fav/ms-icon-144x144.png">
 <meta name="msapplication-TileColor" content="#000000">
 <meta name="theme-color" content="#000000">
@@ -38,18 +59,18 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image" content="./images/og/og-image.png">
-<meta property="og:url" content="">
+<meta property="og:url" content="https://dogwonder.dev">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="🌵 Nunjucks 🌵">
 <meta name="twitter:description" content="">
 <meta name="twitter:image" content="./images/og/twitter-image.jpg">
 </head>
-<body class="dg dg-about">
+<body class="has-cookie dg dg-about">
     <div id="cookieNotice" class="cookie-notice open" role="region">
     <div class="container">
-        <p>Like most websites 🌵 Nunjucks 🌵 uses cookies to give you the best experience. <a href="./privacy" title="View our Privacy Policy">Learn more</a>
+        <p>Like most websites 🌵 Nunjucks 🌵 uses cookies to give you the best experience. <a href="./privacy.html" title="View our Privacy Policy">Learn more</a>
         <button id="cookieButton" class="cookieButton close" type="button" aria-label="Accept Cookies">Accept Cookies</button>
-        <button id="cookieSettings" class="cookieButton accept" type="button" aria-label="Close">Settings</button>
+        <a href="./cookies.html" class="cookieButton accept" type="button" aria-label="Close">Settings</a>
         </p>
     </div>
 </div>
@@ -86,7 +107,7 @@
     <main id="content" class="dg-container">
       <div class="dg-content">
         
-<div class="dg-content__inner" id="vision">
+<div class="dg-content__inner">
     <h1>About</h1>
 </div>
 
@@ -121,7 +142,9 @@
     </li>
 </ul>
 
-    <p>© Copyright 2019</p>
+    <p>© Copyright 2019 <br /> 
+    <a href="./privacy.html">Privacy policy</a> | <a href="./cookies.html">Cookie policy</a>  | <a href="./terms.html">Terms of Service</a>
+    </p>
     <svg width="0" height="0">
     <radialGradient id="rg" r="150%" cx="30%" cy="107%">
       <stop stop-color="#fdf497" offset="0" />
@@ -200,17 +223,13 @@
 
 </div>
 
-    <script src="./scripts/scripts.js"></script>
+    <script src="./scripts/app.js"></script>
     <script src="./scripts/gallery.js"></script>
     <script>
     
     astro.init();
     
-    if('serviceWorker' in navigator) {
-    const registerServiceWorker = async () =>  
-    navigator.serviceWorker.register('./service-worker.js');
-    const registration = await registerServiceWorker();
-    }
+    
     </script>
 </body>
 </html>

@@ -3,22 +3,43 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>{% if title %}{{ title }}{% else %}{{ title }}{% endif %}</title>
+    <title>{% if pageTitle %}{{ siteTitle }} - {{ pageTitle }}{% else %}{{ siteTitle }}{% endif %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="./scripts/js.cookie.js"></script>
-    <script type="module">
-    let cookies_vars = {
-        "essential":true,
-        "analytics":true,
-        "marketing":true,
-        "settings":true
-    };
-    Cookies.set('dg_cookie_policy', cookies_vars, { expires: 365, path: '' });
+    <script>
+    {# Set the 🍪 if not yet defined #}
+    (function(){
+        //Set up our 🍪 vars
+        let cookies_vars = {"essential":true,"analytics":true,"marketing":true};
+
+        //If the 🍪 not set, set it 
+        let hasCookie = Cookies.get('dg_cookie_policy');
+        if (!hasCookie) {
+            Cookies.set('dg_cookie_policy', cookies_vars, { expires: 365, path: '' });
+        }
+
+        //Now let's get the 🍪 vars
+        let getCookie = Cookies.getJSON('dg_cookie_policy');
+        //If analytics 🍪 is true 
+        if(getCookie.analytics === true) {
+            //console.log('Analytics 🍪 is set to true');   
+        } else {
+            //console.log('Analytics 🍪 is set to false');   
+        }
+
+        //If marketing 🍪 is true 
+        if(getCookie.marketing === true) {
+            //console.log('Marketing 🍪 is set to true');   
+        } else {
+            //console.log('Marketing 🍪 is set to false');   
+        }
+
+    })();
     </script>
     <link rel="stylesheet" href="./css/main.css">
     {% include "../partials/_meta.njk" %}
 </head>
-<body class="dg{% if body_class %} {{ body_class }}{% endif %}">
+<body class="has-cookie dg{% if body_class %} {{ body_class }}{% endif %}">
     {% include "../partials/_cookie.njk" %}
     <div class="dg-wrapper">
     {% include "../partials/_header.njk" %}
@@ -32,17 +53,17 @@
     {% include "../partials/_footer.njk" %}
     </div><!--/.wrapper-->
     {% include "../partials/_gallery-dom.njk" %}
-    <script src="./scripts/scripts.js"></script>
+    <script src="./scripts/app.js"></script>
     <script src="./scripts/gallery.js"></script>
     <script>
     {# Mobile nav https://github.com/cferdinandi/astro/ #}
     astro.init();
     {# Service worker #}
-    if('serviceWorker' in navigator) {
+    {# if('serviceWorker' in navigator) {
     const registerServiceWorker = async () =>  
     navigator.serviceWorker.register('./service-worker.js');
     const registration = await registerServiceWorker();
-    }
+    } #}
     </script>
 </body>
 </html>

@@ -58,3 +58,18 @@
 
 //Modal
 .reveal {background-color: black;border-color:black}
+
+//Alert
+.alert {
+    padding:1rem;
+    color: #c53030;
+    border: 1px solid #fc8181;
+    border-radius:2px;
+    background-color: #fff5f5;
+    font-size:1.6rem;
+    font-weight:bold;
+}
+.alert .a {
+    color: #fff5f5;
+    text-decoration:underline;
+}

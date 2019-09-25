@@ -114,9 +114,10 @@ gulp.task('scripts', () => {
       'assets/vendor/photoswipe/dist/photoswipe.min.js',
       'assets/vendor/photoswipe/dist/photoswipe-ui-default.min.js',
       'assets/vendor/astro.min.js',
+      'assets/scripts/cookiePolicy.js',
       'assets/scripts/scripts.js'
     ])
-    .pipe(concat('scripts.js'))
+    .pipe(concat('app.js'))
     .pipe(gulp.dest(path.join(dir.dist, 'scripts')))
 });
 
@@ -139,9 +140,10 @@ gulp.task('scripts-build', () => {
     'assets/vendor/photoswipe/dist/photoswipe.min.js',
     'assets/vendor/photoswipe/dist/photoswipe-ui-default.min.js',
     'assets/vendor/astro.min.js',
+    'assets/scripts/cookiePolicy.js',
     'assets/scripts/babel/scripts.js'
   ])
-  .pipe(concat('scripts.js'))
+  .pipe(concat('app.js'))
   .pipe(terser()) //accepts ES6 template literals 
   .pipe(gulp.dest(path.join(dir.dist, 'scripts')))
 });
@@ -152,7 +154,7 @@ gulp.task('clean', () => del([ dir.dist ]) );
 // Images
 gulp.task('images', () => {
   return gulp
-    .src('assets/images/**/*.+(png|jpg|jpeg|gif|svg)')
+    .src('assets/images/**/*.+(png|jpg|jpeg|gif|svg|json)')
     .pipe(gulp.dest(path.join(dir.dist, 'images')))
 });
 

@@ -27,8 +27,7 @@ var defaults = {
     cookietypes: {
         "essential":true,
         "analytics":true,
-        "marketing":true,
-        "settings":true
+        "marketing":true
     }, 
     selector: '[data-cookie]', 
     onSubmit: true,
@@ -85,15 +84,15 @@ var Constructor = function () {
         };
 
         var getRadioValue = function (name) {
-        var field = document.querySelector('[data-cookie="' + name + '"]');
-        return field.value;
+            var field = document.querySelector('[data-cookie="' + name + '"]');
+            if (!field) return;
+            return field.value;
         };
 
         var setRadio = function (field, value) {
-        if (field.value !== value) return;
-        field.checked = true;
-
-    };
+            if (field.value !== value) return;
+            field.checked = true;
+        };
 
     var getCookie = function (cookie, selector) {
 
@@ -156,14 +155,12 @@ var Constructor = function () {
 
         let analyticsValue = values.find(o => o.name === 'analytics');
         let marketingValue = values.find(o => o.name === 'marketing');
-        let settingsValue = values.find(o => o.name === 'settings');
 
         //Spit put the values
         var cookies_vars = {
             "essential": true,
             "analytics":analyticsValue.value,
-            "marketing":marketingValue.value,
-            "settings":settingsValue.value
+            "marketing":marketingValue.value
         };
 
         // console.log(cookies_vars);
@@ -189,9 +186,8 @@ var Constructor = function () {
         
         // On submit update the cookie
         if (settings.onSubmit) {
-            console.log('submit');
+            // console.log('submit');
             document.addEventListener('submit', function (event) {
-
                 // event.preventDefault();
                 updateCookie(settings.cookiename, settings.selector);
 
@@ -201,11 +197,10 @@ var Constructor = function () {
         // Or listen for clicks in the document
         if (settings.onClick) {
             document.addEventListener('click', function (event) {
-
                 if (!event.target.matches(settings.selector)) return;
+                // console.log('click');
                 updateCookie(settings.cookiename, settings.selector);
-                
-            }, false);
+            });
         }
 
     };
@@ -221,16 +216,3 @@ var Constructor = function () {
 return Constructor;
 
 })();
-
-
-document.addEventListener("DOMContentLoaded", function(){
-
-    // Handler when the DOM is fully loaded
-    var cookie = new DGCookies();
-    // cookie.init({
-    //     onClick: true,
-    //     onSubmit: false
-    // });
-    cookie.init();
-
-});

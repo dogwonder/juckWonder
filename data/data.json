@@ -1,8 +1,11 @@
 {  
    "siteTitle": "🌵 Nunjucks 🌵", 
    "siteDesc": "", 
-   "siteUrl": "", 
-   "sitePrivacyUrl": "./privacy", 
+   "siteUrl": "https://dogwonder.dev", 
+   "companyName": "Dogwonder Ltd",
+   "privacyUrl": "./privacy.html", 
+   "ownerName": "Rich Holman", 
+   "ownderEmail": "dogwonder@gmail.com", 
    "images": [{
       "id":"1",
       "image":"images/gallery/images/small/1.jpg",

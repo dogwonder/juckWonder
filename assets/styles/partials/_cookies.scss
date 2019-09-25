@@ -1,6 +1,6 @@
 .cookie-notice {
     color: #31708F;
-    background-color: #D9ECF7;
+    background-color: #ECF3F7;
     border:0;
     border-bottom: 2px solid #BCDFF1;
     padding: 0.6rem;
@@ -9,6 +9,7 @@
     p {margin:0;font-size: 1.5rem;}
     a {color: #31708F;}
     .cookieButton {
+        font-family: $typeface;
         font-size:1.2rem;
         font-weight: bold;
         background-color: transparent;
@@ -30,4 +31,52 @@
 
 .cookie-notice.open {
     display: block;
+}
+
+
+//Cookie settings page
+[data-form="cookie-settings"] {    
+
+    .cookies-radios {
+        padding:2rem 0;
+        display:flex;
+    }
+    .cookies-radio {
+        margin:0 2rem 0 0;
+    }
+
+    label {
+        font-size:2rem;
+        font-weight:bold;
+        display:flex;
+        align-items: center;
+    }
+
+    input[type="radio"] {
+        vertical-align: middle;
+        display:inline-block;
+        margin:0 0.7rem 0 0;
+    }
+
+    // IF using SVGs but not here as fails tests
+    // svg {
+    //     width:3rem;
+    //     height:3rem;
+    //     display:inline-block;
+    //     margin:0 1rem 0 0;
+    // }
+    // input[type="radio"] {
+    //     opacity: 0;
+    //     width: 0;
+    //     height: 0;
+    // }
+    // input[type="radio"] ~ svg .fa-primary {
+    //     opacity: 0;  
+    // }
+    // input[type="radio"]:active ~ svg .fa-primary {
+    // opacity: 1;
+    // }
+    // input[type="radio"]:checked ~ svg .fa-primary {
+    // opacity: 1;
+    // }
 }
