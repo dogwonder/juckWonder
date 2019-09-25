@@ -2,6 +2,7 @@
    "siteTitle": "🌵 Nunjucks 🌵", 
    "siteDesc": "", 
    "siteUrl": "", 
+   "sitePrivacyUrl": "./privacy", 
    "images": [{
       "id":"1",
       "image":"images/gallery/images/small/1.jpg",

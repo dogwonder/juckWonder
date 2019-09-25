@@ -195,3 +195,6 @@ const dev = gulp.series('nunjucks', gulp.parallel('sass', 'scripts', 'serve', 'w
 const build = gulp.series('clean', 'babel', 'nunjucks', gulp.parallel('sass-build', 'scripts-build', 'images'), 'move', 'banner');
 exports.default = dev;
 exports.build = build;
+
+//dev: `gulp`
+//build for production: `gulp build`

@@ -19,22 +19,30 @@
     {% include "../partials/_meta.njk" %}
 </head>
 <body class="dg{% if body_class %} {{ body_class }}{% endif %}">
-    <div class="dg-wrapper flow">
+    {% include "../partials/_cookie.njk" %}
+    <div class="dg-wrapper">
     {% include "../partials/_header.njk" %}
-    <section class="dg-container" role="main">
-      <main class="dg-content">
+    <main id="content" class="dg-container">
+      <div class="dg-content">
         {% block content %}
             {# Main content goes here. #}
          {% endblock %}
-      </main>
-    </section><!--/.container-->
+      </div>
+    </main><!--/.container-->
     {% include "../partials/_footer.njk" %}
     </div><!--/.wrapper-->
     {% include "../partials/_gallery-dom.njk" %}
     <script src="./scripts/scripts.js"></script>
-    <script>
-    astro.init(); //Astro menu https://github.com/cferdinandi/astro/
-    </script>
     <script src="./scripts/gallery.js"></script>
+    <script>
+    {# Mobile nav https://github.com/cferdinandi/astro/ #}
+    astro.init();
+    {# Service worker #}
+    if('serviceWorker' in navigator) {
+    const registerServiceWorker = async () =>  
+    navigator.serviceWorker.register('./service-worker.js');
+    const registration = await registerServiceWorker();
+    }
+    </script>
 </body>
 </html>
