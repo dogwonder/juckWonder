@@ -185,7 +185,7 @@ gulp.task('banner', () => {
 });
 
 // Moving misc files
-gulp.task('move', () => {  
+gulp.task('move-js', () => {  
   return gulp
       .src([
       'assets/scripts/gallery.js', 
@@ -195,9 +195,12 @@ gulp.task('move', () => {
 });
 
 // Moving the service worker
-gulp.task('sw', () => {  
+gulp.task('move-files', () => {  
   return gulp
-    .src('assets/scripts/service-worker.js')
+    .src([
+      'assets/scripts/service-worker.js',
+      'assets/CNAME',
+    ])
     .pipe(gulp.dest(dir.dist));
 });
 
@@ -217,7 +220,7 @@ gulp.task('tests', shell.task('$(npm bin)/cypress run'))
 // Init
 // -----------------
 const dev = gulp.series('nunjucks', gulp.parallel('sass', 'scripts', 'serve', 'watch'));
-const build = gulp.series('clean', 'babel', 'nunjucks', gulp.parallel('sass-build', 'scripts-build', 'fonts', 'images'), 'move', 'sw', 'banner');
+const build = gulp.series('clean', 'babel', 'nunjucks', gulp.parallel('sass-build', 'scripts-build', 'fonts', 'images'), 'move-js', 'move-files', 'banner');
 exports.default = dev;
 exports.build = build;
 
