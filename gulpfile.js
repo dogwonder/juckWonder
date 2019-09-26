@@ -27,7 +27,7 @@ const pkg = require('./package.json');
 // Variables
 // -----------------
 const dir = {
- dist: './dist/',
+ dist: './docs/',
  src: './src/',
  styles: './assets/styles/',
  scripts: './assets/scripts/'
