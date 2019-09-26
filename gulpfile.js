@@ -15,8 +15,10 @@ const shell = require('gulp-shell');
 const plumber = require('gulp-plumber');
 const rename = require('gulp-rename');
 const data = require('gulp-data');
-const nunjucks = require('gulp-nunjucks');
-const markdown = require('markdown');
+const nunjucks = require('nunjucks');
+const markdown = require('nunjucks-markdown');
+const marked = require('marked');
+const gulpnunjucks = require('gulp-nunjucks');
 const browserSync = require('browser-sync').create();
 const log = require('fancy-log');
 const colors = require('ansi-colors');
@@ -45,8 +47,12 @@ const comment = '/*\n' +
 
 // Development Tasks
 // -----------------
-
 //Nunjucks
+
+// Markdown vars
+var env = new nunjucks.Environment(new nunjucks.FileSystemLoader(dir.src));
+markdown.register(env, marked);
+
 gulp.task('nunjucks', () => {
   return gulp
     .src(path.join(dir.src, '/*.html'))
@@ -54,7 +60,7 @@ gulp.task('nunjucks', () => {
     .pipe(data(function() {
       return require('./data/data.json')
     }))
-    .pipe(nunjucks.compile())
+    .pipe(gulpnunjucks.compile("", {env: env}))
     .pipe(gulp.dest(dir.dist))
 });
 
@@ -111,9 +117,11 @@ gulp.task('watch', () => {
 gulp.task('scripts', () => {  
   return gulp
     .src([
-      'assets/vendor/photoswipe/dist/photoswipe.min.js',
+      'assets/vendor/photoswipe/dist/photoswipe.min.js', //Galery plugin
       'assets/vendor/photoswipe/dist/photoswipe-ui-default.min.js',
-      'assets/vendor/astro.min.js',
+      'assets/vendor/astro.min.js', //Mobile nav
+      'assets/vendor/validate.js',  //Validation plugin
+		  'assets/vendor/validate.polyfills.min.js', //Validation plugin - polyfill
       'assets/scripts/cookiePolicy.js',
       'assets/scripts/scripts.js'
     ])
@@ -137,9 +145,11 @@ gulp.task('babel', () => {
 gulp.task('scripts-build', () => {  
   return gulp
   .src([
-    'assets/vendor/photoswipe/dist/photoswipe.min.js',
+    'assets/vendor/photoswipe/dist/photoswipe.min.js', //Galery plugin
     'assets/vendor/photoswipe/dist/photoswipe-ui-default.min.js',
-    'assets/vendor/astro.min.js',
+    'assets/vendor/astro.min.js', //Mobile nav
+    'assets/vendor/validate.js',  //Validation plugin
+		'assets/vendor/validate.polyfills.min.js', //Validation plugin - polyfill
     'assets/scripts/cookiePolicy.js',
     'assets/scripts/babel/scripts.js'
   ])
@@ -156,6 +166,12 @@ gulp.task('images', () => {
   return gulp
     .src('assets/images/**/*.+(png|jpg|jpeg|gif|svg|json)')
     .pipe(gulp.dest(path.join(dir.dist, 'images')))
+});
+
+// Copying fonts
+gulp.task('fonts', () => {  
+  return gulp.src('assets/fonts/**/*')
+    .pipe(gulp.dest(path.join(dir.dist, 'fonts')))
 });
 
 // Banner
@@ -178,6 +194,13 @@ gulp.task('move', () => {
     .pipe(gulp.dest(path.join(dir.dist, 'scripts')));
 });
 
+// Moving the service worker
+gulp.task('sw', () => {  
+  return gulp
+    .src('assets/scripts/service-worker.js')
+    .pipe(gulp.dest(dir.dist));
+});
+
 // Static Server + watching scss/html files
 gulp.task('serve', () => {
 
@@ -194,7 +217,7 @@ gulp.task('tests', shell.task('$(npm bin)/cypress run'))
 // Init
 // -----------------
 const dev = gulp.series('nunjucks', gulp.parallel('sass', 'scripts', 'serve', 'watch'));
-const build = gulp.series('clean', 'babel', 'nunjucks', gulp.parallel('sass-build', 'scripts-build', 'images'), 'move', 'banner');
+const build = gulp.series('clean', 'babel', 'nunjucks', gulp.parallel('sass-build', 'scripts-build', 'fonts', 'images'), 'move', 'sw', 'banner');
 exports.default = dev;
 exports.build = build;
 

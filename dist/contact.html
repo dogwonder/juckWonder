@@ -109,19 +109,21 @@
         
 <div class="dg-content__inner" id="about">
   <h1>Contact</h1>
-  <form name="contact" method="POST" data-netlify="true" class="input-group contact-form">
+  <form method="POST" action="https://formspree.io/dogwonder@gmail.com" data-validate>
     <p>
-      <label>Your Name: <input type="text" name="name" required /></label>   
+      <label for="name">Your Name:</label>
+      <input type="text" name="name" title="Please add your name" required>
     </p>
     <p>
-      <label>Your Email: <input type="email" name="email" required /></label>
+      <label for="_replyto">Your Email:</label>
+      <input type="email" name="_replyto" pattern="^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*(\.\w{2,})+$" required>
     </p>
     <p>
-      <label>Message: <textarea name="message" required></textarea></label>
+      <label for="message">Message:</label>
+      <textarea name="message" required></textarea>
     </p>
-    <div data-netlify-recaptcha="true"></div>
     <p>
-      <button type="submit">Send</button>
+      <input type="submit" value="Send">
     </p>
   </form>
 </div>
@@ -244,7 +246,7 @@
     
     astro.init();
     
-    
+    validate.init();
     </script>
 </body>
 </html>

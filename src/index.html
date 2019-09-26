@@ -3,10 +3,12 @@
 
 {% block content %}
 
-{% from "macros/media.njk" import media %}
-{{ media('./images/Ja8S6Pg.jpg', 'Hello world') }}
+{% import "macros/media.njk" as blockMedia %}
+{% import "macros/text.njk" as blockContent %}
 
-<div class="dg-content__inner">
-    <h1>Welcome</h1>
-</div>
+{{ blockMedia.hero('./images/gallery/images/1.jpg', 'Hello world', '') }}
+{# Look at using classes e.g. light-grey instead of hex #}
+{{ blockContent.text('right', '', './images/gallery/images/3.jpg', 'The Inter typeface family', 'markdown/content.md') }}
+{{ blockContent.text('left', '#444444', '', 'The Inter typeface family', 'markdown/test.md') }}
+
 {% endblock %} 

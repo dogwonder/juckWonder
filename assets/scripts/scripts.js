@@ -28,11 +28,27 @@
 
     }
 
+    function equalizer(elem) {
+        var blocks = document.querySelectorAll(elem);
+        if(!blocks) return;
+        var tallest = 0; 
+        // Loop over matching divs
+        blocks.forEach(function (item) {
+            var height = item.offsetHeight;
+            tallest = (height>tallest ? height : tallest); 
+            console.log(tallest);
+            item.style.height = tallest + "px";
+        });
+    }
+
     document.addEventListener("DOMContentLoaded", function(){
         // Handler when the DOM is fully loaded
 
         //Cookie notice
         cookieNoticeSeen();
+
+        //Equal height columns
+        equalizer('[data-col]');
 
         //Load the cookie policy functionality
         var cookie = new DGCookies();

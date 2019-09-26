@@ -1,8 +1,8 @@
 [type='text'], [type='email'], textarea, select {
+    border:2px solid #000;
     font-size:1.8rem;
     width: 100%;
     font-size: inherit;
-    border:2px solid white;
     padding:1rem;
 }
 
@@ -10,11 +10,10 @@
     font-size:1.8rem;
     font-weight: bold;
     cursor: pointer;
-    padding:1rem;
+    padding:1rem 2rem;
     background-color:var(--button-background);
     border:2px solid var(--button-background-hover);
     color:white;
-    margin-top:2rem;
     &:hover {
         background-color:#333;
         color:white;
@@ -25,6 +24,15 @@
     color: black;
 }
 
+.error {
+    border-color: red;
+}
+  
+.error-message {
+    color: red;
+    font-style: italic;
+    font-size:1.4rem;
+}
 
 .input-group {
     

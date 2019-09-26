@@ -27,13 +27,19 @@
     box-sizing: border-box;
 }
 
+//Fonts - https://rsms.me/inter/
+html { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
+
 //Global
 html {
     font-size: 62.5%;
 }
 
 body {
-    font-family: $typeface;
+    // font-family: $typeface;
     font-size: $default-font-size;
     line-height: $default-line-height;
     font-weight: normal;
@@ -60,9 +66,10 @@ a, a:link {
  -webkit-transition: all 150ms ease;
   transition: all 150ms ease;
   color:var(--highlight);
+  text-decoration: underline;
   &:hover, &:focus {
       color:var(--highlight-dark);
-      text-decoration: underline;
+      text-decoration: none;
   }
 }
 
@@ -83,58 +90,57 @@ a, a:link {
 
 //Typography
 h1,h2,h3,h4,h5,h6{
-  font-weight:$bold;
+  font-weight:900;
   line-height: 1.33;
   color:var(--heading);
   margin:calc(var(--spacer) * 2) 0 var(--spacer);
 }
 
-.dg-content h1 {
-    @extend .dgTitle; //48px
-}
-.dg-content h2 {
-    font-size: 3rem;
-    line-height: 3.2rem;
-    font-weight: 600;
-}
-.dg-content h3 {
-    font-size: 2.4rem;
-    font-weight: 600;
-}
-.dg-content h4 {
-    font-size: 2rem;
-    font-weight: 600;
-}
-.dg-content h5 {
-   font-size: 1.8rem;
-   font-weight: normal;
-}
-.dg-content h6 {
-   font-size: 1.6rem;
-   font-weight: normal;
-}
-
-.dg-content p {
-    margin:0 0 var(--spacer);
-}
-
-.dg-content ul {
-    margin:0 0 calc(var(--spacer) * 2) calc(var(--spacer) * 2);
-    list-style-type: disc;
-}
-
-.dg-content ol {
-    list-style-type: lower-alpha;
-    margin:0 0 calc(var(--spacer) * 2) calc(var(--spacer) * 2);
+.dg-content {
+    h1 {
+        @extend .dgTitle; //48px
+    }
+    h2 {
+        font-size: 3rem;
+        line-height: 3.2rem;
+    }
+    h3 {
+        font-size: 2.4rem;
+    }
+    h4 {
+        font-size: 2rem;
+    }
+    h5 {
+       font-size: 1.8rem;
+       font-weight: normal;
+    }
+    h6 {
+       font-size: 1.6rem;
+       font-weight: normal;
+    }
+    p {
+        margin:0 0 var(--spacer);
+    }
+    ul {
+        margin:0 0 calc(var(--spacer) * 2) calc(var(--spacer) * 2);
+        list-style-type: disc;
+    }
     ol {
-        margin-top:var(--spacer);
-        list-style-type: lower-roman;
+        list-style-type: lower-alpha;
+        margin:0 0 calc(var(--spacer) * 2) calc(var(--spacer) * 2);
+        ol {
+            margin-top:var(--spacer);
+            list-style-type: lower-roman;
+        }
+    }
+    img {
+        margin-top:2rem;
+    }
+    code {
+        font-family: monospace;
     }
 }
 
-.dg-content img {
-    margin-top:2rem;
-}
 
 //Siblings
 // h3 ~ h4 {margin-top:calc((var(--spacer) / 2) * -1);}
@@ -245,6 +251,7 @@ h1,h2,h3,h4,h5,h6{
         > a {
             color:inherit;
             &:hover {
+                text-decoration: none;
                 fill: var(--highlight-light);
             }
         }

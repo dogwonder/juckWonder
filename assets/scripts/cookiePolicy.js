@@ -191,7 +191,7 @@ var Constructor = function () {
                 // event.preventDefault();
                 updateCookie(settings.cookiename, settings.selector);
 
-            });
+            }, false);
         }
         
         // Or listen for clicks in the document
@@ -200,7 +200,7 @@ var Constructor = function () {
                 if (!event.target.matches(settings.selector)) return;
                 // console.log('click');
                 updateCookie(settings.cookiename, settings.selector);
-            });
+            }, false);
         }
 
     };
