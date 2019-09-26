@@ -3,12 +3,14 @@
 
 {% block content %}
 
-{% import "macros/media.njk" as blockMedia %}
-{% import "macros/text.njk" as blockContent %}
+{% from "macros/media.njk" import hero %}
+{% from "macros/text.njk" import text %}
 
-{{ blockMedia.hero('./images/gallery/images/1.jpg', 'Hello world', '') }}
+{{ hero('./images/gallery/images/1.jpg', 'Hello world', '') }}
+
 {# Look at using classes e.g. light-grey instead of hex #}
-{{ blockContent.text('right', '', './images/gallery/images/3.jpg', 'The Inter typeface family', 'markdown/content.md') }}
-{{ blockContent.text('left', '#444444', '', 'The Inter typeface family', 'markdown/test.md') }}
+{{ text('right', '', './images/gallery/images/3.jpg', 'The Inter typeface family', 'markdown/1.md') }}
+{{ text('left', '#444444', '', 'A thing', 'markdown/2.md') }}
+{{ text('right', '#FEB4D5', '', 'Something else', 'markdown/3.md') }}
 
 {% endblock %} 
