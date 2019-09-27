@@ -1,7 +1,8 @@
 {  
    "siteTitle": "🌵 Nunjucks 🌵", 
-   "siteDesc": "", 
+   "siteDesc": "A nunjucks stater static site", 
    "siteUrl": "https://dogwonder.dev", 
+   "siteImage": "https://dogwonder.dev/images/og/og-image.jpg", 
    "companyName": "Dogwonder Ltd",
    "privacyUrl": "./privacy.html", 
    "ownerName": "Rich Holman", 

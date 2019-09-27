@@ -164,7 +164,7 @@ gulp.task('clean', () => del([ dir.dist ]) );
 // Images
 gulp.task('images', () => {
   return gulp
-    .src('assets/images/**/*.+(png|jpg|jpeg|gif|svg|json)')
+    .src('assets/images/**/*.+(png|jpg|jpeg|gif|svg|json|ico|json)')
     .pipe(gulp.dest(path.join(dir.dist, 'images')))
 });
 
