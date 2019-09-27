@@ -60,7 +60,7 @@ Meta description (this also changes the twitter and facebook share text)
 {{ siteDesc }}
 ```
 
-Body class - `{% set body_class = "dg-gallery" %}`
+Body class - `{% set body_class = "wj-gallery" %}`
 Page title - `{% set page_title = "Gallery" %}`
 
 Social (`footer.njk`) - `{{ social('dogwonder', 'dogwonder@gmail.com', '07967835097') }}`

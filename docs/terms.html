@@ -14,13 +14,13 @@
         let cookies_vars = {"essential":true,"analytics":true,"marketing":true};
 
         //If the 🍪 not set, set it 
-        let hasCookie = Cookies.get('dg_cookie_policy');
+        let hasCookie = Cookies.get('wj_cookie_policy');
         if (!hasCookie) {
-            Cookies.set('dg_cookie_policy', cookies_vars, { expires: 365, path: '' });
+            Cookies.set('wj_cookie_policy', cookies_vars, { expires: 365, path: '' });
         }
 
         //Now let's get the 🍪 vars
-        let getCookie = Cookies.getJSON('dg_cookie_policy');
+        let getCookie = Cookies.getJSON('wj_cookie_policy');
         //If analytics 🍪 is true 
         if(getCookie.analytics === true) {
             //console.log('Analytics 🍪 is set to true');   
@@ -61,8 +61,9 @@
 <meta name="twitter:title" content="🌵 wonderJucks 🌵">
 <meta name="twitter:description" content="A nunjucks stater static site">
 <meta name="twitter:image" content="https://dogwonder.dev/images/og/og-image.png">
+    <script type='application/ld+json'>{"@context":"https://schema.org","@type":"WebSite","@id":"https://dogwonder.dev#website","url":"https://dogwonder.dev","name":"Dogwonder Ltd","logo":"https://dogwonder.dev/images/og/logo-160x60.png"}</script>
 </head>
-<body class="has-cookie dg dg-about">
+<body class="has-cookie wj wj-about">
     <div id="cookieNotice" class="cookie-notice open" role="region">
     <div class="container">
         <p>Like most websites 🌵 wonderJucks 🌵 uses cookies to give you the best experience. <a href="./privacy.html">Read our privacy policy</a>
@@ -71,11 +72,11 @@
         </p>
     </div>
 </div>
-    <div class="dg-wrapper">
-    <div class="dg-masthead">
-  <div class="dg-masthead__container">
+    <div class="wj-wrapper">
+    <div class="wj-masthead">
+  <div class="wj-masthead__container">
     
-    <header class="dg-masthead__logo">
+    <header class="wj-masthead__logo">
     <a href="./">
       <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" fill-rule="evenodd" clip-rule="evenodd" stroke-linecap="square" stroke-miterlimit="1.5">
       <path d="M267.053 466.54L472.286 50.034" fill="none" stroke="#000" stroke-width="86.17" transform="matrix(-.4994 .49095 -.48533 -.49369 455.116 229.674)"/>
@@ -88,7 +89,7 @@
       <span class="show-for-sr">Go to the homepage</span>
     </a>
     </header>
-    <nav id="site-navigation" class="nav-collapse dg-masthead__nav">
+    <nav id="site-navigation" class="nav-collapse wj-masthead__nav">
 						<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 						<a class="nav-toggle" data-nav-toggle="#nav-menu" href="#">
 							<svg class="🍔" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"/></svg>
@@ -109,10 +110,10 @@
 		</nav><!-- #site-navigation -->
   </div>
 </div>
-    <main id="content" class="dg-container">
-      <div class="dg-content">
+    <main id="content" class="wj-container">
+      <div class="wj-content">
         
-<div class="dg-content__inner">
+<div class="wj-content__inner">
     <h2>Dogwonder Ltd Terms of Service</h2>
     <h3>1. Terms</h3>
     <p>By accessing the website at <a href="https://dogwonder.dev">DOGWONDER.DEV</a>, you are agreeing to be bound by these terms of service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this website are protected by applicable copyright and trademark law.</p>
@@ -148,7 +149,7 @@
 
       </div>
     </main><!--/.container-->
-    <footer id="footer" class="dg-footer">
+    <footer id="footer" class="wj-footer">
     
     
 <ul class="nav-social">
@@ -162,7 +163,7 @@
             </a>
     </li>
     <li class="nav-social__item">
-        <a href="mailto:" rel="external">
+        <a href="mailto:dogwonder@gmail.com" rel="external">
         <svg class="icon icon-social" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <path d="M464 64H48C21.49 64 0 85.49 0 112v288c0 26.51 21.49 48 48 48h416c26.51 0 48-21.49 48-48V112c0-26.51-21.49-48-48-48zm0 48v40.805c-22.422 18.259-58.168 46.651-134.587 106.49-16.841 13.247-50.201 45.072-73.413 44.701-23.208.375-56.579-31.459-73.413-44.701C106.18 199.465 70.425 171.067 48 152.805V112h416zM48 400V214.398c22.914 18.251 55.409 43.862 104.938 82.646 21.857 17.205 60.134 55.186 103.062 54.955 42.717.231 80.509-37.199 103.053-54.947 49.528-38.783 82.032-64.401 104.947-82.653V400H48z" />
         <span class="show-for-sr">Email</span>

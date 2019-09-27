@@ -14,7 +14,7 @@
     var cookieButton = document.getElementById('cookieButton'); // Set a cookie
 
     cookieButton.addEventListener('click', function (event) {
-      Cookies.set('dg_cookie_notice', 'closed', {
+      Cookies.set('wj_cookie_notice', 'closed', {
         expires: 365,
         path: ''
       });
@@ -22,7 +22,7 @@
       document.body.classList.remove('has-cookie');
     }, false); //Remove notice if cookie already set
 
-    if (Cookies.get('dg_cookie_notice') == 'closed') {
+    if (Cookies.get('wj_cookie_notice') == 'closed') {
       cookieNotice.classList.remove('open');
       document.body.classList.remove('has-cookie');
     }
@@ -52,7 +52,7 @@
 
     equalizer('[data-col]'); //Load the cookie policy functionality
 
-    var cookie = new DGCookies();
+    var cookie = new WJCookies();
     cookie.init({
       onClick: true,
       onSubmit: false

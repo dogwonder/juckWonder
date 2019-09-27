@@ -51,8 +51,8 @@ body {
 }
 
 
-%dgTitle,
-.dgTitle {
+%wjTitle,
+.wjTitle {
   font-size:3rem;
   line-height: 3.2rem;
   color:var(--text-color-normal);
@@ -98,9 +98,9 @@ h1,h2,h3,h4,h5,h6{
   margin:calc(var(--spacer) * 2) 0 var(--spacer);
 }
 
-.dg-content {
+.wj-content {
     h1 {
-        @extend .dgTitle; //48px
+        @extend .wjTitle; //48px
     }
     h2 {
         font-size: 3rem;
@@ -123,6 +123,8 @@ h1,h2,h3,h4,h5,h6{
     p {
         margin:0 0 var(--spacer);
     }
+    em {font-style:italic;}
+    strong {font-weight: 700;}
     ul {
         margin:0 0 calc(var(--spacer) * 2) calc(var(--spacer) * 2);
         list-style-type: disc;
@@ -148,22 +150,22 @@ h1,h2,h3,h4,h5,h6{
 // h3 ~ h4 {margin-top:calc((var(--spacer) / 2) * -1);}
 
 /*Layout*/
-.dg-wrapper {
+.wj-wrapper {
 
 }
 @media only screen and (min-width: 64rem) {
-    .dg-wrapper {
+    .wj-wrapper {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
       }
 }
 
-.dg-masthead {
+.wj-masthead {
     overflow: hidden;
     padding:0;
     background-color:var(--border);
-    .dg-masthead__container {
+    .wj-masthead__container {
         padding:2rem;
         display: flex;
         align-items: stretch;
@@ -172,32 +174,32 @@ h1,h2,h3,h4,h5,h6{
 }
 
 //Sticky footer
-.dg-container {
+.wj-container {
     flex:1;
 }
 
-.dg-footer {
+.wj-footer {
   background-color: var(--masthead);
   color:white;
 }
 
 //Nav
-.dg-nav {}
+.wj-nav {}
 
 //Logo
-.dg-masthead__logo {
+.wj-masthead__logo {
     svg {
         width:4.4rem;
         height:4.4rem;
     }
 }
 
-.dg-content {
+.wj-content {
     padding:0;
     margin:0;
 }
 
-.dg-content__inner {
+.wj-content__inner {
     margin:0 auto 4rem;
     max-width: 70ch;
     padding:0 2rem;
@@ -207,14 +209,14 @@ h1,h2,h3,h4,h5,h6{
 }
 
 //Links
-.dg-content__links {
+.wj-content__links {
     p {margin:0 0 0.25rem;}
     [class^="fa"] {margin-right:1rem;}
 }
 
 
 //Footer
-.dg-footer {
+.wj-footer {
     padding:4rem 0;
     color:var(--border);
     .nav-social {
@@ -261,9 +263,9 @@ h1,h2,h3,h4,h5,h6{
 
 //Themes
 $themes: (
-    "light-grey": $dg-light-grey,
-    "dark-grey": $dg-dark-grey,
-    "coal": $dg-coal
+    "light-grey": $wj-light-grey,
+    "dark-grey": $wj-dark-grey,
+    "coal": $wj-coal
 );
 @each $theme, $color in $themes {
       .theme--#{$theme}  {

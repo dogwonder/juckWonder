@@ -1,15 +1,15 @@
-{% set body_class = "dg-gallery" %}
+{% set body_class = "wj-gallery" %}
 {% set page_title = "Gallery" %}
 
 {% extends "layout/_layout.njk" %}
 {% from "macros/gallery.njk" import gallery %}
 
 {% block content %}
-<div class="dg-content__inner" id="about">
+<div class="wj-content__inner" id="about">
  
 <h1>Gallery</h1>
-<div class="dg-gallery">
-    <div class="dg-gallery__grid gallerySwipe">
+<div class="wj-gallery">
+    <div class="wj-gallery__grid gallerySwipe">
         {% for image in images %}
             {{ gallery(image.index, image.title, image.image, image.image_large, image.width, image.height) }}
         {% endfor %}

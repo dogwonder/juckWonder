@@ -1,4 +1,4 @@
-{% set body_class = "dg-home" %}
+{% set body_class = "wj-home" %}
 
 {% extends "layout/_layout.njk" %}
 {% from "macros/media.njk" import hero %}
@@ -6,10 +6,10 @@
 
 {% block content %}
 
-{{ hero('./images/gallery/images/1.jpg', '🌵 wonderJucks 🌵', 'A nunjucks stater static site') }}
+{{ hero('./images/blocks/1.jpg', '🌵 wonderJucks 🌵', 'A nunjucks stater static site') }}
 
 {# Look at using classes e.g. light-grey instead of hex #}
-{{ text('right', '', './images/gallery/images/3.jpg', 'Text block -- with image', 'markdown/1.md') }}
-{{ text('left', '#444444', '', 'Another text block -- with solid colour', 'markdown/2.md') }}
+{{ text('right', '', './images/blocks/2.jpg', 'Text block -- with image', 'markdown/1.md') }}
+{{ text('left', '#9A9FA2', '', 'Another text block -- with solid colour', 'markdown/2.md') }}
 
 {% endblock %} 

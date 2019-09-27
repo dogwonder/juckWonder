@@ -22,7 +22,7 @@
 .block--media {
     padding: 4rem 2rem 2rem;
     background-color: var(--masthead);
-    background-position: 0 100%;
+    background-position: center center;
     background-size: cover;
     text-align: center;
     display: flex;
@@ -81,6 +81,7 @@
     }
     .block__image {
         background-size: cover;
+        background-position: center center;
     }
 
     &.right {

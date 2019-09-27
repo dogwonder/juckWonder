@@ -14,13 +14,13 @@
         let cookies_vars = {"essential":true,"analytics":true,"marketing":true};
 
         //If the 🍪 not set, set it 
-        let hasCookie = Cookies.get('dg_cookie_policy');
+        let hasCookie = Cookies.get('wj_cookie_policy');
         if (!hasCookie) {
-            Cookies.set('dg_cookie_policy', cookies_vars, { expires: 365, path: '' });
+            Cookies.set('wj_cookie_policy', cookies_vars, { expires: 365, path: '' });
         }
 
         //Now let's get the 🍪 vars
-        let getCookie = Cookies.getJSON('dg_cookie_policy');
+        let getCookie = Cookies.getJSON('wj_cookie_policy');
         //If analytics 🍪 is true 
         if(getCookie.analytics === true) {
             //console.log('Analytics 🍪 is set to true');   
@@ -41,12 +41,12 @@
     {% include "../partials/_meta.njk" %}
     {% include "../partials/_structured-data.njk" %}
 </head>
-<body class="has-cookie dg{% if body_class %} {{ body_class }}{% endif %}">
+<body class="has-cookie wj{% if body_class %} {{ body_class }}{% endif %}">
     {% include "../partials/_cookie.njk" %}
-    <div class="dg-wrapper">
+    <div class="wj-wrapper">
     {% include "../partials/_header.njk" %}
-    <main id="content" class="dg-container">
-      <div class="dg-content">
+    <main id="content" class="wj-container">
+      <div class="wj-content">
         {% block content %}
             {# Main content goes here. #}
          {% endblock %}
