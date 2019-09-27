@@ -1,26 +1,28 @@
 //CSS Vars - usage var(--background)
 :root {
-	--hue: 257; 
+	--hue: 183; 
 	
     --background: white;
     --masthead: #1E1E1E;
 	
     --border:#e5e7e9;
 	
-    --text-color-normal: hsl(257, 2%, 0%);
-    --heading: hsl(257, 2%, 15%);
-	--meta: hsl(257, 2%, 30%);
+    --text-color-normal: hsl(183, 2%, 0%);
+    --heading: hsl(183, 2%, 15%);
+	--meta: hsl(183, 2%, 30%);
 
-    --highlight: hsl(257, 100%, 20%);
-	--highlight-dark: hsl(257, 20%, 20%);
-	--highlight-light: hsl(257, 100%, 90%);
-	--hover: hsl(257, 20%, 20%);
+    --highlight: hsl(183, 100%, 20%);
+	--highlight-dark: hsl(183, 20%, 20%);
+	--highlight-light: hsl(183, 100%, 90%);
+	--hover: hsl(183, 20%, 20%);
 
-    --button-background: hsl(257, 20%, 20%);
-    --button-background-hover: hsl(257, 20%, 30%);
+    --button-background: hsl(183, 20%, 20%);
+    --button-background-hover: hsl(183, 20%, 30%);
 	--button-text-color: white;
 	
-	--spacer: 2rem;
+    --spacer: 2rem;
+    
+    --container: 70ch;
 }
 
 * {
@@ -90,7 +92,7 @@ a, a:link {
 
 //Typography
 h1,h2,h3,h4,h5,h6{
-  font-weight:900;
+  font-weight: $bold;
   line-height: 1.33;
   color:var(--heading);
   margin:calc(var(--spacer) * 2) 0 var(--spacer);
@@ -197,7 +199,7 @@ h1,h2,h3,h4,h5,h6{
 
 .dg-content__inner {
     margin:0 auto 4rem;
-    max-width: 80rem;
+    max-width: 70ch;
     padding:0 2rem;
     @media #{$large-up} {
         padding:0;

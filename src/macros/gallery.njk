@@ -1,7 +1,7 @@
 {% macro gallery(imageID, imageTitle, imageUrl, imageUrlLarge, imageWidth, imageHeight) %}
   <figure id="image-{{ imageID}}" class="dg-gallery__item" itemprop="associatedMedia" itemscope
         itemtype="http://schema.org/ImageObject">
-            <a href="{{ imageUrlLarge }}" itemprop="contentUrl" 
+            <a class="frame" href="{{ imageUrlLarge }}" itemprop="contentUrl" 
                 data-size="{{ imageWidth }}x{{ imageHeight }}">
                 <img src="{{ imageUrl }}" alt="{{ imageTitle }}" />
             </a>

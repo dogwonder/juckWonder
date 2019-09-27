@@ -10,5 +10,8 @@
 {% block content %}
 <div class="dg-content__inner">
     <h1>About</h1>
+    {% markdown %}
+    {% include "markdown/about.md" %}
+    {% endmarkdown %}
 </div>
 {% endblock %} 

@@ -29,16 +29,21 @@
     }
 
     function equalizer(elem) {
+        const mq = window.matchMedia( "(min-width: 1025px)" );
         var blocks = document.querySelectorAll(elem);
         if(!blocks) return;
-        var tallest = 0; 
-        // Loop over matching divs
-        blocks.forEach(function (item) {
-            var height = item.offsetHeight;
-            tallest = (height>tallest ? height : tallest); 
-            console.log(tallest);
-            item.style.height = tallest + "px";
-        });
+        
+        if (mq.matches) {
+            var tallest = 0; 
+            // Loop over matching divs
+            blocks.forEach(function (item) {
+                var height = item.offsetHeight;
+                tallest = (height>tallest ? height : tallest); 
+                // console.log(tallest);
+                item.style.height = tallest + "px";
+            });
+        }
+
     }
 
     document.addEventListener("DOMContentLoaded", function(){
@@ -59,6 +64,10 @@
         // cookie.init();
         
     });
+
+    // window.addEventListener("resize", function(){
+    //     equalizer('[data-col]');
+    // });
 
 })();
 

@@ -29,10 +29,11 @@
         display: block;
         width: 100%;
         font-size: 4rem;
-        line-height: 5rem;
+        line-height: 1.5;
         > a {
             text-decoration: none;
-            color:white;
+			color:white;
+			font-weight: $bold;
             &:hover {
                 color:var(--highlight-light);
             }
@@ -50,7 +51,7 @@
 			align-items: center;
 			text-align:center;
 			ul {
-				max-width: 60ch;
+				max-width: var(--container);
 				margin:0 auto;
 				opacity: 1;
 			}
