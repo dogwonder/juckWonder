@@ -117,10 +117,10 @@ gulp.task('watch', () => {
 gulp.task('scripts', () => {  
   return gulp
     .src([
-      'assets/vendor/photoswipe/dist/photoswipe.min.js', //Galery plugin
-      'assets/vendor/photoswipe/dist/photoswipe-ui-default.min.js',
-      'assets/vendor/astro.min.js', //Mobile nav
-      'assets/vendor/validate.js',  //Validation plugin
+      'assets/vendor/photoswipe.min.js', //Galery plugin - https://photoswipe.com/documentation/getting-started.html
+      'assets/vendor/photoswipe-ui-default.min.js',
+      'assets/vendor/astro.min.js', //Mobile nav - https://github.com/cferdinandi/astro
+      'assets/vendor/validate.js',  //Validation plugin - https://github.com/cferdinandi/validate
 		  'assets/vendor/validate.polyfills.min.js', //Validation plugin - polyfill
       'assets/scripts/cookiePolicy.js',
       'assets/scripts/scripts.js'
@@ -145,10 +145,10 @@ gulp.task('babel', () => {
 gulp.task('scripts-build', () => {  
   return gulp
   .src([
-    'assets/vendor/photoswipe/dist/photoswipe.min.js', //Galery plugin
-    'assets/vendor/photoswipe/dist/photoswipe-ui-default.min.js',
-    'assets/vendor/astro.min.js', //Mobile nav
-    'assets/vendor/validate.js',  //Validation plugin
+    'assets/vendor/photoswipe.min.js', //Galery plugin - https://photoswipe.com/documentation/getting-started.html
+    'assets/vendor/photoswipe-ui-default.min.js',
+    'assets/vendor/astro.min.js', //Mobile nav - https://github.com/cferdinandi/astro
+    'assets/vendor/validate.js',  //Validation plugin - https://github.com/cferdinandi/validate
 		'assets/vendor/validate.polyfills.min.js', //Validation plugin - polyfill
     'assets/scripts/cookiePolicy.js',
     'assets/scripts/babel/scripts.js'

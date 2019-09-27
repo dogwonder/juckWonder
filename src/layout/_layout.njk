@@ -53,9 +53,10 @@
     </main><!--/.container-->
     {% include "../partials/_footer.njk" %}
     </div><!--/.wrapper-->
-    {% include "../partials/_gallery-dom.njk" %}
     <script src="./scripts/app.js"></script>
-    <script src="./scripts/gallery.js"></script>
+    {% block scripts %}
+        {#extra scripts. #}
+    {% endblock %}
     <script>
     {# Mobile nav https://github.com/cferdinandi/astro #}
     astro.init();

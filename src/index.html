@@ -1,10 +1,10 @@
 {% set body_class = "dg-home" %}
+
 {% extends "layout/_layout.njk" %}
-
-{% block content %}
-
 {% from "macros/media.njk" import hero %}
 {% from "macros/text.njk" import text %}
+
+{% block content %}
 
 {{ hero('./images/gallery/images/1.jpg', 'Hello world', '') }}
 

@@ -2,6 +2,7 @@
 {% set page_title = "Gallery" %}
 
 {% extends "layout/_layout.njk" %}
+{% from "macros/gallery.njk" import gallery %}
 
 {% block content %}
 <div class="dg-content__inner" id="about">
@@ -9,18 +10,14 @@
 <h1>Gallery</h1>
 <div class="dg-gallery">
     <div class="dg-gallery__grid gallerySwipe">
-
-    {% for image in images %}
-        <figure id="image-{{ image.index }}" class="dg-gallery__item" itemprop="associatedMedia" itemscope
-        itemtype="http://schema.org/ImageObject">
-            <a href="{{ image.image_large }}" itemprop="contentUrl" 
-                data-size="{{ image.width }}x{{ image.height }}">
-                <img src="{{ image.image }}" alt="{{ image.title }}" />
-            </a>
-            <figcaption class="dg-gallery__details" itemprop="caption description">{{ image.title }}</figcaption>
-        </figure>
-    {% endfor %}
-    
+        {% for image in images %}
+            {{ gallery(image.index, image.title, image.image, image.image_large, image.width, image.height) }}
+        {% endfor %}
     </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+{% include "partials/_gallery-dom.njk" %}
+<script src="./scripts/gallery.js"></script>
 {% endblock %}

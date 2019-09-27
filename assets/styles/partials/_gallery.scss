@@ -60,18 +60,18 @@
         width:25rem;
     }
     margin:0;
+    // opacity: 1;
     // -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
     // filter: grayscale(100%);
+    &:hover {}
 }
 
 .dg-gallery__details {
     position: relative;
     z-index: 1;
     padding: 1rem 1rem 1rem 0;
-    font-size: 1.8rem;
-    font-weight:bold;
-    color: #111;
-    > span {display:block;color:#333;font-weight:normal;font-size: 1.6rem;}
+    font-size: 1.6rem;
+    color: var(--meta);
 }
 
 @media (min-width: 768px) {
