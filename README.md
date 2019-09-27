@@ -46,7 +46,7 @@ There are some site variables that should be edited away from the boilerplate de
 
 - [ ] Change site vars - `data.json`
 - [ ] Site name - `/images/fav/manifest.json`
-- [ ] Update social images in `/images/og`, `/images/fav/`, `logotype.svg` and `icon.png`
+- [ ] Update social images in `/images/og`, `/images/fav/`, `logotype.svg`
 - [ ] Update form endpoint in `contact.html` - currently using [Formspree](https://formspree.io/)
 
 
