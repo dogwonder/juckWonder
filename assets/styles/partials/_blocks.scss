@@ -45,10 +45,15 @@
     }  
     .block__heading {
         color:inherit;
-        font-size: 4rem;
+        font-size: 2.4rem;
         letter-spacing: 1px;
-        max-width:80%;
         margin:0 auto 1rem;
+        @media #{$large-up} {
+            font-size: 4rem;
+            max-width:80%;
+            margin:0 auto 1rem;
+        }
+        
     }
     .block__content {
         max-width:var(--container);
