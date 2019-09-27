@@ -1,6 +1,6 @@
-## Nunjucks starter site
+## wonderJucks - a Nunjucks starter site
 
-This site has been build using [Nunjucks](https://mozilla.github.io/nunjucks/). 
+A starter kit to build websites using [Nunjucks](https://mozilla.github.io/nunjucks/) a rich and powerful templating language for JavaScript.
 
 ## Requirements
 

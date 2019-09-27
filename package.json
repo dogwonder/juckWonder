@@ -1,5 +1,5 @@
 {
-  "name": "nunjucks",
+  "name": "wonderJucks",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dogwonder/nunjucks.git"
+    "url": "git+https://github.com/dogwonder/wonderjucks.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dogwonder/nunjucks/issues"
+    "url": "https://github.com/dogwonder/wonderjucks/issues"
   },
-  "homepage": "https://github.com/dogwonder/nunjucks#readme",
+  "homepage": "https://github.com/dogwonder/wonderjucks#readme",
   "devDependencies": {
     "@babel/core": "^7.6.0",
     "@babel/plugin-transform-template-literals": "^7.4.4",
