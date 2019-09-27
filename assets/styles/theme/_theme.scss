@@ -239,7 +239,6 @@ h1,h2,h3,h4,h5,h6{
         &:hover {
             opacity: 1;
             fill: var(--highlight-light);
-            // transform: scale(1.1);
         }
     }
     .icon-social-instagram {
@@ -252,9 +251,9 @@ h1,h2,h3,h4,h5,h6{
         margin:2rem 0;
         > a {
             color:inherit;
-            &:hover {
+            &:hover, &:focus {
                 text-decoration: none;
-                fill: var(--highlight-light);
+                color: var(--highlight-light);
             }
         }
     }
