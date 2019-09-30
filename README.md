@@ -2,9 +2,9 @@
 
 A starter kit to build websites using [Nunjucks](https://mozilla.github.io/nunjucks/) a rich and powerful templating language for JavaScript. 
 
-🐛 Framework free
-🐝 Minimal CSS
-🐬 Block based templating 
+- 🐛 Framework free
+- 🐝 Minimal CSS
+- 🐬 Block based templating 
 
 ## Requirements
 
