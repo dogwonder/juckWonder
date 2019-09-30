@@ -1,6 +1,6 @@
-{% macro text(alignment, color, image, heading, file) %}
-  <div class="block block--text{% if (alignment == 'right') %} right{% else %} left{% endif %}">
-    <div class="block__text" data-col>
+{% macro text(bgColor, alignment, color, image, heading, file) %}
+  <div class="block block--text{% if (alignment == 'right') %} right{% elif (alignment == 'left') %} left{% else %} center{% endif %}"{% if bgColor %} style="background-color: {{ bgColor }};"{% endif %}>
+    <div class="block__text"{% if (alignment == 'center') %} style="background-color: {{ color }};"{% endif %}{% if (alignment == 'left') or (alignment == 'right') %} data-col{% endif %}>
         <div class="inner">
           {% if heading %}
           <h2 class="block__heading">{{ heading }}</h2>
@@ -12,11 +12,13 @@
           {% endif %}
         </div>
     </div>
+    {% if (alignment == 'left') or (alignment == 'right') %}
     {% if color %}
     <div class="block__color" style="background-color: {{ color }};" data-col></div>
     {% endif %}
     {% if image %}
     <div class="block__image" style="background-image: url({{ image }});" data-col></div>
+    {% endif %}
     {% endif %}
   </div>
 {% endmacro %}

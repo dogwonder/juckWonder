@@ -14,13 +14,13 @@
         let cookies_vars = {"essential":true,"analytics":true,"marketing":true};
 
         //If the 🍪 not set, set it 
-        let hasCookie = Cookies.get('wj_cookie_policy');
+        let hasCookie = Cookies.get('jw_cookie_policy');
         if (!hasCookie) {
-            Cookies.set('wj_cookie_policy', cookies_vars, { expires: 365, path: '' });
+            Cookies.set('jw_cookie_policy', cookies_vars, { expires: 365, path: '' });
         }
 
         //Now let's get the 🍪 vars
-        let getCookie = Cookies.getJSON('wj_cookie_policy');
+        let getCookie = Cookies.getJSON('jw_cookie_policy');
         //If analytics 🍪 is true 
         if(getCookie.analytics === true) {
             //console.log('Analytics 🍪 is set to true');   
@@ -43,10 +43,10 @@
 </head>
 <body class="has-cookie wj{% if body_class %} {{ body_class }}{% endif %}">
     {% include "../partials/_cookie.njk" %}
-    <div class="wj-wrapper">
+    <div class="jw-wrapper">
     {% include "../partials/_header.njk" %}
-    <main id="content" class="wj-container">
-      <div class="wj-content">
+    <main id="content" class="jw-container">
+      <div class="jw-content">
         {% block content %}
             {# Main content goes here. #}
          {% endblock %}

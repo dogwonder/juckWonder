@@ -17,7 +17,7 @@
 	--hover: hsl(183, 20%, 20%);
 
     --button-background: hsl(183, 20%, 20%);
-    --button-background-hover: hsl(183, 20%, 30%);
+    --button-background-hover: hsl(183, 20%, 10%);
 	--button-text-color: white;
 	
     --spacer: 2rem;
@@ -49,7 +49,6 @@ body {
     color: var(--text-color-normal);
     text-align:left;
 }
-
 
 %wjTitle,
 .wjTitle {
@@ -98,7 +97,7 @@ h1,h2,h3,h4,h5,h6{
   margin:calc(var(--spacer) * 2) 0 var(--spacer);
 }
 
-.wj-content {
+.jw-content {
     h1 {
         @extend .wjTitle; //48px
     }
@@ -150,22 +149,22 @@ h1,h2,h3,h4,h5,h6{
 // h3 ~ h4 {margin-top:calc((var(--spacer) / 2) * -1);}
 
 /*Layout*/
-.wj-wrapper {
+.jw-wrapper {
 
 }
 @media only screen and (min-width: 64rem) {
-    .wj-wrapper {
+    .jw-wrapper {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
       }
 }
 
-.wj-masthead {
+.jw-masthead {
     overflow: hidden;
     padding:0;
     background-color:var(--border);
-    .wj-masthead__container {
+    .jw-masthead__container {
         padding:2rem;
         display: flex;
         align-items: stretch;
@@ -174,32 +173,32 @@ h1,h2,h3,h4,h5,h6{
 }
 
 //Sticky footer
-.wj-container {
+.jw-container {
     flex:1;
 }
 
-.wj-footer {
+.jw-footer {
   background-color: var(--masthead);
   color:white;
 }
 
 //Nav
-.wj-nav {}
+.jw-nav {}
 
 //Logo
-.wj-masthead__logo {
+.jw-masthead__logo {
     svg {
         width:4.4rem;
         height:4.4rem;
     }
 }
 
-.wj-content {
+.jw-content {
     padding:0;
     margin:0;
 }
 
-.wj-content__inner {
+.jw-content__inner {
     margin:0 auto 4rem;
     max-width: 70ch;
     padding:0 2rem;
@@ -209,14 +208,14 @@ h1,h2,h3,h4,h5,h6{
 }
 
 //Links
-.wj-content__links {
+.jw-content__links {
     p {margin:0 0 0.25rem;}
     [class^="fa"] {margin-right:1rem;}
 }
 
 
 //Footer
-.wj-footer {
+.jw-footer {
     padding:4rem 0;
     color:var(--border);
     .nav-social {
@@ -263,9 +262,9 @@ h1,h2,h3,h4,h5,h6{
 
 //Themes
 $themes: (
-    "light-grey": $wj-light-grey,
-    "dark-grey": $wj-dark-grey,
-    "coal": $wj-coal
+    "light-grey": $jw-light-grey,
+    "dark-grey": $jw-dark-grey,
+    "coal": $jw-coal
 );
 @each $theme, $color in $themes {
       .theme--#{$theme}  {

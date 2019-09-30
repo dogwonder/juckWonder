@@ -6,18 +6,27 @@
     padding:1rem;
 }
 
+.button, 
 [type='submit'] {
     font-size:1.8rem;
     font-weight: bold;
     cursor: pointer;
     padding:1rem 2rem;
     background-color:var(--button-background);
-    border:2px solid var(--button-background-hover);
+    border:2px solid var(--button-background);
     color:white;
     &:hover, &:focus {
         color:white;
-        background-color:#333;
-        
+        background-color:var(--button-background-hover);
+        border-color:var(--button-background-hover);
+    }
+}
+
+a.button, 
+a.button:link {
+    text-decoration: none;
+    &:hover, &:focus {
+        text-decoration: none;
     }
 }
 

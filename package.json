@@ -1,5 +1,5 @@
 {
-  "name": "wonderJucks",
+  "name": "juckWonder",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dogwonder/wonderjucks.git"
+    "url": "git+https://github.com/dogwonder/juckwonder.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dogwonder/wonderjucks/issues"
+    "url": "https://github.com/dogwonder/juckwonder/issues"
   },
-  "homepage": "https://github.com/dogwonder/wonderjucks#readme",
+  "homepage": "https://github.com/dogwonder/juckwonder#readme",
   "devDependencies": {
     "@babel/core": "^7.6.0",
     "@babel/plugin-transform-template-literals": "^7.4.4",

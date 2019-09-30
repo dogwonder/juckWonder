@@ -1,6 +1,10 @@
 ## wonderJucks 🗿 - a Nunjucks starter site
 
-A starter kit to build websites using [Nunjucks](https://mozilla.github.io/nunjucks/) a rich and powerful templating language for JavaScript.
+A starter kit to build websites using [Nunjucks](https://mozilla.github.io/nunjucks/) a rich and powerful templating language for JavaScript. 
+
+🐛 Framework free
+🐝 Minimal CSS
+🐬 Block based templating 
 
 ## Requirements
 
@@ -60,7 +64,7 @@ Meta description (this also changes the twitter and facebook share text)
 {{ siteDesc }}
 ```
 
-Body class - `{% set body_class = "wj-gallery" %}`
+Body class - `{% set body_class = "jw-gallery" %}`
 Page title - `{% set page_title = "Gallery" %}`
 
 Social (`footer.njk`) - `{{ social('dogwonder', 'dogwonder@gmail.com', '07967835097') }}`

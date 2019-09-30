@@ -1,0 +1,14 @@
+{% macro float(color, heading, file) %}
+  <div class="block block--float"{% if color %} style="background-color: {{ color }};"{% endif %}>
+        <div class="inner">
+          {% if heading %}
+          <h2 class="block__heading">{{ heading }}</h2>
+          {% endif %}
+          {% if file %}
+          {% markdown %}
+          {% include file %}
+          {% endmarkdown %}
+          {% endif %}
+        </div>
+  </div>
+{% endmacro %}

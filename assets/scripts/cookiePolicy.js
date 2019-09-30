@@ -23,7 +23,7 @@ var WJCookies = (function () {
 //
 //Cookies settings
 var defaults = {
-    cookiename: 'wj_cookie_policy', 
+    cookiename: 'jw_cookie_policy', 
     cookietypes: {
         "essential":true,
         "analytics":true,

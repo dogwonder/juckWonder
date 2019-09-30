@@ -14,13 +14,13 @@
         let cookies_vars = {"essential":true,"analytics":true,"marketing":true};
 
         //If the 🍪 not set, set it 
-        let hasCookie = Cookies.get('wj_cookie_policy');
+        let hasCookie = Cookies.get('jw_cookie_policy');
         if (!hasCookie) {
-            Cookies.set('wj_cookie_policy', cookies_vars, { expires: 365, path: '' });
+            Cookies.set('jw_cookie_policy', cookies_vars, { expires: 365, path: '' });
         }
 
         //Now let's get the 🍪 vars
-        let getCookie = Cookies.getJSON('wj_cookie_policy');
+        let getCookie = Cookies.getJSON('jw_cookie_policy');
         //If analytics 🍪 is true 
         if(getCookie.analytics === true) {
             //console.log('Analytics 🍪 is set to true');   
@@ -63,7 +63,7 @@
 <meta name="twitter:image" content="https://dogwonder.dev/images/og/og-image.png">
     <script type='application/ld+json'>{"@context":"https://schema.org","@type":"WebSite","@id":"https://dogwonder.dev#website","url":"https://dogwonder.dev","name":"Dogwonder Ltd","logo":"https://dogwonder.dev/images/og/logo-160x60.png"}</script>
 </head>
-<body class="has-cookie wj wj-home">
+<body class="has-cookie wj jw-home">
     <div id="cookieNotice" class="cookie-notice open" role="region">
     <div class="container">
         <p>Like most websites 🌵 wonderJucks 🌵 uses cookies to give you the best experience. <a href="./privacy.html">Read our privacy policy</a>
@@ -72,11 +72,11 @@
         </p>
     </div>
 </div>
-    <div class="wj-wrapper">
-    <div class="wj-masthead">
-  <div class="wj-masthead__container">
+    <div class="jw-wrapper">
+    <div class="jw-masthead">
+  <div class="jw-masthead__container">
     
-    <header class="wj-masthead__logo">
+    <header class="jw-masthead__logo">
     <a href="./">
       <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="presentation" focusable="false" fill-rule="evenodd" clip-rule="evenodd" stroke-linecap="square" stroke-miterlimit="1.5">
       <path d="M267.053 466.54L472.286 50.034" fill="none" stroke="#000" stroke-width="86.17" transform="matrix(-.4994 .49095 -.48533 -.49369 455.116 229.674)"/>
@@ -89,7 +89,7 @@
       <span class="show-for-sr">Go to the homepage</span>
     </a>
     </header>
-    <nav id="site-navigation" class="nav-collapse wj-masthead__nav">
+    <nav id="site-navigation" class="nav-collapse jw-masthead__nav">
 						<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
 						<a class="nav-toggle" data-nav-toggle="#nav-menu" href="#">
 							<svg class="🍔" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"/></svg>
@@ -110,9 +110,10 @@
 		</nav><!-- #site-navigation -->
   </div>
 </div>
-    <main id="content" class="wj-container">
-      <div class="wj-content">
+    <main id="content" class="jw-container">
+      <div class="jw-content">
         
+
 
 
   <div class="block block--media" style="background-image: url(./images/blocks/1.jpg);">
@@ -153,12 +154,14 @@
     </div>
     
     
+    
     <div class="block__image" style="background-image: url(./images/blocks/2.jpg);" data-col></div>
+    
     
   </div>
 
 
-  <div class="block block--text left">
+  <div class="block block--text left" style="background-color: #efefef;">
     <div class="block__text" data-col>
         <div class="inner">
           
@@ -176,16 +179,123 @@
         </div>
     </div>
     
+    
     <div class="block__color" style="background-color: #9A9FA2;" data-col></div>
+    
     
     
   </div>
 
 
+  <div class="block block--text center">
+    <div class="block__text" style="background-color: ;">
+        <div class="inner">
+          
+          <h2 class="block__heading">Center text block</h2>
+          
+          
+          <h3 id="adhuc-tradere-convexi-conpositum-commemorat">Adhuc tradere convexi conpositum commemorat</h3>
+<p>Avulsumque facies ture retinere deque mortalia unum, posset sepulcro somnoque.
+Me regis in tuam mala, inde postquam? Hiberi moventem <a href="http://laertiadaeque.org/cumsinamus.html">voce quodsi
+quem</a> aevum fuerat quem sortita
+Asbolos pastores culpavi. Nescius poteram aevum, viro ingenium. Cum tamen <strong>aera
+in</strong>, toto non per sumpsisse Somne totumque, est locum nulli inter nuper timidi,
+nox.</p>
+<p>Facilesque caput melior domo gravis munere, colla inter, aequora. Inquit illi:
+<em>rus</em> refert ferre regit abdita squamea et iuga ora traxit flammas removit
+Ammon. <em>Non</em> in Athenae illa, posuere sanguine et rubent: postquam: credere
+stravere marmore meruisse.</p>
+
+          
+        </div>
+    </div>
+    
+  </div>
+
+
+
+
+  <div class="block block--float" style="background-color: #efefef;">
+        <div class="inner">
+          
+          <h2 class="block__heading">Floating block</h2>
+          
+          
+          <h3 id="tumet-totas">Tumet totas</h3>
+<p>Comitum pietate videri sed solacia mulces, labefactaque superi saxificos sede
+phocae fratrum accipe? Per pennis ducebat mihi. Hecateia adfatur qualis ut totum
+nobis tamen ergo: ostentare erant <em>ululasse regem</em> inhibere carpit ut meo,
+tollit. Omnis si suum difficili solebat pedibus facinusque reliqui nec ille et
+<strong>est ut leves</strong> et, ab? Quid fungis dederam bibulaeque quod, te exercet
+vitaque.</p>
+<ul>
+<li>Echo vidit</li>
+<li>Narret ad curvo inmanibus ista Mopsopios tamen</li>
+<li>Mortis arces</li>
+<li>Mirum aberant auro dispar placet sinit et</li>
+<li>Fecit virtutis latis</li>
+<li>Fervore stirpe rupit vultus</li>
+</ul>
+
+          
+        </div>
+  </div>
+
+
+
+  <div class="block block--cta">
+        <div class="inner">
+          
+          <a href="./about.html" class="block__cta button">Learn more</a>
+          
+        </div>
+  </div>
+
+
+
+    <script src="//maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDsHbDxcYMeWfD1kEFgy8qsPGuN0sL4mC8"></script>
+    <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function(){
+
+        var geocoder = new google.maps.Geocoder();
+        var address = "47 George Downing Estate, London";
+
+        geocoder.geocode( { 'address': address}, function(results, status) {
+
+        if (status == google.maps.GeocoderStatus.OK) {
+
+            var latitude = results[0].geometry.location.lat();
+            var longitude = results[0].geometry.location.lng();
+
+            var myLatlng = new google.maps.LatLng(latitude,longitude);
+
+            var mapOptions = {
+            center: myLatlng,
+            zoom: 14
+            };
+
+            var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+            var marker = new google.maps.Marker({
+                position: myLatlng,
+                map: map
+            });
+            }
+        });
+
+    });
+    </script>
+    <div class="block block--map">
+        <div class="inner">
+            <div id="map"></div>
+        </div>
+    </div>
+
+
 
       </div>
     </main><!--/.container-->
-    <footer id="footer" class="wj-footer">
+    <footer id="footer" class="jw-footer">
     
     
 <ul class="nav-social">

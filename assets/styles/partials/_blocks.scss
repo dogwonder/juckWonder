@@ -17,8 +17,14 @@
         text-align: center;
     }
 
+    .inner {width: inherit;}
+
+    .block__heading:first-of-type {margin-top:0;}
+
 }
 
+
+//Hero block - macros/hero.njk
 .block--media {
     padding: 4rem 2rem 2rem;
     background-color: var(--masthead);
@@ -61,9 +67,9 @@
     }
 }
 
+//Text block, left, right, center alignment - macros/text.njk
 .block--text {
     padding: 0;
-    width: 100%;
 
     @media #{$large-up} {
         display: flex;
@@ -74,7 +80,6 @@
             min-height:inherit;
         }
     }
-    .block__heading {margin-top:0;}
     .block__text {}
     .block__color, .block__image {
         min-height: 30rem;
@@ -87,5 +92,48 @@
     &.right {
         .block__text {order:2;}
         .block__color {order:1;}
+    }
+
+    &.center {
+        text-align: center;   
+        .block__text .inner {
+            max-width: var(--container);
+            margin:0 auto;
+            padding-top:4rem;
+            padding-bottom:4rem;
+        }
+    }
+}
+
+//Callout block - macros/float.njk
+.block--float {
+    padding:0;
+    .inner {
+        margin:2rem;    
+        background-color: var(--background);
+    }
+}
+
+//CTA - macros/cta.njk
+.block--cta {
+    padding:0;
+    min-height: auto;
+    text-align: center;
+    .inner {width:inherit;}
+    .block__cta {
+        display: block;
+        max-width: var(--container);
+        margin:0 auto;
+        border-radius: 0.6rem;
+    }
+}
+
+//Map - macros/map.njk
+.block--map {
+    padding:0;
+    #map {
+        width:100%;
+        height:50rem;
+        img {margin-top:0;}
     }
 }
