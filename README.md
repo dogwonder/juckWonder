@@ -46,7 +46,7 @@ This has been set up for deploying tpo GitHub pages but it's static so there are
 ### Dependencies
 This uses a few libraries and open-source plugins, all MIT licensed
 
-
+- [JavaScript Cookie v2.2.0](https://github.com/js-cookie/js-cookie)
 - [Astro - Mobile-first navigation patterns.](https://github.com/cferdinandi/astro)
 - [Validate.js - A lightweight form validation script.](https://github.com/cferdinandi/validate)
 - [PhotoSwipe- JavaScript gallery, no dependencies](https://github.com/dimsemenov/photoswipe)
@@ -82,6 +82,6 @@ Social (`footer.njk`) - `{{ social('dogwonder', 'dogwonder@gmail.com', '07967835
 
 ## License
 
-juckWonder is licensed under MIT license. 
+juckWonder is licensed under [MIT license](https://github.com/dogwonder/juckWonder/blob/master/LICENSE). 
 
 
