@@ -1,10 +1,10 @@
 const CACHE_NAME = 'jw_cache'
 const URLS_TO_CACHE = [
   '/',
-  './index.html',
-  './css/styles.css',
-  './scripts/app.js',
-  './images/logotype.svg'
+  '/index.html',
+  '/css/styles.css',
+  '/scripts/app.js',
+  '/images/logotype.svg'
 ]
 
 self.addEventListener('install', function (ev) {
