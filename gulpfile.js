@@ -198,7 +198,7 @@ gulp.task('move-js', () => {
 gulp.task('move-files', () => {  
   return gulp
     .src([
-      'assets/scripts/service-worker.js',
+      'assets/scripts/sw.js',
       'assets/CNAME',
     ])
     .pipe(gulp.dest(dir.dist));
