@@ -43,6 +43,15 @@ Uses [cypress.io](https://www.cypress.io/) and test are located in `cypress/inte
 This has been set up for deploying tpo GitHub pages but it's static so there are many options
 
 ---------------
+### Dependencies
+This uses a few libraries and open-source plugins, all MIT licensed
+
+
+- [Astro - Mobile-first navigation patterns.](https://github.com/cferdinandi/astro)
+- [Validate.js - A lightweight form validation script.](https://github.com/cferdinandi/validate)
+- [PhotoSwipe- JavaScript gallery, no dependencies](https://github.com/dimsemenov/photoswipe)
+
+---------------
 
 ### Customisation
 
@@ -68,5 +77,11 @@ Body class - `{% set body_class = "jw-gallery" %}`
 Page title - `{% set page_title = "Gallery" %}`
 
 Social (`footer.njk`) - `{{ social('dogwonder', 'dogwonder@gmail.com', '07967835097') }}`
+
+---------------
+
+## License
+
+juckWonder is licensed under MIT license. 
 
 

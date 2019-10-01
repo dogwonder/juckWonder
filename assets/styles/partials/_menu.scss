@@ -60,6 +60,15 @@
 	}
 }
 
+/* Only stick if you can fit */
+@media (min-height: 300px) {
+	.jw-masthead {
+	  position: sticky;
+	  top: 0;
+	  z-index:99;
+	}
+  }
+
 
 /**
  * Navigation Toggle

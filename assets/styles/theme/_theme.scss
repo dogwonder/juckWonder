@@ -1,23 +1,23 @@
 //CSS Vars - usage var(--background)
 :root {
-	--hue: 183; 
+	--hue: 209; 
 	
     --background: white;
     --masthead: #1E1E1E;
 	
     --border:#e5e7e9;
 	
-    --text-color-normal: hsl(183, 2%, 0%);
-    --heading: hsl(183, 2%, 15%);
-	--meta: hsl(183, 2%, 30%);
+    --text-color-normal: hsl(209, 2%, 0%);
+    --heading: hsl(209, 20%, 25%);
+	--meta: hsl(211, 10%, 53%);
 
-    --highlight: hsl(183, 100%, 20%);
-	--highlight-dark: hsl(183, 20%, 20%);
-	--highlight-light: hsl(183, 100%, 90%);
-	--hover: hsl(183, 20%, 20%);
-
-    --button-background: hsl(183, 20%, 20%);
-    --button-background-hover: hsl(183, 20%, 10%);
+    --highlight: hsl(212, 92%, 43%);
+	--highlight-dark: hsl(209, 61%, 16%);
+    --highlight-light: hsl(210, 31%, 80%);
+    --hover: hsl(209, 34%, 30%);
+	
+    --button-background: hsl(211, 39%, 23%);
+    --button-background-hover: hsl(209, 61%, 16%);
 	--button-text-color: white;
 	
     --spacer: 2rem;
@@ -69,7 +69,7 @@ a, a:link {
   color:var(--highlight);
   text-decoration: underline;
   &:hover, &:focus {
-      color:var(--highlight-dark);
+      color:var(--hover);
       text-decoration: none;
   }
 }
@@ -161,11 +161,14 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .jw-masthead {
-    overflow: hidden;
     padding:0;
     background-color:var(--border);
+    line-height: 1;
     .jw-masthead__container {
-        padding:2rem;
+        padding:1rem;
+        @media #{$large-up} {
+            padding:2rem;
+        }
         display: flex;
         align-items: stretch;
         justify-content: space-between;
