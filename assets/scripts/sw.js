@@ -15,7 +15,7 @@
             .then(function (cache) {
                 return cache.addAll([
                     '/css/styles.css',
-                    '/scripts/app.js'
+                    '/scripts/app.js',
                     '/',
                     '/offline.html'
                 ]);
