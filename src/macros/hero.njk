@@ -1,5 +1,5 @@
-{% macro hero(image, heading, content) %}
-  <div class="block block--media"{% if heading %} style="background-image: url({{ image }});"{% endif %}>
+{% macro hero(image, heading, content, class) %}
+  <div class="block block--media{% if class %} {{ class }}{% endif %}"{% if heading %} style="background-image: url({{ image }});"{% endif %}>
         <div class="block__wrapper">
         {% if heading %}
         <h2 class="block__heading">{{ heading }}</h2>

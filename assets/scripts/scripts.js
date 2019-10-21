@@ -1,5 +1,8 @@
 (function () {
 
+    //remove no-js class
+    document.documentElement.className = document.documentElement.className.replace("no-js","js");
+
     //🍪 notice
     function cookieNoticeSeen() {
 
@@ -46,8 +49,8 @@
 
     }
 
+    // Handler when the DOM is fully loaded
     document.addEventListener("DOMContentLoaded", function(){
-        // Handler when the DOM is fully loaded
 
         //Cookie notice
         cookieNoticeSeen();

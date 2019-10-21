@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if pageTitle %}{{ siteTitle }} - {{ pageTitle }}{% else %}{{ siteTitle }}{% endif %}</title>
     <meta name="description" content="{{ siteDesc }}"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="./scripts/js.cookie.js"></script>
     <script>
     {# Set the 🍪 if not yet defined #}
@@ -41,7 +41,7 @@
     {% include "../partials/_meta.njk" %}
     {% include "../partials/_structured-data.njk" %}
 </head>
-<body class="has-cookie wj{% if body_class %} {{ body_class }}{% endif %}">
+<body class="has-cookie wj{% if body_class %} {{ body_class }}{% endif %}" data-theme="default">
     {% include "../partials/_cookie.njk" %}
     <div class="jw-wrapper">
     {% include "../partials/_header.njk" %}
@@ -55,6 +55,26 @@
     {% include "../partials/_footer.njk" %}
     </div><!--/.wrapper-->
     <script src="./scripts/app.js"></script>
+    {#
+    <script>
+    async function init() {
+        //Bail if not supported
+        if(!('serviceWorker' in navigator)) {
+            return;
+        }
+
+        const registration = await navigator.serviceWorker.register("./sw.js");
+        registration.onupdatefound = () => {
+            console.log("Installing new service worker");
+            
+            registration.installing.onstatechange = function () {
+                console.log(this.state);
+            };
+        }
+    }
+    init();
+    </script>
+    #}
     {% block scripts %}
         {#extra scripts. #}
     {% endblock %}

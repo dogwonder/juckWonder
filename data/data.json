@@ -7,6 +7,7 @@
    "privacyUrl": "./privacy.html", 
    "ownerName": "Rich Holman", 
    "ownerEmail": "dogwonder@gmail.com", 
+   "twitter": "dogwonder", 
    "images": [{
       "id":"1",
       "image":"images/gallery/images/small/1.jpg",

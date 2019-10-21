@@ -19,6 +19,7 @@ const nunjucks = require('nunjucks');
 const markdown = require('nunjucks-markdown');
 const marked = require('marked');
 const gulpnunjucks = require('gulp-nunjucks');
+const htmlbeautify = require('gulp-html-beautify');
 const browserSync = require('browser-sync').create();
 const log = require('fancy-log');
 const colors = require('ansi-colors');
@@ -52,6 +53,11 @@ const comment = '/*\n' +
 // Markdown vars
 var env = new nunjucks.Environment(new nunjucks.FileSystemLoader(dir.src));
 markdown.register(env, marked);
+
+//Add global context {{ getContext() | dump| safe }}
+env.addGlobal('getContext', function() { 
+  return this.ctx;
+})
 
 gulp.task('nunjucks', () => {
   return gulp
@@ -184,10 +190,18 @@ gulp.task('banner', () => {
     .pipe(gulp.dest(path.join(dir.dist, 'css')));
 });
 
+// Beautify HTML
+gulp.task('htmlbeautify', () => {
+  return gulp.src(path.join(dir.dist, '*.html'))
+    .pipe(htmlbeautify({indentSize: 2}))
+    .pipe(gulp.dest(dir.dist));
+});
+
 // Moving misc files
 gulp.task('move-js', () => {  
   return gulp
       .src([
+      'assets/.htaccess', 
       'assets/scripts/gallery.js', 
       'assets/vendor/js.cookie.js'
       ])
@@ -220,7 +234,7 @@ gulp.task('tests', shell.task('$(npm bin)/cypress run'))
 // Init
 // -----------------
 const dev = gulp.series('nunjucks', gulp.parallel('sass', 'scripts', 'serve', 'watch'));
-const build = gulp.series('clean', 'babel', 'nunjucks', gulp.parallel('sass-build', 'scripts-build', 'fonts', 'images'), 'move-js', 'move-files', 'banner');
+const build = gulp.series('clean', 'babel', 'nunjucks', gulp.parallel('sass-build', 'scripts-build', 'fonts', 'images'), 'move-js', 'move-files', 'banner', 'htmlbeautify');
 exports.default = dev;
 exports.build = build;
 

@@ -1,7 +1,9 @@
 "use strict";
 
 (function () {
-  //🍪 notice
+  //remove no-js class
+  document.documentElement.className = document.documentElement.className.replace("no-js", "js"); //🍪 notice
+
   function cookieNoticeSeen() {
     var getCookie = function getCookie(name) {
       var value = "; " + document.cookie;
@@ -43,10 +45,10 @@
         item.style.height = tallest + "px";
       });
     }
-  }
+  } // Handler when the DOM is fully loaded
+
 
   document.addEventListener("DOMContentLoaded", function () {
-    // Handler when the DOM is fully loaded
     //Cookie notice
     cookieNoticeSeen(); //Equal height columns
 

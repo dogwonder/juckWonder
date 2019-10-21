@@ -6,24 +6,30 @@
 {% from "macros/float.njk" import float %}
 {% from "macros/cta.njk" import cta %}
 {% from "macros/map.njk" import map %}
+{% from "macros/image.njk" import image %}
+{% from "macros/modal.njk" import modal %}
 
 {% block content %}
 
-{# {{ hero('path/to/image.jpg', 'Block title', 'Block content') }} #}
-{{ hero('./images/blocks/1.jpg', '🌵 juckWonder 🌵', 'A nunjucks stater static site') }}
+{# {{ modal('#efefef', 'Open', 'markdown/lorem.md', '') }} #}
 
-{# {{ text('#backgroundcolor', 'alignment', '#blockcolor', 'path/to/image.jpg', 'Block title', 'markdown.md') }} #}
+{# {{ hero('path/to/image.jpg', 'Block title', 'Block content', 'class') }} #}
+{{ hero('./images/blocks/1.jpg', '🌵 juckWonder 🌵', 'A nunjucks stater static site', '') }}
+
+{# {{ text('#backgroundcolor', 'alignment', '#blockcolor', 'path/to/image.jpg', 'Block title', 'markdown.md', 'class') }} #}
 {{ text('', 'right', '', './images/blocks/2.jpg', 'Text block -- with image', 'markdown/1.md') }}
 {{ text('#efefef','left', '#9A9FA2', '', 'Another text block -- with solid colour', 'markdown/2.md') }}
 {{ text('', 'center', '', '', 'Center text block', 'markdown/ipsum.md') }}
 
-{# {{ float('#backgroundcolor', 'Block title', 'markdown.md') }} #}
-{{ float('#efefef', 'Floating block', 'markdown/lorem.md') }}
+{# {{ float('#backgroundcolor', 'Block title', 'markdown.md', 'class') }} #}
+{{ float('#efefef', 'Floating block', 'markdown/lorem.md', '') }}
 
-{# {{ cta('#backgroundcolor', 'Block title', 'url') }} #}
-{{ cta('', 'About this site', './about.html') }}
+{# {{ cta('#backgroundcolor', 'Block title', 'url', 'class') }} #}
+{{ cta('', 'About this site', './about.html', '') }}
 
 {# {{ map('address') }} #}
 {# {{ map('47 George Downing Estate, London') }} #}
+
+{# {{ image('path/to/image.jpg', 'Alttext', 'class') }} #}
 
 {% endblock %} 

@@ -1,5 +1,5 @@
 //CSS Vars - usage var(--background)
-:root {
+:root, [data-theme="default"] {
 	--hue: 209; 
 	
     --background: white;
@@ -9,24 +9,20 @@
 	
     --text-color-normal: hsl(209, 2%, 0%);
     --heading: hsl(209, 20%, 25%);
-	--meta: hsl(211, 10%, 53%);
+	--meta: hsl(209, 10%, 53%);
 
-    --highlight: hsl(212, 92%, 43%);
-	--highlight-dark: hsl(209, 61%, 16%);
-    --highlight-light: hsl(210, 31%, 80%);
+    --highlight: hsl(209, 92%, 43%);
+	--highlight-dark: hsl(209, 61%, 14%);
+    --highlight-light: hsl(209, 31%, 80%);
     --hover: hsl(209, 34%, 30%);
 	
-    --button-background: hsl(211, 39%, 23%);
+    --button-background: hsl(209, 39%, 23%);
     --button-background-hover: hsl(209, 61%, 16%);
 	--button-text-color: white;
 	
     --spacer: 2rem;
     
     --container: 70ch;
-}
-
-* {
-    box-sizing: border-box;
 }
 
 //Fonts - https://rsms.me/inter/
@@ -68,26 +64,15 @@ a, a:link {
   transition: all 150ms ease;
   color:var(--highlight);
   text-decoration: underline;
+  &:active {
+      
+  }
   &:hover, &:focus {
       color:var(--hover);
       text-decoration: none;
   }
 }
 
-//Blazy
-.b-lazy {
-    filter: blur(2vw);
-    /* this is needed so Safari keeps sharp edges */
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    transform: scale(1.1);
-    opacity: 0;
-    &.b-loaded {
-        transform: scale(1);
-        filter: none;
-        opacity: 1;
-    }
-}
 
 //Typography
 h1,h2,h3,h4,h5,h6{

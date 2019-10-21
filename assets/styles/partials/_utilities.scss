@@ -11,6 +11,7 @@
 	/* many screen reader and browser combinations announce broken words as they would appear visually */
 	word-wrap: normal !important;
 }
+
 .skip-link {
 	background-color: #f1f1f1;
 	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
@@ -36,10 +37,26 @@
 	z-index: 100000;
 }
 
+
+//Blazy
+.b-lazy {
+    filter: blur(2vw);
+    /* this is needed so Safari keeps sharp edges */
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    transform: scale(1.1);
+    opacity: 0;
+    &.b-loaded {
+        transform: scale(1);
+        filter: none;
+        opacity: 1;
+    }
+}
+
 //Utilities
 .align-right {
     float:right;
-    margin:0 0 $spacer $spacer;
+    margin:0 0 2rem 2rem;
     max-width:12rem;
     @media #{$large-up} {
         max-width:30rem;
@@ -76,3 +93,32 @@
 
 //Padding
 .inner {padding:2rem;}
+
+
+//Aspect ratio
+.frame {
+    --n: 6;
+    --d: 9;
+    padding-bottom: calc(var(--n) / var(--d) * 100%);
+    position: relative;
+}
+
+.frame > * {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.frame > img,
+.frame > video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin:0;
+}

@@ -1,0 +1,7 @@
+{% macro image(imageUrl, imageAlt, class) %}
+  <div class="block block--image{% if class %} {{ class }}{% endif %}">
+    <div class="frame">
+            <img src="{{ imageUrl }}" alt="{{ imageAlt }}" />
+    </div>
+  </div>
+{% endmacro %}

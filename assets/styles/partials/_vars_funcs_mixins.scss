@@ -29,43 +29,40 @@ $instagram:     #376489;
 $linkedin:      #007bb6;
 $youtube:       #bb0000;
 $email:         #333333;
-$social-hover:  #3b3b3b;
-
-// Alert Colors
-$alert-yellow:      #ebe16f;
-$alert-red:         #FFD9D9;
-$alert-green:       #D9FFD9;
-$alert-blue:        #d5edf8;
-$disabled-gray:     #cfcfcf;
-
-// Margins
-$spacer: 2rem;
-$spacer-large: $spacer * 2;
-$grid-spacer: 1.875rem;
 
 
-// Media queries from Foundation framework by ZURB
-// http://foundation.zurb.com/
-// and on GitHub at https://github.com/zurb/foundation
+// Color functions
+//
+//
+//Color contrast
+@mixin text-contrast($n) {
+  $color-brightness: round((red($n) * 299) + (green($n) * 587) + (blue($n) * 114) / 1000);
+  $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
 
-//color functions
-/// Slightly lighten a color
-/// @access public
-/// @param {Color} $color - color to tint
-/// @param {Number} $percentage - percentage of `$color` in returned color
-/// @return {Color}
+  @if abs($color-brightness) < ($light-color/2){
+    color: $white;
+    border-color: $white;
+  }
+
+  @else {
+    color: $text-color;
+    border-color: $text-color;
+  }
+}
+
+// Slightly lighten a color
 @function tint($color, $percentage) {
   @return mix(white, $color, $percentage);
 }
 
-/// Slightly darken a color
-/// @access public
-/// @param {Color} $color - color to shade
-/// @param {Number} $percentage - percentage of `$color` in returned color
-/// @return {Color}
+// Slightly darken a color
 @function shade($color, $percentage) {
   @return mix(black, $color, $percentage);
 }
+
+// Media queries from Foundation framework by ZURB
+// http://foundation.zurb.com/
+// and on GitHub at https://github.com/zurb/foundation
 
 // functions
 // originally in https://github.com/zurb/foundation/blob/master/scss/foundation/_functions.scss
@@ -117,33 +114,6 @@ $xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (m
 $xxxlarge-up: "#{$screen} and (min-width:#{lower-bound($xxxlarge-range)})" !default;
 $xxxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxxlarge-range)}) and (max-width:#{upper-bound($xxxlarge-range)})" !default;
 
-/* Example
-// From http://alistapart.com/article/using-css-mod-queries-with-range-selectors
-li {
-@include mod-list(3, 0){
-  @include select-range(3, 5){
-    // styles for items 3 to 5 in a list mod 3 remainder = 0
-    }
-  }
-}
-*/
-
-.show-for-sr {
-  clip: rect(1px, 1px, 1px, 1px);
-  height: 1px;
-  overflow: hidden;
-  position: absolute !important;
-  width: 1px;
-}
-
-//Unstyled list
-%unstyled_list {
-    line-height: 1;
-    list-style: none;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
 
 //Aspect ratio
 @mixin aspect-ratio($width, $height) {
@@ -160,21 +130,5 @@ li {
     left: 0;
     right: 0;
     bottom: 0;
-  }
-}
-
-//Color contrast
-@mixin text-contrast($n) {
-  $color-brightness: round((red($n) * 299) + (green($n) * 587) + (blue($n) * 114) / 1000);
-  $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
-
-  @if abs($color-brightness) < ($light-color/2){
-    color: $white;
-    border-color: $white;
-  }
-
-  @else {
-    color: $text-color;
-    border-color: $text-color;
   }
 }

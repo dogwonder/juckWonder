@@ -32,6 +32,7 @@
     background-size: cover;
     text-align: center;
     display: flex;
+    align-items: center;
     position: relative;
     color:white;
     z-index:1;
@@ -135,5 +136,18 @@
         width:100%;
         height:50rem;
         img {margin-top:0;}
+    }
+}
+
+//Image block - macros/image.njk
+.block--image {
+    //Override flex
+    display: block;
+    padding:0;
+    position: relative;
+    //Set the aspect ratio
+    .frame {
+        --n: 2;
+        --d: 10;
     }
 }
