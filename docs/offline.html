@@ -44,7 +44,7 @@
 
         })();
     </script>
-    <link rel="stylesheet" href="./css/main.css?cache_bust=1.65.0">
+    <link rel="stylesheet" href="./css/main.css?cache_bust=1.67.0">
 
     <link rel="icon" type="image/png" sizes="16x16" href="./images/fav/favicon-16x16.png">
     <link rel="mask-icon" sizes="any" href="./images/logotype.svg" color="#14d5de">
@@ -186,7 +186,7 @@
         // This is the service worker with the combined offline experience (Offline page + Offline copy of pages) - https://preview.pwabuilder.com/serviceworker
         if ("serviceWorker" in navigator) {
             if (navigator.serviceWorker.controller) {
-                console.log("active service worker found, no need to register");
+                //console.log("active service worker found, no need to register");
             } else {
                 // Register the service worker
                 navigator.serviceWorker
@@ -194,7 +194,7 @@
                         scope: "./"
                     })
                     .then(function(reg) {
-                        console.log("Service worker has been registered for scope: " + reg.scope);
+                        //console.log("Service worker has been registered for scope: " + reg.scope);
                     });
             }
         }

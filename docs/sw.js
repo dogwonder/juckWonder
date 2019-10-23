@@ -1,4 +1,4 @@
-const CACHE = "dgCache-1.65.0";
+const CACHE = "dgCache-1.67.0";
 const offlineFallbackPage = "offline.html";
 
 // Install stage sets up the offline page in the cache and opens a new cache
@@ -7,7 +7,7 @@ self.addEventListener("install", function (event) {
 
   event.waitUntil(
     caches.open(CACHE).then(function (cache) {
-      console.log("Cached offline page during install");
+      // console.log("Cached offline page during install");
       return cache.add(offlineFallbackPage);
     })
   );

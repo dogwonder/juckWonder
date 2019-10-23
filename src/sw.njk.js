@@ -7,7 +7,7 @@ self.addEventListener("install", function (event) {
 
   event.waitUntil(
     caches.open(CACHE).then(function (cache) {
-      console.log("Cached offline page during install");
+      // console.log("Cached offline page during install");
       return cache.add(offlineFallbackPage);
     })
   );
