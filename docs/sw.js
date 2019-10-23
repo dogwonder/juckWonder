@@ -1,7 +1,6 @@
-const CACHE = "dgCache-1.63.0";
+const CACHE = "dgCache-1.64.0";
 const precacheFiles = [
     '/',
-    '/sw.js',
     '/css/main.css',
     '/scripts/app.js',
     '/favicon.ico',

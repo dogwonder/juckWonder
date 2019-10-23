@@ -1,7 +1,6 @@
 const CACHE = "dgCache-{{ pkgVersion() }}";
 const precacheFiles = [
     '/',
-    '/sw.js',
     '/css/main.css',
     '/scripts/app.js',
     '/favicon.ico',
