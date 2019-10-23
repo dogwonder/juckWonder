@@ -1,4 +1,4 @@
-const CACHE = "dgCache-<%= version %>";
+const CACHE = "dgCache-1.63.0";
 const precacheFiles = [
     '/',
     '/sw.js',

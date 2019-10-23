@@ -1,4 +1,4 @@
-const CACHE = "dgCache-<%= version %>";
+const CACHE = "dgCache-{{ pkgVersion() }}";
 const precacheFiles = [
     '/',
     '/sw.js',

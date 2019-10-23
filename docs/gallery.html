@@ -44,7 +44,7 @@
 
         })();
     </script>
-    <link rel="stylesheet" href="./css/main.css?cache_bust=1.59.0">
+    <link rel="stylesheet" href="./css/main.css?cache_bust=1.63.0">
 
     <link rel="icon" type="image/png" sizes="16x16" href="./images/fav/favicon-16x16.png">
     <link rel="mask-icon" sizes="any" href="./images/logotype.svg" color="#14d5de">
@@ -216,9 +216,8 @@
     </div>
     <!--/.wrapper-->
     <script src="./scripts/app.js"></script>
-
     <script>
-        // This is the service worker with the combined offline experience (Offline page + Offline copy of pages)
+        // This is the service worker with the combined offline experience (Offline page + Offline copy of pages) - https://preview.pwabuilder.com/serviceworker
         if ("serviceWorker" in navigator) {
             if (navigator.serviceWorker.controller) {
                 console.log("active service worker found, no need to register");

@@ -55,9 +55,8 @@
     {% include "../partials/_footer.njk" %}
     </div><!--/.wrapper-->
     <script src="./scripts/app.js"></script>
-    
     <script>
-    // This is the service worker with the combined offline experience (Offline page + Offline copy of pages)
+    // This is the service worker with the combined offline experience (Offline page + Offline copy of pages) - https://preview.pwabuilder.com/serviceworker
     if ("serviceWorker" in navigator) {
         if (navigator.serviceWorker.controller) {
             console.log("active service worker found, no need to register");
