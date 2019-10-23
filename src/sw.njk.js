@@ -5,7 +5,7 @@
  * version. If a request fails and the result isn't in the cache then we
  * display an Offline page.
  */
-const CACHE='dgCache-<%= version %>'; // name of the current cache
+const CACHE='dgCache-{{ pkgVersion() }}'; // name of the current cache
 const OFFLINE='/offline.html'; // URL to offline HTML document
 
 const AUTO_CACHE = [ // URLs of assets to immediately cache

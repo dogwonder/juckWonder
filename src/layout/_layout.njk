@@ -37,7 +37,7 @@
 
     })();
     </script>
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/main.css?cache_bust={{ pkgVersion() }}">
     {% include "../partials/_meta.njk" %}
     {% include "../partials/_structured-data.njk" %}
 </head>
@@ -55,26 +55,13 @@
     {% include "../partials/_footer.njk" %}
     </div><!--/.wrapper-->
     <script src="./scripts/app.js"></script>
-    {#
     <script>
-    async function init() {
-        //Bail if not supported
-        if(!('serviceWorker' in navigator)) {
-            return;
-        }
-
-        const registration = await navigator.serviceWorker.register("./sw.js");
-        registration.onupdatefound = () => {
-            console.log("Installing new service worker");
-            
-            registration.installing.onstatechange = function () {
-                console.log(this.state);
-            };
-        }
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+            navigator.serviceWorker.register('./sw.js');
+        });
     }
-    init();
     </script>
-    #}
     {% block scripts %}
         {#extra scripts. #}
     {% endblock %}

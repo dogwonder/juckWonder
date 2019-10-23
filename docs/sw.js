@@ -1,66 +1,76 @@
-const staticCacheName = 'dgCache';
-const version = '1.0.5';
+/**
+ * Unlike most Service Workers, this one always attempts to download assets
+ * from the network. Only when network access fails do we fallback to using
+ * the cache. When a request succeeds we always update the cache with the new
+ * version. If a request fails and the result isn't in the cache then we
+ * display an Offline page.
+ */
+const CACHE='dgCache-1.55.0'; // name of the current cache
+const OFFLINE='/offline.html'; // URL to offline HTML document
 
-self.oninstall = evt => {
-    evt.waitUntil(
-        caches.open(staticCacheName + '-' + version)
-        .then((cache) => {
-            return cache.addAll([
-                '/css/main.css', 
-                '/css/main.css', 
-                '/scripts/app.js',
-                '/index.html', 
-                '/offline.html'
-            ]);
-        }).then(self.skipWaiting())
+const AUTO_CACHE = [ // URLs of assets to immediately cache
+    OFFLINE,
+    '/',
+    '/sw.js',
+    '/css/main.css',
+    '/scripts/app.js',
+    '/favicon.ico',
+    '/images/fav/android-chrome-192x192.png'
+];
+
+// Iterate AUTO_CACHE and add cache each entry
+self.addEventListener('install', event => {
+    event.waitUntil(
+      caches.open(CACHE)
+        .then(cache => cache.addAll(AUTO_CACHE))
+        .then(self.skipWaiting())
     );
-};
+});
 
-self.onactivate = evt => {
-    evt.waitUntil(
-        caches.keys()
-            .then((cacheNames) => {
-                const deleteOldCaches = cacheNames.map((cacheName) => {
-
-                    //Old caches - please remove. 
-                    if(cacheName !== staticCacheName + '-' + version) {
-                        return caches.delete(cacheName);
-                    }
-
-                    //this is the current cache
-                    return Promise.resolve();
-                });
-                return Promise.all(deleteOldCaches);
-            }).then(() => self.clients.claim())
+// Destroy inapplicable caches
+self.addEventListener('activate', event => {
+    event.waitUntil(
+      caches.keys().then(cacheNames => {
+        return cacheNames.filter(cacheName => CACHE !== cacheName);
+      }).then(unusedCaches => {
+        console.log('DESTROYING CACHE', unusedCaches.join(','));
+        return Promise.all(unusedCaches.map(unusedCache => {
+          return caches.delete(unusedCache);
+        }));
+      }).then(() => self.clients.claim())
     );
-};
+  });
 
-self.onfetch = evt => {
-    // Skip cross-origin requests, like those for Google Analytics.
-    if (event.request.url.startsWith(self.location.origin)) {
-        evt.respondWith(
-            caches.match(evt.request)
-                .then((cachedResponse) => {
+self.addEventListener('fetch', event => {
+if (!event.request.url.startsWith(self.location.origin) || event.request.method !== 'GET') {
+    // External request, or POST, ignore
+    return void event.respondWith(fetch(event.request));
+}
 
-                    if(cachedResponse) {
-                        return cachedResponse;
-                    }
-                    
-                    return caches.open(staticCacheName + '-' + version).then(cache => {
-                        return fetch(evt.request).then(response => {
-                            // Put a copy of the response in the runtime cache.
-                            return cache.put(evt.request, response.clone()).then(() => {
-                                console.log("match found for ", evt.request.url);
-                                return response;
-                            });
-                        });
-                    });
-            })
-        );
-    }
-};
+event.respondWith(
+    // Always try to download from server first
+    fetch(event.request).then(response => {
+    // When a download is successful cache the result
+    caches.open(CACHE).then(cache => {
+        cache.put(event.request, response)
+    });
+    // And of course display it
+    return response.clone();
+    }).catch((_err) => {
+    // A failure probably means network access issues
+    // See if we have a cached version
+    return caches.match(event.request).then(cachedResponse => {
+        if (cachedResponse) {
+        // We did have a cached version, display it
+        return cachedResponse;
+        }
 
-
-
-      
-
+        // We did not have a cached version, display offline page
+        return caches.open(CACHE).then((cache) => {
+        const offlineRequest = new Request(OFFLINE);
+        return cache.match(offlineRequest);
+        });
+    });
+    })
+);
+});
