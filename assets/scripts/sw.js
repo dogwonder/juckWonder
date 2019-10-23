@@ -1,15 +1,5 @@
-/**
- * Unlike most Service Workers, this one always attempts to download assets
- * from the network. Only when network access fails do we fallback to using
- * the cache. When a request succeeds we always update the cache with the new
- * version. If a request fails and the result isn't in the cache then we
- * display an Offline page.
- */
-const CACHE='dgCache-<%= version %>'; // name of the current cache
-const OFFLINE='/offline.html'; // URL to offline HTML document
-
-const AUTO_CACHE = [ // URLs of assets to immediately cache
-    OFFLINE,
+const CACHE = "dgCache-<%= version %>";
+const precacheFiles = [
     '/',
     '/sw.js',
     '/css/main.css',
@@ -18,59 +8,79 @@ const AUTO_CACHE = [ // URLs of assets to immediately cache
     '/images/fav/android-chrome-192x192.png'
 ];
 
-// Iterate AUTO_CACHE and add cache each entry
-self.addEventListener('install', event => {
-    event.waitUntil(
-      caches.open(CACHE)
-        .then(cache => cache.addAll(AUTO_CACHE))
-        .then(self.skipWaiting())
-    );
+self.addEventListener("install", function (event) {
+  console.log("Install Event processing");
+
+  console.log("Skip waiting on install");
+  self.skipWaiting();
+
+  event.waitUntil(
+    caches.open(CACHE).then(function (cache) {
+      console.log("Caching pages during install");
+      return cache.addAll(precacheFiles);
+    })
+  );
 });
 
-// Destroy inapplicable caches
-self.addEventListener('activate', event => {
-    event.waitUntil(
-      caches.keys().then(cacheNames => {
-        return cacheNames.filter(cacheName => CACHE !== cacheName);
-      }).then(unusedCaches => {
-        console.log('DESTROYING CACHE', unusedCaches.join(','));
-        return Promise.all(unusedCaches.map(unusedCache => {
-          return caches.delete(unusedCache);
-        }));
-      }).then(() => self.clients.claim())
-    );
-  });
+// Allow sw to control of current page
+self.addEventListener("activate", function (event) {
+  console.log("Claiming clients for current page");
+  event.waitUntil(self.clients.claim());
+});
 
-self.addEventListener('fetch', event => {
-if (!event.request.url.startsWith(self.location.origin) || event.request.method !== 'GET') {
-    // External request, or POST, ignore
-    return void event.respondWith(fetch(event.request));
+// If any fetch fails, it will look for the request in the cache and serve it from there first
+self.addEventListener("fetch", function (event) { 
+  if (event.request.method !== "GET") return;
+
+  event.respondWith(
+    fromCache(event.request).then(
+      function (response) {
+        // The response was found in the cache so we responde with it and update the entry
+
+        // This is where we call the server to get the newest version of the
+        // file to use the next time we show view
+        event.waitUntil(
+          fetch(event.request).then(function (response) {
+            return updateCache(event.request, response);
+          })
+        );
+
+        return response;
+      },
+      function () {
+        // The response was not found in the cache so we look for it on the server
+        return fetch(event.request)
+          .then(function (response) {
+            // If request was success, add or update it in the cache
+            event.waitUntil(updateCache(event.request, response.clone()));
+
+            return response;
+          })
+          .catch(function (error) {
+            console.log("Network request failed and no cache." + error);
+          });
+      }
+    )
+  );
+});
+
+function fromCache(request) {
+  // Check to see if you have it in the cache
+  // Return response
+  // If not in the cache, then return
+  return caches.open(CACHE).then(function (cache) {
+    return cache.match(request).then(function (matching) {
+      if (!matching || matching.status === 404) {
+        return Promise.reject("no-match");
+      }
+
+      return matching;
+    });
+  });
 }
 
-event.respondWith(
-    // Always try to download from server first
-    fetch(event.request).then(response => {
-    // When a download is successful cache the result
-    caches.open(CACHE).then(cache => {
-        cache.put(event.request, response)
-    });
-    // And of course display it
-    return response.clone();
-    }).catch((_err) => {
-    // A failure probably means network access issues
-    // See if we have a cached version
-    return caches.match(event.request).then(cachedResponse => {
-        if (cachedResponse) {
-        // We did have a cached version, display it
-        return cachedResponse;
-        }
-
-        // We did not have a cached version, display offline page
-        return caches.open(CACHE).then((cache) => {
-        const offlineRequest = new Request(OFFLINE);
-        return cache.match(offlineRequest);
-        });
-    });
-    })
-);
-});
+function updateCache(request, response) {
+  return caches.open(CACHE).then(function (cache) {
+    return cache.put(request, response);
+  });
+}
