@@ -1,4 +1,4 @@
-const CACHE = "dgCache-1.67.0";
+const CACHE = "dgCache-1.69.0";
 const offlineFallbackPage = "offline.html";
 
 // Install stage sets up the offline page in the cache and opens a new cache

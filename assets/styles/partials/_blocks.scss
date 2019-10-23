@@ -7,7 +7,6 @@
     @media #{$large-up} {
         display: flex;
         align-items: center;
-        min-height:40rem;
     }
 
     .block__wrapper {
@@ -107,11 +106,12 @@
         }
     }
     .block__text {}
-    .block__color, .block__image {
-        min-height: 30rem;
-    }
+    .block__color, .block__image {}
     .block__image {
-        
+        position: relative;
+        .block__background {
+            position: absolute;
+        }
     }
 
     &.right {
