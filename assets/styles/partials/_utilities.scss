@@ -1,7 +1,5 @@
 //Accessibility
 /* Text meant only for screen readers */
-.says,
-.screen-reader-text, 
 .sr-only {
 	clip: rect(1px, 1px, 1px, 1px);
 	height: 1px;
@@ -12,71 +10,50 @@
 	word-wrap: normal !important;
 }
 
-.skip-link {
+.sr-only:focus {
 	background-color: #f1f1f1;
-	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	-webkit-clip-path: none;
+	clip-path: none;
 	color: #21759b;
 	display: block;
-	font-family: $typeface;
 	font-size: 14px;
+	font-size: 0.875rem;
 	font-weight: 700;
-	left: -9999em;
-	outline: none;
+	height: auto;
+	right: 5px;
+	line-height: normal;
 	padding: 15px 23px 14px;
 	text-decoration: none;
-	text-transform: none;
-	top: -9999em;
-}
-
-.skip-link:focus {
-	clip: auto;
-	height: auto;
-	left: 6px;
-	top: 7px;
+	top: 5px;
 	width: auto;
 	z-index: 100000;
 }
 
 
-//Blazy
-.b-lazy {
-    filter: blur(2vw);
-    /* this is needed so Safari keeps sharp edges */
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    transform: scale(1.1);
-    opacity: 0;
-    &.b-loaded {
-        transform: scale(1);
-        filter: none;
-        opacity: 1;
-    }
+.skip-link {
+	left: -9999rem;
+	top: 2.5rem;
+	z-index: 999999999;
+	text-decoration: underline;
+}
+
+.skip-link:focus {
+	display: block;
+	left: 6px;
+	top: 7px;
+	font-size: 14px;
+	font-weight: 600;
+	text-decoration: none;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	z-index: 100000;
+	right: auto;
 }
 
 //Utilities
-.align-right {
-    float:right;
-    margin:0 0 2rem 2rem;
-    max-width:12rem;
-    @media #{$large-up} {
-        max-width:30rem;
-    }
-}
-
-//Close button
-.close-button {
-    z-index:100;
-    right: 1.5rem;
-    top: 0.5rem;
-    font-size: 4em;
-    color:#fff;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.20);
-}
-
-//Modal
-.reveal {background-color: black;border-color:black}
-
-//Alert
 .alert {
     padding:1rem;
     color: #c53030;
@@ -93,7 +70,6 @@
 
 //Padding
 .inner {padding:2rem;}
-
 
 //Aspect ratio
 .frame {

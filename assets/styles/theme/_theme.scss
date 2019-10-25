@@ -8,7 +8,7 @@
     --border:#e5e7e9;
 	
     --text-color-normal: hsl(209, 2%, 0%);
-    --heading: hsl(209, 20%, 25%);
+    --heading: hsl(209, 20%, 0%);
 	--meta: hsl(209, 10%, 53%);
 
     --highlight: hsl(209, 92%, 43%);
@@ -25,25 +25,26 @@
     --container: 70ch;
 }
 
-//Fonts - https://rsms.me/inter/
-html { font-family: 'Inter', sans-serif; }
-@supports (font-variation-settings: normal) {
-  html { font-family: 'Inter var', sans-serif; }
-}
-
 //Global
 html {
-    font-size: 62.5%;
+    font-size: 62.5%; /* 1rem = 10px */
 }
 
 body {
-    // font-family: $typeface;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
     font-size: $default-font-size;
     line-height: $default-line-height;
     font-weight: normal;
     background-color:var(--textbackground);
     color: var(--text-color-normal);
     text-align:left;
+}
+
+@supports ( font-variation-settings: normal ) {
+
+	body {
+		font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+	}
 }
 
 %wjTitle,
@@ -80,6 +81,7 @@ h1,h2,h3,h4,h5,h6{
   line-height: 1.33;
   color:var(--heading);
   margin:calc(var(--spacer) * 2) 0 var(--spacer);
+  letter-spacing: 0.1px;
 }
 
 .jw-content {
@@ -87,21 +89,20 @@ h1,h2,h3,h4,h5,h6{
         @extend .wjTitle; //48px
     }
     h2 {
-        font-size: 3rem;
-        line-height: 3.2rem;
+        font-size: 3.2rem;
     }
     h3 {
-        font-size: 2.4rem;
+        font-size: 2.8rem;
     }
     h4 {
-        font-size: 2rem;
+        font-size: 2.4rem;
     }
     h5 {
-       font-size: 1.8rem;
+       font-size: 2.1rem;
        font-weight: normal;
     }
     h6 {
-       font-size: 1.6rem;
+       font-size: 1.8rem;
        font-weight: normal;
     }
     p {

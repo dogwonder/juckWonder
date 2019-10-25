@@ -1,48 +1,89 @@
-const CACHE = "dgCache-1.71.0";
-const offlineFallbackPage = "offline.html";
+const CACHE = "dgCache-1.77.0";
 
-// Install stage sets up the offline page in the cache and opens a new cache
+// This is the service worker with the Cache-first network
+const precacheFiles = [
+  /* Add an array of files to precache for your app */
+  'offline.html', 
+  'index.html', 
+  'css/main.css', 
+  'scripts/app.js',
+  'images/fav/favicon-32x32.png',
+  'images/fav/favicon-16x16.png'
+];
+
 self.addEventListener("install", function (event) {
-  console.log("Install Event processing");
+  console.log("[PWA Builder] Install Event processing");
+
+  console.log("[PWA Builder] Skip waiting on install");
+  self.skipWaiting();
 
   event.waitUntil(
     caches.open(CACHE).then(function (cache) {
-      // console.log("Cached offline page during install");
-      return cache.add(offlineFallbackPage);
+      console.log("[PWA Builder] Caching pages during install");
+      return cache.addAll(precacheFiles);
     })
   );
 });
 
-// If any fetch fails, it will show the offline page.
-self.addEventListener("fetch", function (event) {
+// Allow sw to control of current page
+self.addEventListener("activate", function (event) {
+  console.log("[PWA Builder] Claiming clients for current page");
+  event.waitUntil(self.clients.claim());
+});
+
+// If any fetch fails, it will look for the request in the cache and serve it from there first
+self.addEventListener("fetch", function (event) { 
   if (event.request.method !== "GET") return;
 
   event.respondWith(
-    fetch(event.request).catch(function (error) {
-      // The following validates that the request was for a navigation to a new document
-      if (
-        event.request.destination !== "document" ||
-        event.request.mode !== "navigate"
-      ) {
-        return;
-      }
+    fromCache(event.request).then(
+      function (response) {
+        // The response was found in the cache so we respond with it and update the entry
 
-      console.error("Network request Failed. Serving offline page " + error);
-      return caches.open(CACHE).then(function (cache) {
-        return cache.match(offlineFallbackPage);
-      });
-    })
+        // This is where we call the server to get the newest version of the
+        // file to use the next time we show view
+        event.waitUntil(
+          fetch(event.request).then(function (response) {
+            return updateCache(event.request, response);
+          })
+        );
+
+        return response;
+      },
+      function () {
+        // The response was not found in the cache so we look for it on the server
+        return fetch(event.request)
+          .then(function (response) {
+            // If request was success, add or update it in the cache
+            event.waitUntil(updateCache(event.request, response.clone()));
+
+            return response;
+          })
+          .catch(function (error) {
+            console.log("[PWA Builder] Network request failed and no cache." + error);
+          });
+      }
+    )
   );
 });
 
-// This is an event that can be fired from your page to tell the SW to update the offline page
-self.addEventListener("refreshOffline", function () {
-  const offlinePageRequest = new Request(offlineFallbackPage);
+function fromCache(request) {
+  // Check to see if you have it in the cache
+  // Return response
+  // If not in the cache, then return
+  return caches.open(CACHE).then(function (cache) {
+    return cache.match(request).then(function (matching) {
+      if (!matching || matching.status === 404) {
+        return Promise.reject("no-match");
+      }
 
-  return fetch(offlineFallbackPage).then(function (response) {
-    return caches.open(CACHE).then(function (cache) {
-      console.log("Offline page updated from refreshOffline event: " + response.url);
-      return cache.put(offlinePageRequest, response);
+      return matching;
     });
   });
-});
+}
+
+function updateCache(request, response) {
+  return caches.open(CACHE).then(function (cache) {
+    return cache.put(request, response);
+  });
+}

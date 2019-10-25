@@ -4,7 +4,7 @@
         <figure class="block__background">
           <picture>
             <source media="(min-width: 900px)" srcset="{% if imageLarge %}{{ imageLarge }}{% else %}{{ image }}{% endif %}">
-            <img src="{{ image }}" alt="{{ heading }}">
+            <img src="{{ image }}" alt="{{ heading }}" loading="lazy" />
           </picture>
         </figure><!--/block__background-->
 
