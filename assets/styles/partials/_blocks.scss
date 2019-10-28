@@ -16,7 +16,9 @@
         text-align: center;
     }
 
-    .inner {width: inherit;}
+    .inner {
+        width: inherit;
+    }
 
     .block__heading:first-of-type {margin-top:0;}
 
@@ -134,7 +136,12 @@
 .block--float {
     padding:0;
     .inner {
-        margin:2rem;    
+        margin:1rem;
+        width: calc(100% - 2rem);
+        @media #{$large-up} {
+            margin:2rem;
+            width: calc(100% - 4rem);
+        }
         background-color: var(--background);
     }
 }

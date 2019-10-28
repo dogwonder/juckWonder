@@ -32,8 +32,11 @@ html {
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
-    font-size: $default-font-size;
+    font-size: 1.8rem;
     line-height: $default-line-height;
+    @media #{$large-up} {
+        font-size: $default-font-size;
+    }
     font-weight: normal;
     background-color:var(--textbackground);
     color: var(--text-color-normal);
