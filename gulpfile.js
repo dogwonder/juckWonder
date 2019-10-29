@@ -22,6 +22,7 @@ const marked = require('marked');
 const gulpnunjucks = require('gulp-nunjucks');
 const banner = require('gulp-banner');
 const htmlbeautify = require('gulp-html-beautify');
+const handlebars = require('gulp-compile-handlebars');
 
 
 //System and Utilities
@@ -100,7 +101,6 @@ gulp.task('nunjucks', () => {
     .pipe(gulpnunjucks.compile("", {env: env}))
     .pipe(gulp.dest(dir.dist))
 });
-
 
 //  Sass: compile sass to css
 //===========================================

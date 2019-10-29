@@ -3,790 +3,324 @@
 {% extends "layout/_layout.njk" %}
 
 {% set months = [
-    "january", 
-    "february", 
-    "march", 
-    "april", 
-    "may",
-    "june", 
-    "july", 
-    "august", 
-    "september", 
-    "october", 
-    "november", 
-    "december"
-    ] %}
+"january", 
+"february", 
+"march", 
+"april", 
+"may",
+"june", 
+"july", 
+"august", 
+"september", 
+"october", 
+"november", 
+"december"
+] %}
 
-    {% set vegetables = [{
-        "icon": "",
-        "name": "Asparagus", 
-        "during": [
-            "may", 
-            "june", 
-            "july"
-        ]
-    },
-    {
-            "icon": "🍆",
-            "name": "Aubergine", 
-            "during": [
-                "may",
-                "june", 
-                "july", 
-                "august", 
-                "september", 
-                "october"
-            ]
-    },
-    {
-            "icon": "🌿",
-            "name": "Basil", 
-            "during": [
-                "june", 
-                "july", 
-                "august"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Beetroot", 
-            "during": [
-                "january", 
-                "july", 
-                "august", 
-                "september", 
-                "october", 
-                "november", 
-                "december"
-            ]
-    },
-    {
-            "icon": "🥦",
-            "name": "Broccoli", 
-            "during": [
-                "july", 
-                "august", 
-                "september", 
-                "october"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Brussels sprouts", 
-            "during": [
-                "january", 
-                "february", 
-                "march", 
-                "october", 
-                "november", 
-                "december"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Cabbage", 
-            "during": [
-                "january", 
-                "february", 
-                "march", 
-                "april", 
-                "may",
-                "june", 
-                "july", 
-                "august", 
-                "september", 
-                "october", 
-                "november", 
-                "december"
-            ]
-    },
-    {
-            "icon": "🥕",
-            "name": "Carrot", 
-            "during": [
-                "may",
-                "june", 
-                "july", 
-                "august", 
-                "september"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Cauliflower", 
-            "during": [
-                "january", 
-                "february", 
-                "march", 
-                "april", 
-                "december"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Cavolo nero", 
-            "during": [
-                "june", 
-                "july", 
-                "august", 
-                "september", 
-                "october"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Celeriac", 
-            "during": [
-                "january", 
-                "february", 
-                "march", 
-                "april", 
-                "september", 
-                "october", 
-                "november", 
-                "december"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Celery", 
-            "during": [
-                "january", 
-                "february", 
-                "july", 
-                "august", 
-                "september", 
-                "october", 
-                "november", 
-                "december"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Chicory", 
-            "during": [
-                "january", 
-                "february", 
-                "march"
-            ]
-    },
-    {
-            "icon": "🥒",
-            "name": "Courgette", 
-            "during": [
-                "june", 
-                "july", 
-                "august", 
-                "september"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Courgette flower", 
-            "during": [
-                "june", 
-                "july", 
-                "august"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Fennel bulb", 
-            "during": [
-                "june", 
-                "july", 
-                "august", 
-                "september"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Garlic", 
-            "during": [
-                "june", 
-                "july", 
-                "august", 
-                "september",
-                "october"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Globe artichoke", 
-            "during": [
-                "may",
-                "june", 
-                "july", 
-                "august", 
-                "september", 
-                "october", 
-                "november"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Jerusalem artichoke", 
-            "during": [
-                "january", 
-                "february", 
-                "march", 
-                "october", 
-                "november", 
-                "december"
-            ]
-    },
-    {
-            "icon": "🥬",
-            "name": "Kale", 
-            "during": [
-                "january", 
-                "february", 
-                "september", 
-                "october", 
-                "november", 
-                "december"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Kohlrabi", 
-            "during": [ 
-                "july", 
-                "august", 
-                "september", 
-                "october", 
-                "november"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Lambs lettuce", 
-            "during": [
-                "may",
-                "june", 
-                "july", 
-                "august", 
-                "september", 
-                "october", 
-                "november"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Leek", 
-            "during": [
-                "january", 
-                "february", 
-                "march", 
-                "september", 
-                "october", 
-                "november", 
-                "december"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Lettuce", 
-            "during": [
-                "april", 
-                "may",
-                "june", 
-                "july", 
-                "august", 
-                "september", 
-                "october", 
-                "november", 
-                "december"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Marrow", 
-            "during": [
-                "july", 
-                "august", 
-                "september"
-            ]
-    },
-    {
-            "icon": "🥔",
-            "name": "New potatoes", 
-            "during": [
-                "april", 
-                "may",
-                "june", 
-                "july"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Pak choi", 
-            "during": [
-                "january", 
-                "february", 
-                "march", 
-                "april", 
-                "may",
-                "june", 
-                "july", 
-                "august", 
-                "september", 
-                "october", 
-                "november", 
-                "december"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Parsnip", 
-            "during": [
-                "january", 
-                "february", 
-                "march", 
-                "september", 
-                "october", 
-                "november", 
-                "december"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Peas", 
-            "during": [
-                "april", 
-                "may",
-                "june", 
-                "july", 
-                "august", 
-                "september", 
-                "october", 
-                "november"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Pepper", 
-            "during": [
-                "february", 
-                "march", 
-                "april", 
-                "may",
-                "june", 
-                "july", 
-                "august", 
-                "september", 
-                "october"
-            ]
-    },
-    {
-            "icon": "🥔",
-            "name": "Potato", 
-            "during": [
-                "march", 
-                "april", 
-                "may",
-                "june", 
-                "july"
-            ]
-    },
-    {
-            "icon": "🎃",
-            "name": "Pumpkin", 
-            "during": [
-                "october", 
-                "november", 
-                "december"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Purple sprouting broccoli", 
-            "during": [
-                "january", 
-                "february", 
-                "march", 
-                "april"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Radicchio", 
-            "during": [
-                "january", 
-                "february", 
-                "march", 
-                "april", 
-                "may",
-                "june", 
-                "july", 
-                "august", 
-                "september", 
-                "october", 
-                "november", 
-                "december"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Radish", 
-            "during": [
-                "april", 
-                "may",
-                "june", 
-                "july", 
-                "august", 
-                "september", 
-                "october"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Runner bean", 
-            "during": [
-                "june", 
-                "july", 
-                "august", 
-                "september", 
-                "october", 
-                "november"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Salsify", 
-            "during": [
-                "january",  
-                "october", 
-                "november", 
-                "december"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Samphire", 
-            "during": [
-                "july", 
-                "august"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Spinach", 
-            "during": [ 
-                "march",
-                "april", 
-                "may",
-                "june",
-                "july", 
-                "august", 
-                "september"
-            ]
-    },
-    {
-            "icon": "🥬",
-            "name": "Spring greens", 
-            "during": [
-                "march", 
-                "april", 
-                "may",
-                "june"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Swede", 
-            "during": [
-                "january", 
-                "february",
-                "october",
-                "november",
-                "december"
-            ]
-    },
-    {
-            "icon": "🍠",
-            "name": "Sweet potato", 
-            "during": [
-                "january", 
-                "february", 
-                "march", 
-                "october", 
-                "november", 
-                "december"
-            ]
-    },
-    {
-            "icon": "🌽",
-            "name": "Sweetcorn", 
-            "during": [
-                "august", 
-                "september"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Swiss chard", 
-            "during": [
-                "july", 
-                "august", 
-                "september", 
-                "october",
-                "november"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Turnip", 
-            "during": [
-                "january", 
-                "february", 
-                "october", 
-                "november", 
-                "december"
-            ]
-    },
-    {
-            "icon": "",
-            "name": "Watercress", 
-            "during": [
-                "march",
-                "april",
-                "may",
-                "june", 
-                "july",
-                "august", 
-                "september"
-            ]
-    }
-    ] %}
-    
-    {% set fruits = [{
-    "icon": "🍎",
-    "name": "Apple", 
+{% set vegetables = [{
+    "icon": "",
+    "name": "Asparagus", 
     "during": [
-        "january", 
-        "february", 
-        "september", 
-        "october", 
-        "november", 
-        "december"
+        "may", 
+        "june", 
+        "july"
     ]
-    },
-    {
-        "icon": "",
-        "name": "Apricot", 
+},
+{
+        "icon": "🍆",
+        "name": "Aubergine", 
         "during": [
-            "april", 
             "may",
             "june", 
-            "july", 
-            "august", 
-            "september"
-        ]
-    },
-    {
-        "icon": "🍌",
-        "name": "Banana", 
-        "during": [
-            "january", 
-            "february", 
-            "march", 
-            "april", 
-            "may",
-            "june", 
-            "july", 
-            "august", 
-            "september", 
-            "october", 
-            "november", 
-            "december"
-        ]
-    },
-    {
-        "icon": "",
-        "name": "Blackberry", 
-        "during": [
             "july", 
             "august", 
             "september", 
             "october"
         ]
-    },
-    {
-        "icon": "",
-        "name": "Blackcurrants", 
-        "during": [
-            "may",
-            "june", 
-            "july"
-        ]
-    },
-    {
-        "icon": "🍎",
-        "name": "Bramley apple", 
-        "during": [
-            "january", 
-            "february", 
-            "march", 
-            "november", 
-            "december"
-        ]
-    },
-    {
-        "icon": "🍒",
-        "name": "Cherry", 
+},
+{
+        "icon": "🌿",
+        "name": "Basil", 
         "during": [
             "june", 
-            "july"
-        ]
-    },
-    {
-        "icon": "🍊",
-        "name": "Clementine", 
-        "during": [
-            "january", 
-            "february", 
-            "november", 
-            "december"
-        ]
-    },
-    {
-        "icon": "🍏",
-        "name": "Crab apple", 
-        "during": [
+            "july", 
             "august"
         ]
-    },
-    {
+},
+{
         "icon": "",
-        "name": "Cranberry", 
-        "during": [
-            "october", 
-            "november", 
-            "december"
-        ]
-    },
-    {
-        "icon": "",
-        "name": "Damson", 
-        "during": [
-            "august", 
-            "september"
-        ]
-    },
-    {
-        "icon": "",
-        "name": "Date", 
+        "name": "Beetroot", 
         "during": [
             "january", 
+            "july", 
+            "august", 
+            "september", 
             "october", 
             "november", 
             "december"
         ]
-    },
-    {
-        "icon": "",
-        "name": "Elderberries", 
+},
+{
+        "icon": "🥦",
+        "name": "Broccoli", 
         "during": [
+            "july", 
             "august", 
             "september", 
             "october"
         ]
-    },
-    {
+},
+{
         "icon": "",
-        "name": "Fig", 
+        "name": "Brussels sprouts", 
+        "during": [
+            "january", 
+            "february", 
+            "march", 
+            "october", 
+            "november", 
+            "december"
+        ]
+},
+{
+        "icon": "",
+        "name": "Cabbage", 
+        "during": [
+            "january", 
+            "february", 
+            "march", 
+            "april", 
+            "may",
+            "june", 
+            "july", 
+            "august", 
+            "september", 
+            "october", 
+            "november", 
+            "december"
+        ]
+},
+{
+        "icon": "🥕",
+        "name": "Carrot", 
+        "during": [
+            "may",
+            "june", 
+            "july", 
+            "august", 
+            "september"
+        ]
+},
+{
+        "icon": "",
+        "name": "Cauliflower", 
+        "during": [
+            "january", 
+            "february", 
+            "march", 
+            "april", 
+            "december"
+        ]
+},
+{
+        "icon": "",
+        "name": "Cavolo nero", 
+        "during": [
+            "june", 
+            "july", 
+            "august", 
+            "september", 
+            "october"
+        ]
+},
+{
+        "icon": "",
+        "name": "Celeriac", 
+        "during": [
+            "january", 
+            "february", 
+            "march", 
+            "april", 
+            "september", 
+            "october", 
+            "november", 
+            "december"
+        ]
+},
+{
+        "icon": "",
+        "name": "Celery", 
+        "during": [
+            "january", 
+            "february", 
+            "july", 
+            "august", 
+            "september", 
+            "october", 
+            "november", 
+            "december"
+        ]
+},
+{
+        "icon": "",
+        "name": "Chicory", 
+        "during": [
+            "january", 
+            "february", 
+            "march"
+        ]
+},
+{
+        "icon": "🥒",
+        "name": "Courgette", 
+        "during": [
+            "june", 
+            "july", 
+            "august", 
+            "september"
+        ]
+},
+{
+        "icon": "",
+        "name": "Courgette flower", 
+        "during": [
+            "june", 
+            "july", 
+            "august"
+        ]
+},
+{
+        "icon": "",
+        "name": "Fennel bulb", 
+        "during": [
+            "june", 
+            "july", 
+            "august", 
+            "september"
+        ]
+},
+{
+        "icon": "",
+        "name": "Garlic", 
+        "during": [
+            "june", 
+            "july", 
+            "august", 
+            "september",
+            "october"
+        ]
+},
+{
+        "icon": "",
+        "name": "Globe artichoke", 
+        "during": [
+            "may",
+            "june", 
+            "july", 
+            "august", 
+            "september", 
+            "october", 
+            "november"
+        ]
+},
+{
+        "icon": "",
+        "name": "Jerusalem artichoke", 
+        "during": [
+            "january", 
+            "february", 
+            "march", 
+            "october", 
+            "november", 
+            "december"
+        ]
+},
+{
+        "icon": "🥬",
+        "name": "Kale", 
+        "during": [
+            "january", 
+            "february", 
+            "september", 
+            "october", 
+            "november", 
+            "december"
+        ]
+},
+{
+        "icon": "",
+        "name": "Kohlrabi", 
         "during": [ 
             "july", 
             "august", 
             "september", 
-            "october"
+            "october", 
+            "november"
         ]
-    },
-    {
+},
+{
         "icon": "",
-        "name": "Gooseberry", 
+        "name": "Lambs lettuce", 
         "during": [
             "may",
             "june", 
             "july", 
             "august", 
-            "september"
+            "september", 
+            "october", 
+            "november"
         ]
-    },
-    {
+},
+{
         "icon": "",
-        "name": "Grapefruit", 
+        "name": "Leek", 
         "during": [
             "january", 
             "february", 
             "march", 
-            "april", 
-            "may",
-            "december"
-        ]
-    },
-    {
-        "icon": "🍋",
-        "name": "Lemon", 
-        "during": [
-            "january", 
-            "february", 
-            "march"
-        ]
-    },
-    {
-        "icon": "🍊",
-        "name": "Nectarine", 
-        "during": [
-            "may",
-            "june", 
-            "july", 
-            "august", 
-            "september"
-        ]
-    },
-    {
-        "icon": "",
-        "name": "Orange", 
-        "during": [
-            "january", 
-            "february", 
-            "march"
-        ]
-    },
-    {
-        "icon": "🍑",
-        "name": "Peach", 
-        "during": [
-            "july", 
-            "august", 
-            "september"
-        ]
-    },
-    {
-        "icon": "🍐",
-        "name": "Pear", 
-        "during": [
-            "january", 
             "september", 
             "october", 
             "november", 
             "december"
         ]
-    },
-    {
+},
+{
         "icon": "",
-        "name": "Plum", 
+        "name": "Lettuce", 
         "during": [
+            "april", 
+            "may",
+            "june", 
+            "july", 
             "august", 
             "september", 
-            "october"
+            "october", 
+            "november", 
+            "december"
         ]
-    },
-    {
+},
+{
         "icon": "",
-        "name": "Pomegranate", 
+        "name": "Marrow", 
+        "during": [
+            "july", 
+            "august", 
+            "september"
+        ]
+},
+{
+        "icon": "🥔",
+        "name": "New potatoes", 
+        "during": [
+            "april", 
+            "may",
+            "june", 
+            "july"
+        ]
+},
+{
+        "icon": "",
+        "name": "Pak choi", 
         "during": [
             "january", 
             "february", 
@@ -801,80 +335,546 @@
             "november", 
             "december"
         ]
-    },
-    {
+},
+{
         "icon": "",
-        "name": "Quince", 
+        "name": "Parsnip", 
         "during": [
+            "january", 
+            "february", 
+            "march", 
             "september", 
             "october", 
             "november", 
             "december"
         ]
-    },
-    {
+},
+{
         "icon": "",
-        "name": "Raspberry", 
+        "name": "Peas", 
         "during": [
+            "april", 
+            "may",
             "june", 
             "july", 
             "august", 
-            "september"
+            "september", 
+            "october", 
+            "november"
         ]
-    },
-    {
+},
+{
         "icon": "",
-        "name": "Redcurrant", 
+        "name": "Pepper", 
         "during": [
+            "february", 
+            "march", 
+            "april", 
+            "may",
             "june", 
             "july", 
             "august", 
-            "september"
+            "september", 
+            "october"
         ]
-    },
-    {
+},
+{
+        "icon": "🥔",
+        "name": "Potato", 
+        "during": [
+            "march", 
+            "april", 
+            "may",
+            "june", 
+            "july"
+        ]
+},
+{
+        "icon": "🎃",
+        "name": "Pumpkin", 
+        "during": [
+            "october", 
+            "november", 
+            "december"
+        ]
+},
+{
         "icon": "",
-        "name": "Rhubarb", 
+        "name": "Purple sprouting broccoli", 
         "during": [
             "january", 
             "february", 
+            "march", 
+            "april"
+        ]
+},
+{
+        "icon": "",
+        "name": "Radicchio", 
+        "during": [
+            "january", 
+            "february", 
+            "march", 
+            "april", 
+            "may",
+            "june", 
+            "july", 
+            "august", 
+            "september", 
+            "october", 
+            "november", 
+            "december"
+        ]
+},
+{
+        "icon": "",
+        "name": "Radish", 
+        "during": [
+            "april", 
+            "may",
+            "june", 
+            "july", 
+            "august", 
+            "september", 
+            "october"
+        ]
+},
+{
+        "icon": "",
+        "name": "Runner bean", 
+        "during": [
+            "june", 
+            "july", 
+            "august", 
+            "september", 
+            "october", 
+            "november"
+        ]
+},
+{
+        "icon": "",
+        "name": "Salsify", 
+        "during": [
+            "january",  
+            "october", 
+            "november", 
+            "december"
+        ]
+},
+{
+        "icon": "",
+        "name": "Samphire", 
+        "during": [
+            "july", 
+            "august"
+        ]
+},
+{
+        "icon": "",
+        "name": "Spinach", 
+        "during": [ 
+            "march",
+            "april", 
+            "may",
+            "june",
+            "july", 
+            "august", 
+            "september"
+        ]
+},
+{
+        "icon": "🥬",
+        "name": "Spring greens", 
+        "during": [
             "march", 
             "april", 
             "may",
             "june"
         ]
-    },
-    {
-        "icon": "🍓",
-        "name": "Strawberry", 
+},
+{
+        "icon": "",
+        "name": "Swede", 
         "during": [
-            "june", 
-            "july", 
+            "january", 
+            "february",
+            "october",
+            "november",
+            "december"
+        ]
+},
+{
+        "icon": "🍠",
+        "name": "Sweet potato", 
+        "during": [
+            "january", 
+            "february", 
+            "march", 
+            "october", 
+            "november", 
+            "december"
+        ]
+},
+{
+        "icon": "🌽",
+        "name": "Sweetcorn", 
+        "during": [
             "august", 
             "september"
         ]
-    },
-    {
-        "icon": "🍅",
-        "name": "Tomato", 
+},
+{
+        "icon": "",
+        "name": "Swiss chard", 
         "during": [
-            "may",
-            "june", 
             "july", 
             "august", 
             "september", 
-            "october"
+            "october",
+            "november"
         ]
-    }, 
-    {
-        "icon": "🍉",
-        "name": "Watermelon", 
+},
+{
+        "icon": "",
+        "name": "Turnip", 
         "during": [
-            "june", 
-            "july", 
-            "august"
+            "january", 
+            "february", 
+            "october", 
+            "november", 
+            "december"
         ]
-    } ] %}
+},
+{
+        "icon": "",
+        "name": "Watercress", 
+        "during": [
+            "march",
+            "april",
+            "may",
+            "june", 
+            "july",
+            "august", 
+            "september"
+        ]
+}
+] %}
+
+{% set fruits = [{
+"icon": "🍎",
+"name": "Apple", 
+"during": [
+    "january", 
+    "february", 
+    "september", 
+    "october", 
+    "november", 
+    "december"
+]
+},
+{
+    "icon": "",
+    "name": "Apricot", 
+    "during": [
+        "april", 
+        "may",
+        "june", 
+        "july", 
+        "august", 
+        "september"
+    ]
+},
+{
+    "icon": "🍌",
+    "name": "Banana", 
+    "during": [
+        "january", 
+        "february", 
+        "march", 
+        "april", 
+        "may",
+        "june", 
+        "july", 
+        "august", 
+        "september", 
+        "october", 
+        "november", 
+        "december"
+    ]
+},
+{
+    "icon": "",
+    "name": "Blackberry", 
+    "during": [
+        "july", 
+        "august", 
+        "september", 
+        "october"
+    ]
+},
+{
+    "icon": "",
+    "name": "Blackcurrants", 
+    "during": [
+        "may",
+        "june", 
+        "july"
+    ]
+},
+{
+    "icon": "🍎",
+    "name": "Bramley apple", 
+    "during": [
+        "january", 
+        "february", 
+        "march", 
+        "november", 
+        "december"
+    ]
+},
+{
+    "icon": "🍒",
+    "name": "Cherry", 
+    "during": [
+        "june", 
+        "july"
+    ]
+},
+{
+    "icon": "🍊",
+    "name": "Clementine", 
+    "during": [
+        "january", 
+        "february", 
+        "november", 
+        "december"
+    ]
+},
+{
+    "icon": "🍏",
+    "name": "Crab apple", 
+    "during": [
+        "august"
+    ]
+},
+{
+    "icon": "",
+    "name": "Cranberry", 
+    "during": [
+        "october", 
+        "november", 
+        "december"
+    ]
+},
+{
+    "icon": "",
+    "name": "Damson", 
+    "during": [
+        "august", 
+        "september"
+    ]
+},
+{
+    "icon": "",
+    "name": "Date", 
+    "during": [
+        "january", 
+        "october", 
+        "november", 
+        "december"
+    ]
+},
+{
+    "icon": "",
+    "name": "Elderberries", 
+    "during": [
+        "august", 
+        "september", 
+        "october"
+    ]
+},
+{
+    "icon": "",
+    "name": "Fig", 
+    "during": [ 
+        "july", 
+        "august", 
+        "september", 
+        "october"
+    ]
+},
+{
+    "icon": "",
+    "name": "Gooseberry", 
+    "during": [
+        "may",
+        "june", 
+        "july", 
+        "august", 
+        "september"
+    ]
+},
+{
+    "icon": "",
+    "name": "Grapefruit", 
+    "during": [
+        "january", 
+        "february", 
+        "march", 
+        "april", 
+        "may",
+        "december"
+    ]
+},
+{
+    "icon": "🍋",
+    "name": "Lemon", 
+    "during": [
+        "january", 
+        "february", 
+        "march"
+    ]
+},
+{
+    "icon": "🍊",
+    "name": "Nectarine", 
+    "during": [
+        "may",
+        "june", 
+        "july", 
+        "august", 
+        "september"
+    ]
+},
+{
+    "icon": "",
+    "name": "Orange", 
+    "during": [
+        "january", 
+        "february", 
+        "march"
+    ]
+},
+{
+    "icon": "🍑",
+    "name": "Peach", 
+    "during": [
+        "july", 
+        "august", 
+        "september"
+    ]
+},
+{
+    "icon": "🍐",
+    "name": "Pear", 
+    "during": [
+        "january", 
+        "september", 
+        "october", 
+        "november", 
+        "december"
+    ]
+},
+{
+    "icon": "",
+    "name": "Plum", 
+    "during": [
+        "august", 
+        "september", 
+        "october"
+    ]
+},
+{
+    "icon": "",
+    "name": "Pomegranate", 
+    "during": [
+        "january", 
+        "february", 
+        "march", 
+        "april", 
+        "may",
+        "june", 
+        "july", 
+        "august", 
+        "september", 
+        "october", 
+        "november", 
+        "december"
+    ]
+},
+{
+    "icon": "",
+    "name": "Quince", 
+    "during": [
+        "september", 
+        "october", 
+        "november", 
+        "december"
+    ]
+},
+{
+    "icon": "",
+    "name": "Raspberry", 
+    "during": [
+        "june", 
+        "july", 
+        "august", 
+        "september"
+    ]
+},
+{
+    "icon": "",
+    "name": "Redcurrant", 
+    "during": [
+        "june", 
+        "july", 
+        "august", 
+        "september"
+    ]
+},
+{
+    "icon": "",
+    "name": "Rhubarb", 
+    "during": [
+        "january", 
+        "february", 
+        "march", 
+        "april", 
+        "may",
+        "june"
+    ]
+},
+{
+    "icon": "🍓",
+    "name": "Strawberry", 
+    "during": [
+        "june", 
+        "july", 
+        "august", 
+        "september"
+    ]
+},
+{
+    "icon": "🍅",
+    "name": "Tomato", 
+    "during": [
+        "may",
+        "june", 
+        "july", 
+        "august", 
+        "september", 
+        "october"
+    ]
+}, 
+{
+    "icon": "🍉",
+    "name": "Watermelon", 
+    "during": [
+        "june", 
+        "july", 
+        "august"
+    ]
+} ] %}
 
 {% block content %}
 
@@ -886,6 +886,8 @@
 }
 
 .seasons h1 span {color:green;}
+.month {display:none;}
+.month.show {display:block;}
 
 ul.months {
     margin:0 0 4rem;
@@ -924,7 +926,9 @@ ul.months li .icon {
 </style>
 <div class="seasons">
 
-      <h1>What's in season in <span>{{ getCurrentMonth() | capitalize }}</span></h1>
+    {% for thismonth in months %}
+     <div class="month{% if getCurrentMonth() == thismonth %} show{% endif %}">
+      <h1>What's in season in <span>{{ thismonth | capitalize }}</span></h1>
       <h2>Vegetables</h2>
     
       <ul class="months vegetables">  
@@ -935,13 +939,8 @@ ul.months li .icon {
         {# {{ vegetables | length }} #}
 
         {% for month in vegetableDuring %}
-            {% if month == getCurrentMonth() %}    
+            {% if month == thismonth %}    
                 <li>
-                {# {% if vegetable.icon %}
-                <span class="icon">{{ vegetable.icon }}</span>
-                {% else %}
-                <img class="icon" src="./images/icons/vegetables/{{ vegetable.name | lower |  replace(" ", "_") }}.svg" alt="{{ vegetable.name }}">
-                {% endif %} #}
                 <img class="icon" src="./images/icons/vegetables/{{ vegetable.name | lower |  replace(" ", "_") }}.svg" alt="{{ vegetable.name }}">
                 {{ vegetable.name }}
                 </li>
@@ -961,13 +960,8 @@ ul.months li .icon {
       {% set fruitDuring = fruit.during %}
 
         {% for month in fruitDuring %}
-            {% if month == getCurrentMonth() %}
+            {% if month == thismonth %}
                 <li>
-                {# {% if fruit.icon %}
-                <span class="icon">{{ fruit.icon }}</span>
-                {% else %}
-                <img class="icon" src="./images/icons/fruit/{{ fruit.name | lower |  replace(" ", "_") }}.svg" alt="{{ fruit.name }}">
-                {% endif %} #}
                 <img class="icon" src="./images/icons/fruit/{{ fruit.name | lower |  replace(" ", "_") }}.svg" alt="{{ fruit.name }}">
                 {{ fruit.name }}
                 </li>
@@ -976,6 +970,9 @@ ul.months li .icon {
     
       {% endfor %}
       </ul>
+      </div>
+
+      {% endfor %}
 
 </div><!--.week-->
 
