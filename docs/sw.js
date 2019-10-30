@@ -1,4 +1,4 @@
-const CACHE = "dgCache-1.98.0";
+const CACHE = "dgCache-1.99.0";
 
 // This is the service worker with the Cache-first network
 const precacheFiles = [

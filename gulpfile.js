@@ -22,7 +22,6 @@ const marked = require('marked');
 const gulpnunjucks = require('gulp-nunjucks');
 const banner = require('gulp-banner');
 const htmlbeautify = require('gulp-html-beautify');
-const handlebars = require('gulp-compile-handlebars');
 
 
 //System and Utilities
@@ -290,7 +289,6 @@ gulp.task('serviceworker', () => {
 gulp.task('move-js', () => {  
   return gulp
       .src([
-      'assets/.htaccess', 
       'assets/scripts/gallery.js', 
       'assets/vendor/js.cookie.js'
       ])
