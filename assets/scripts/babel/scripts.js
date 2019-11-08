@@ -30,6 +30,37 @@
     }
   }
 
+  ;
+
+  function toggleNav(button, elem) {
+    // HTML
+    // <nav class="navigation">
+    // <button aria-expanded="false" aria-controls="menu">Menu</button>
+    // <ul id="menu" hidden>
+    //     <li><a href="/">Home</a></li>
+    //     <li><a href="/benefits">Benefits</a></li>
+    //     <li><a href="/pricing">Pricing</a></li>
+    //     <li><a href="/blog">Blog</a></li>
+    // </ul>
+    // </nav>    
+    // CSS
+    // [hidden] { display: none; }
+    // [aria\-expanded=true] {}    
+    // #menu:not([hidden]) {pointer-events: all;}
+    // Init 
+    // toggleNav('.navigation button', '.navigation ul');
+    var toggleMenu = document.querySelector(button);
+    var menu = document.querySelector(elem);
+    toggleMenu.addEventListener('click', function () {
+      // The JSON.parse function helps us convert the attribute from a string to a real boolean.
+      var open = JSON.parse(toggleMenu.getAttribute('aria-expanded'));
+      toggleMenu.setAttribute('aria-expanded', !open);
+      menu.hidden = !menu.hidden;
+    });
+  }
+
+  ;
+
   function equalizer(elem) {
     var mq = window.matchMedia("(min-width: 1025px)");
     var blocks = document.querySelectorAll(elem);
@@ -45,8 +76,9 @@
         item.style.height = tallest + "px";
       });
     }
-  } // Handler when the DOM is fully loaded
+  }
 
+  ; // Handler when the DOM is fully loaded
 
   document.addEventListener("DOMContentLoaded", function () {
     //Cookie notice
@@ -54,7 +86,7 @@
 
     equalizer('[data-col]'); //Load the cookie policy functionality
 
-    var cookie = new WJCookies();
+    var cookie = new JWCookies();
     cookie.init({
       onClick: true,
       onSubmit: false

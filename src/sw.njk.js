@@ -25,10 +25,22 @@ self.addEventListener("install", function (event) {
   );
 });
 
-// Allow sw to control of current page
-self.addEventListener("activate", function (event) {
-  console.log("[PWA Builder] Claiming clients for current page");
-  event.waitUntil(self.clients.claim());
+self.addEventListener("activate", function(event) {
+  event.waitUntil(
+    //Delete old caches
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.map(function(cacheName) {
+          if (CACHE !== cacheName &&  cacheName.startsWith("dgCache")) {
+            return caches.delete(cacheName);
+          }
+        })
+      );
+    }).then(function() {
+      console.log('[ServiceWorker] Claiming clients for version - {{ pkgVersion() }}');
+      return self.clients.claim();
+    })  
+  );
 });
 
 // If any fetch fails, it will look for the request in the cache and serve it from there first

@@ -31,6 +31,7 @@ const path = require('path');
 const plumber = require('gulp-plumber');
 const rename = require('gulp-rename');
 const bump = require('gulp-bump');
+const merge = require('merge-stream');
 const shell = require('gulp-shell');
 const browserSync = require('browser-sync').create();
 const log = require('fancy-log');
@@ -285,23 +286,14 @@ gulp.task('serviceworker', () => {
       .pipe(gulp.dest(dir.dist));
 });
 
-// Moving misc files
-gulp.task('move-js', () => {  
-  return gulp
-      .src([
-      'assets/scripts/gallery.js', 
-      'assets/vendor/js.cookie.js'
-      ])
-    .pipe(gulp.dest(path.join(dir.dist, 'scripts')));
-});
 
-// Moving the service worker
+// Moving files
 gulp.task('move-files', () => {  
-  return gulp
-    .src([
-      'assets/CNAME'
-    ])
-    .pipe(gulp.dest(dir.dist));
+  let cname = gulp.src(['assets/CNAME'])
+    .pipe(gulp.dest(path.join(dir.dist)));
+  let scripts = gulp.src(['assets/scripts/gallery.js', 'assets/vendor/js.cookie.js'])
+    .pipe(gulp.dest(path.join(dir.dist, 'scripts')));
+    return merge(cname, scripts);
 });
 
 // Static Server + watching scss/html files
@@ -320,7 +312,7 @@ gulp.task('tests', shell.task('$(npm bin)/cypress run'))
 // Init
 // -----------------
 const dev = gulp.series('nunjucks', gulp.parallel('sass', 'scripts', 'serve', 'watch'));
-const build = gulp.series('clean', 'babel', 'nunjucks', gulp.parallel('sass-build', 'scripts-build', 'fonts', 'images', 'responsive'), gulp.parallel('bump', 'serviceworker', 'banner'), 'move-js', 'move-files', 'htmlbeautify');
+const build = gulp.series('clean', 'babel', 'nunjucks', gulp.parallel('sass-build', 'scripts-build', 'fonts', 'images', 'responsive'), gulp.parallel('bump', 'serviceworker', 'banner'), 'move-files', 'htmlbeautify');
 exports.default = dev;
 exports.build = build;
 

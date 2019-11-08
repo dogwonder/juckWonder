@@ -14,7 +14,7 @@ https://gist.github.com/dogwonder/a3504de087ea051917925a55e8d7d3d5
 * Revealing Module Pattern Boilerplate
 * (c) 2017 Chris Ferdinandi, MIT License, https://gomakethings.com
 */
-var WJCookies = (function () {
+var JWCookies = (function () {
 
 'use strict';
 
