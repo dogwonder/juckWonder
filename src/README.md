@@ -68,13 +68,11 @@ There are some site variables that should be edited away from the boilerplate de
 Meta description (this also changes the twitter and facebook share text)
 
 ```
-{{ siteDesc }}
-{% set siteDesc = "Blah blah blah" %}
-{{ siteDesc }}
+siteDesc = "Blah blah blah"
 ```
 
-Body class - `{% set body_class = "jw-gallery" %}`
-Page title - `{% set page_title = "Gallery" %}`
+Body class - `set body_class = "jw-gallery"`
+Page title - `set page_title = "Gallery"`
 
 
 #### Custom Macros
