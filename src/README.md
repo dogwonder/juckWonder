@@ -91,9 +91,7 @@ I've created a bunch of custom macros (reusable chunks of content - [see Nunjuck
 
 These macros will take a series of parameters, for example image path, title, classname etc. See `src/index.html` for examples and syntax order
 
-for example
-
-Hero macro - `{ hero('path/to/image.jpg', 'path/to/image-large.jpg', 'Block title', 'Block content', 'class') }`
+Hero macro - `hero('path/to/image.jpg', 'path/to/image-large.jpg', 'Block title', 'Block content', 'class')`
 
 ---------------
 
