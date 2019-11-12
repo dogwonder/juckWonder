@@ -44,7 +44,7 @@
 
         })();
     </script>
-    <link rel="stylesheet" href="./css/main.css?cache_bust=1.111.0">
+    <link rel="stylesheet" href="./css/main.css?cache_bust=1.113.0">
 
     <link rel="icon" type="image/png" sizes="16x16" href="./images/fav/favicon-16x16.png">
     <link rel="mask-icon" sizes="any" href="./images/logotype.svg" color="#14d5de">
@@ -190,10 +190,10 @@
                     <h3 id="customisation">Customisation</h3>
                     <p>There are some site variables that should be edited away from the boilerplate defaults</p>
                     <ul>
-                        <li><input disabled="" type="checkbox"> Change site vars - <code>data.json</code></li>
-                        <li><input disabled="" type="checkbox"> Site name - <code>/images/fav/manifest.json</code></li>
-                        <li><input disabled="" type="checkbox"> Update social images in <code>/images/og</code>, <code>/images/fav/</code>, <code>logotype.svg</code></li>
-                        <li><input disabled="" type="checkbox"> Update form endpoint in <code>contact.html</code> - currently using <a href="https://formspree.io/">Formspree</a></li>
+                        <li>Change site vars - <code>data.json</code></li>
+                        <li>Site name - <code>/images/fav/manifest.json</code></li>
+                        <li>Update social images in <code>/images/og</code>, <code>/images/fav/</code>, <code>logotype.svg</code></li>
+                        <li>Update form endpoint in <code>contact.html</code> - currently using <a href="https://formspree.io/">Formspree</a></li>
                     </ul>
                     <h4 id="page-variables">Page variables</h4>
                     <p>Meta description (this also changes the twitter and facebook share text)</p>
@@ -201,6 +201,20 @@
 
 Blah blah blah</code></pre>
                     <p>Body class - <code>Page title -</code></p>
+                    <h4 id="custom-macros">Custom Macros</h4>
+                    <p>I&#39;ve created a bunch of custom macros (reusable chunks of content - <a href="https://mozilla.github.io/nunjucks/templating.html#macro">see Nunjucks guide</a>)</p>
+                    <ul>
+                        <li>Hero block - <code>hero.njk</code></li>
+                        <li>Text block - <code>text.njk</code></li>
+                        <li>Text block (with some extra padding) - <code>float.njk</code></li>
+                        <li>Full width image block - <code>image.njk</code></li>
+                        <li>Call to action block - <code>cta.njk</code></li>
+                        <li>Map block - <code>map.njk</code></li>
+                        <li>Modal block - <code>modal.njk</code></li>
+                    </ul>
+                    <p>These macros will take a series of parameters, for example image path, title, classname etc. See <code>src/index.html</code> for examples and syntax order</p>
+                    <p>for example</p>
+                    <p>Hero macro - <code>&amp;#123;&amp;#123; hero(&#39;path/to/image.jpg&#39;, &#39;path/to/image-large.jpg&#39;, &#39;Block title&#39;, &#39;Block content&#39;, &#39;class&#39;) &amp;#125;&amp;#125;</code></p>
                     <hr>
                     <h2 id="license">License</h2>
                     <p>juckWonder is licensed under <a href="https://github.com/dogwonder/juckWonder/blob/master/LICENSE">MIT license</a>. </p>

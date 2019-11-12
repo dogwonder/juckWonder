@@ -57,10 +57,10 @@ This uses a few libraries and open-source plugins, all MIT licensed. Apart from 
 
 There are some site variables that should be edited away from the boilerplate defaults
 
-- [ ] Change site vars - `data.json`
-- [ ] Site name - `/images/fav/manifest.json`
-- [ ] Update social images in `/images/og`, `/images/fav/`, `logotype.svg`
-- [ ] Update form endpoint in `contact.html` - currently using [Formspree](https://formspree.io/)
+- Change site vars - `data.json`
+- Site name - `/images/fav/manifest.json`
+- Update social images in `/images/og`, `/images/fav/`, `logotype.svg`
+- Update form endpoint in `contact.html` - currently using [Formspree](https://formspree.io/)
 
 
 #### Page variables 
@@ -75,6 +75,25 @@ Meta description (this also changes the twitter and facebook share text)
 
 Body class - `{% set body_class = "jw-gallery" %}`
 Page title - `{% set page_title = "Gallery" %}`
+
+
+#### Custom Macros
+
+I've created a bunch of custom macros (reusable chunks of content - [see Nunjucks guide](https://mozilla.github.io/nunjucks/templating.html#macro))
+
+- Hero block - `hero.njk`
+- Text block - `text.njk`
+- Text block (with some extra padding) - `float.njk`
+- Full width image block - `image.njk`
+- Call to action block - `cta.njk`
+- Map block - `map.njk`
+- Modal block - `modal.njk`
+
+These macros will take a series of parameters, for example image path, title, classname etc. See `src/index.html` for examples and syntax order
+
+for example
+
+Hero macro - `&#123;&#123; hero('path/to/image.jpg', 'path/to/image-large.jpg', 'Block title', 'Block content', 'class') &#125;&#125;`
 
 ---------------
 
