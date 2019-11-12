@@ -93,7 +93,7 @@ These macros will take a series of parameters, for example image path, title, cl
 
 for example
 
-Hero macro - `&#123;&#123; hero('path/to/image.jpg', 'path/to/image-large.jpg', 'Block title', 'Block content', 'class') &#125;&#125;`
+Hero macro - `{ hero('path/to/image.jpg', 'path/to/image-large.jpg', 'Block title', 'Block content', 'class') }`
 
 ---------------
 
