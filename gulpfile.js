@@ -82,14 +82,6 @@ env.addGlobal('pkgVersion', function (str) {
     return cbVersion;
 });
 
-//Get current month
-env.addGlobal('getCurrentMonth', function(){ 
-  var months = ['january','february','march','april','may','june','july','august','september','october','november','december'];
-  var now = new Date();
-  var thisMonth = months[now.getMonth()]; 
-    return thisMonth;
-});
-
 //Nunjucks
 gulp.task('nunjucks', () => {
   return gulp
