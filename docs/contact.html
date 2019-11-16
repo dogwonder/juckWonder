@@ -44,7 +44,7 @@
 
         })();
     </script>
-    <link rel="stylesheet" href="./css/main.css?cache_bust=1.122.0">
+    <link rel="stylesheet" href="./css/main.css?cache_bust=1.123.0">
 
     <link rel="icon" type="image/png" sizes="16x16" href="./images/fav/favicon-16x16.png">
     <link rel="mask-icon" sizes="any" href="./images/logotype.svg" color="#14d5de">
@@ -79,6 +79,20 @@
             "name": "Dogwonder Ltd",
             "logo": "https://juckwonder.com/images/og/logo-160x60.png"
         }
+    </script>
+    <script>
+        (function(w, d, s, o, f, js, fjs) {
+            w[o] = w[o] || function() {
+                (w[o].q = w[o].q || []).push(arguments)
+            };
+            js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+            js.id = o;
+            js.src = f;
+            js.async = 1;
+            fjs.parentNode.insertBefore(js, fjs);
+        }(window, document, 'script', 'plausible', 'https://plausible.io/js/p.js'));
+
+        plausible('page')
     </script>
 </head>
 
