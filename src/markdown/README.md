@@ -62,6 +62,7 @@ There are some site variables that should be edited away from the boilerplate de
 - Site name - `/images/fav/manifest.json`
 - Update social images in `/images/og`, `/images/fav/`, `logotype.svg`
 - Update form endpoint in `contact.html` - currently using [Formspree](https://formspree.io/)
+- Add your own analytics in `_analytics.njk`
 
 
 #### Page variables 
