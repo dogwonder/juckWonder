@@ -5,6 +5,7 @@ A starter kit to build websites using [Nunjucks](https://mozilla.github.io/nunju
 - 🐛 Framework free
 - 🐝 Minimal CSS
 - 🐬 Block based templating 
+- 👍 Optimised for accessibility, speed and search engines
 
 ## Requirements
 

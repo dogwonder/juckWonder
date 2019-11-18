@@ -92,7 +92,7 @@
         cookieNoticeSeen();
 
         //Equal height columns
-        equalizer('[data-col]');
+        // equalizer('[data-col]');
 
         //Load the cookie policy functionality
         var cookie = new JWCookies();

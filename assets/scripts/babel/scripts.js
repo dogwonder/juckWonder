@@ -83,8 +83,8 @@
   document.addEventListener("DOMContentLoaded", function () {
     //Cookie notice
     cookieNoticeSeen(); //Equal height columns
-
-    equalizer('[data-col]'); //Load the cookie policy functionality
+    // equalizer('[data-col]');
+    //Load the cookie policy functionality
 
     var cookie = new JWCookies();
     cookie.init({

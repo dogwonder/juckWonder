@@ -77,6 +77,7 @@
         left: 0;
         right: 0;
     }  
+
     .block__heading {
         color:inherit;
         font-size: 2.4rem;
@@ -92,6 +93,7 @@
     .block__content {
         max-width:var(--container);
         margin:0 auto;
+        a {color:inherit;}
     }
 }
 
@@ -112,9 +114,6 @@
     .block__color, .block__image {}
     .block__image {
         position: relative;
-        .block__background {
-            position: absolute;
-        }
     }
 
     &.right {

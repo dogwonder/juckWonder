@@ -1,4 +1,4 @@
-{% macro hero(image, imageLarge, heading, content, class) %}
+{% macro hero(image, imageLarge, heading, file, class) %}
   <div class="block block--media{% if class %} {{ class }}{% endif %}">
 
         <figure class="block__background">
@@ -13,9 +13,11 @@
             {% if heading %}
             <h1 class="block__heading">{{ heading }}</h1>
             {% endif %}
-            {% if content %}
+            {% if file %}
             <div class="block__content">
-            {{content}}
+            {% markdown %}
+            {% include file %}
+            {% endmarkdown %}
             </div>
             {% endif %}
           </div><!--/inner-->
