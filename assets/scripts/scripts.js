@@ -3,6 +3,8 @@
     //remove no-js class
     document.documentElement.className = document.documentElement.className.replace("no-js","js");
 
+
+    //Generic function for getting element siblings
     var getSiblings = function (elem) {
 
         // Setup siblings array and get the first sibling
@@ -49,6 +51,7 @@
 
     };
 
+    //Equalize image heights inline with text blocks
     function equalizer(elem) {
 
         var blocks = document.querySelectorAll(elem);
@@ -77,7 +80,6 @@
         
     };
 
-
     //Vanilla nav toggle button
     function toggleNav(button, elem) {
 
@@ -104,6 +106,7 @@
         const menu = document.querySelector(elem);
 
         toggleMenu.addEventListener('click', function() {
+
             // The JSON.parse function helps us convert the attribute from a string to a real boolean.
             const open = JSON.parse(toggleMenu.getAttribute('aria-expanded'));
 
@@ -121,6 +124,9 @@
         //Cookie notice
         cookieNoticeSeen();
 
+        //Toggle nav
+        toggleNav('#nav-toggle', '#nav-menu');
+
         //Equal height columns
         equalizer('[data-col]');
 
@@ -130,7 +136,6 @@
             onClick: true,
             onSubmit: false
         });
-        // cookie.init();
         
     });
 

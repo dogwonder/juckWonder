@@ -149,7 +149,6 @@ gulp.task('scripts', () => {
     .src([
       'assets/vendor/photoswipe.min.js', //Galery plugin - https://photoswipe.com/documentation/getting-started.html
       'assets/vendor/photoswipe-ui-default.min.js',
-      'assets/vendor/astro.min.js', //Mobile nav - https://github.com/cferdinandi/astro
       'assets/vendor/validate.js',  //Validation plugin - https://github.com/cferdinandi/validate
 		  'assets/vendor/validate.polyfills.min.js', //Validation plugin - polyfill
       'assets/scripts/cookiePolicy.js',
@@ -177,7 +176,6 @@ gulp.task('scripts-build', () => {
   .src([
     'assets/vendor/photoswipe.min.js', //Galery plugin - https://photoswipe.com/documentation/getting-started.html
     'assets/vendor/photoswipe-ui-default.min.js',
-    'assets/vendor/astro.min.js', //Mobile nav - https://github.com/cferdinandi/astro
     'assets/vendor/validate.js',  //Validation plugin - https://github.com/cferdinandi/validate
 		'assets/vendor/validate.polyfills.min.js', //Validation plugin - polyfill
     'assets/scripts/cookiePolicy.js',

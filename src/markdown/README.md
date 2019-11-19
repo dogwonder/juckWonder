@@ -45,10 +45,9 @@ This has been set up for deploying tpo GitHub pages but it's static so there are
 
 ---------------
 ### Dependencies
-This uses a few libraries and open-source plugins, all MIT licensed. Apart from Astro and maybe the cookie notice (local law permitting) none are essential and can be removed.  
+This uses a few libraries and open-source plugins, all MIT licensed. Apart from maybe the cookie notice (local law permitting) none are essential and can be removed.  
 
 - [JavaScript Cookie v2.2.0](https://github.com/js-cookie/js-cookie)
-- [Astro - Mobile-first navigation patterns.](https://github.com/cferdinandi/astro)
 - [Validate.js - A lightweight form validation script.](https://github.com/cferdinandi/validate)
 - [PhotoSwipe- JavaScript gallery, no dependencies](https://github.com/dimsemenov/photoswipe)
 

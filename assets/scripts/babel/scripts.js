@@ -2,7 +2,7 @@
 
 (function () {
   //remove no-js class
-  document.documentElement.className = document.documentElement.className.replace("no-js", "js");
+  document.documentElement.className = document.documentElement.className.replace("no-js", "js"); //Generic function for getting element siblings
 
   var getSiblings = function getSiblings(elem) {
     // Setup siblings array and get the first sibling
@@ -47,7 +47,7 @@
     }
   }
 
-  ;
+  ; //Equalize image heights inline with text blocks
 
   function equalizer(elem) {
     var blocks = document.querySelectorAll(elem);
@@ -100,7 +100,9 @@
 
   window.addEventListener("load", function () {
     //Cookie notice
-    cookieNoticeSeen(); //Equal height columns
+    cookieNoticeSeen(); //Toggle nav
+
+    toggleNav('#nav-toggle', '#nav-menu'); //Equal height columns
 
     equalizer('[data-col]'); //Load the cookie policy functionality
 
@@ -108,6 +110,6 @@
     cookie.init({
       onClick: true,
       onSubmit: false
-    }); // cookie.init();
+    });
   });
 })();
