@@ -186,7 +186,8 @@ h1,h2,h3,h4,h5,h6{
 
 //Sticky footer
 .jw-container {
-    flex:1;
+    //We need this for IE11 to respect, flex:1 won't work on it's own
+    flex:1 0 auto;
 }
 
 .jw-footer {
