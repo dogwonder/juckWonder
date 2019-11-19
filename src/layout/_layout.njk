@@ -11,30 +11,12 @@
     {# Set the 🍪 if not yet defined #}
     (function(){
         //Set up our 🍪 vars
-        let cookies_vars = {"essential":true,"analytics":true,"marketing":true};
-
+        let cookies_vars = {"essential":true,"analytics":true,"marketing":false};
         //If the 🍪 not set, set it 
         let hasCookie = Cookies.get('jw_cookie_policy');
         if (!hasCookie) {
             Cookies.set('jw_cookie_policy', cookies_vars, { expires: 365, path: '' });
         }
-
-        //Now let's get the 🍪 vars
-        let getCookie = Cookies.getJSON('jw_cookie_policy');
-        //If analytics 🍪 is true 
-        if(getCookie.analytics === true) {
-            //console.log('Analytics 🍪 is set to true');   
-        } else {
-            //console.log('Analytics 🍪 is set to false');   
-        }
-
-        //If marketing 🍪 is true 
-        if(getCookie.marketing === true) {
-            //console.log('Marketing 🍪 is set to true');   
-        } else {
-            //console.log('Marketing 🍪 is set to false');   
-        }
-
     })();
     </script>
     <link rel="stylesheet" href="./css/main.css?cache_bust={{ pkgVersion() }}">

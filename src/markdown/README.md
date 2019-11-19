@@ -94,6 +94,34 @@ These macros will take a series of parameters, for example image path, title, li
 Hero macro - `hero('path/to/image.jpg', 'path/to/image-large.jpg', 'Block title', 'Block content', 'class')`
 Text macro - `text('#backgroundcolor', 'alignment', '#blockcolor', 'path/to/image.jpg', 'path/to/image-large.jpg', 'Block title', 'markdown.md', 'class')`
 
+
+#### Cookies
+
+Users can control the cookies settings from `/cookies.html` this can then used to conditionally load scripts that include third party cookies, like Google Analytics, or in this instance [plauisble.io](https://plausible.io/). A cookie called jw_cookie_policy is created on first visit to the site. Currently the defaults are set as 
+
+`{"essential":true,"analytics":true,"marketing":false};`
+
+As such you can turn on or off scripts / cookies via the following conditional (currently set in the <head>)
+
+```
+//Get the 🍪 as a var
+let getCookie = Cookies.getJSON('jw_cookie_policy');
+
+//If analytics 🍪 is true 
+if(getCookie.analytics === true) {
+    console.log('Analytics 🍪 is set to true');   
+} else {
+    console.log('Analytics 🍪 is set to false');    
+}
+
+//If marketing 🍪 is true 
+if(getCookie.marketing === true) {
+    console.log('Marketing 🍪 is set to true');   
+} else {
+    console.log('Marketing 🍪 is set to false');   
+}
+```
+
 ---------------
 
 ## License
