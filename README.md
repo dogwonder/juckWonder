@@ -62,7 +62,7 @@ There are some site variables that should be edited away from the boilerplate de
 - Update social images in `/images/og`, `/images/fav/`, `logotype.svg`
 - Update form endpoint in `contact.html` - currently using [Formspree](https://formspree.io/)
 - Add your own analytics in `_analytics.njk`
-
+- There is a little service worker in `sw.njk.js` that caches the main files and serves them up if there is no network access
 
 #### Page variables 
 

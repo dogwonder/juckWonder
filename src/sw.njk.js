@@ -8,7 +8,8 @@ const precacheFiles = [
   'css/main.css', 
   'scripts/app.js',
   'images/fav/favicon-32x32.png',
-  'images/fav/favicon-16x16.png'
+  'images/fav/favicon-16x16.png', 
+  'images/fav/apple-touch-icon.png'
 ];
 
 self.addEventListener("install", function (event) {

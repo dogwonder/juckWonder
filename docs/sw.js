@@ -1,4 +1,4 @@
-const CACHE = "dgCache-1.149.0";
+const CACHE = "dgCache-1.150.0";
 
 // This is the service worker with the Cache-first network
 const precacheFiles = [
@@ -8,7 +8,8 @@ const precacheFiles = [
   'css/main.css', 
   'scripts/app.js',
   'images/fav/favicon-32x32.png',
-  'images/fav/favicon-16x16.png'
+  'images/fav/favicon-16x16.png', 
+  'images/fav/apple-touch-icon.png'
 ];
 
 self.addEventListener("install", function (event) {
@@ -37,7 +38,7 @@ self.addEventListener("activate", function(event) {
         })
       );
     }).then(function() {
-      console.log('[ServiceWorker] Claiming clients for version - 1.149.0');
+      console.log('[ServiceWorker] Claiming clients for version - 1.150.0');
       return self.clients.claim();
     })  
   );
