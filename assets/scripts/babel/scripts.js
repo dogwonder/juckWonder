@@ -2,7 +2,24 @@
 
 (function () {
   //remove no-js class
-  document.documentElement.className = document.documentElement.className.replace("no-js", "js"); //🍪 notice
+  document.documentElement.className = document.documentElement.className.replace("no-js", "js");
+
+  var getSiblings = function getSiblings(elem) {
+    // Setup siblings array and get the first sibling
+    var siblings = [];
+    var sibling = elem.parentNode.firstChild; // Loop through each sibling and push to the array
+
+    while (sibling) {
+      if (sibling.nodeType === 1 && sibling !== elem) {
+        siblings.push(sibling);
+      }
+
+      sibling = sibling.nextSibling;
+    }
+
+    return siblings;
+  }; //🍪 notice
+
 
   function cookieNoticeSeen() {
     var getCookie = function getCookie(name) {
@@ -28,6 +45,26 @@
       cookieNotice.classList.remove('open');
       document.body.classList.remove('has-cookie');
     }
+  }
+
+  ;
+
+  function equalizer(elem) {
+    var blocks = document.querySelectorAll(elem);
+    if (!blocks) return;
+    blocks.forEach(function (item) {
+      var textHeight = item.offsetHeight;
+      var siblings = getSiblings(item); // console.log(textHeight);
+      // console.log(siblings);
+      //Get the siblings
+
+      siblings.forEach(function (sibling) {
+        //If not data equal
+        if (!sibling.matches('[data-equal]')) return; // var siblingType = sibling.getAttribute('data-equal');
+
+        sibling.style.height = textHeight + "px";
+      });
+    });
   }
 
   ; //Vanilla nav toggle button
@@ -59,11 +96,13 @@
     });
   }
 
-  ; // Handler when the DOM is fully loaded
+  ; // Handler when the DOM is fully loaded and after webfont's etc
 
-  document.addEventListener("DOMContentLoaded", function () {
+  window.addEventListener("load", function () {
     //Cookie notice
-    cookieNoticeSeen(); //Load the cookie policy functionality
+    cookieNoticeSeen(); //Equal height columns
+
+    equalizer('[data-col]'); //Load the cookie policy functionality
 
     var cookie = new JWCookies();
     cookie.init({

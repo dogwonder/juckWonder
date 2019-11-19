@@ -14,16 +14,16 @@
     </div><!--/block__text-->
     {% if (alignment == 'left') or (alignment == 'right') %}
     {% if color %}
-    <div class="block__color" style="background-color: {{ color }};" data-col></div>
+    <div class="block__color" style="background-color: {{ color }};" data-equal></div>
     {% endif %}
     {% if image %}
-    <div class="block__image" data-col>
-    <figure class="block__background">
+    <div class="block__image" data-equal>
+      <figure class="block__background">
           <picture>
             <source media="(min-width: 900px)" srcset="{% if image_large %}{{ image_large }}{% else %}{{ image }}{% endif %}">
             <img src="{{ image }}" alt="{{ heading }}" loading="lazy" />
           </picture>
-        </figure><!--/block__background-->
+      </figure><!--/block__background-->
     </div>
     {% endif %}
     {% endif %}

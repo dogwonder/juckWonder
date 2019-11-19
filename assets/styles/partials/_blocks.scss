@@ -112,8 +112,13 @@
     }
     .block__text {}
     .block__color, .block__image {}
+
     .block__image {
         position: relative;
+    }
+
+    .block__background {
+        
     }
 
     &.right {

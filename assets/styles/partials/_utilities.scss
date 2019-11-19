@@ -69,7 +69,12 @@
 }
 
 //Padding
-.inner {padding:2rem;}
+.inner {
+	padding:2rem;
+	@media #{$large-up} {
+		padding:4rem;
+	}
+}
 
 //Aspect ratio
 .frame {
