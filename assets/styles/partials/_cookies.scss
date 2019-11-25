@@ -3,7 +3,9 @@
     background-color: #ECF3F7;
     border:0;
     border-bottom: 2px solid #BCDFF1;
-    padding: 0.6rem;
+    @media #{$large-up} {
+        padding: 0.6rem;
+    }
     display: none;
     text-align: center;
     p {margin:0;font-size: 1.4rem;line-height: 1.2;}
@@ -11,6 +13,7 @@
     .cookieButton {
         font-size:1.2rem;
         font-weight: bold;
+        display: inline-block;
         background-color: transparent;
         border: 2px solid var(--highlight-dark);
         -webkit-appearance: none;
@@ -32,7 +35,30 @@
 }
 
 .cookie-notice.open {
-    display: block;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    @media #{$small-only} {
+        flex-direction: column;
+        .cookieButton {
+            border:0;
+            margin:0;
+            display: block;
+            padding:1rem;
+            width: 100%;
+            background-color: var(--highlight);
+            color:white;
+        }
+        .cookie-notice__text {
+            padding: 1rem;   
+        }
+        .cookie-notice__accept {
+            
+        }
+        .cookie-notice__change {
+            > a {background-color: var(--highlight-dark);}
+        }
+    }
 }
 
 

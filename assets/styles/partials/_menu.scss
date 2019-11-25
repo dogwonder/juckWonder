@@ -105,11 +105,18 @@
 
 	margin-top:0;
 	.🍔 {width:4.4rem;height:4.4rem;}
-	.🚫 {width:4.4rem;height:4.4rem;display: none;}
+	.🚫 {width:4.4rem;height:4.4rem;fill:white;display: none;}
 
 	&[aria\-expanded=true] {
 		.🍔 {display: none;}
-		.🚫 {display: block;}
+		.🚫 {
+			//Make close icon appear in menu
+			display: block;
+			position: absolute;
+			//Offset menu width + a little extra
+			left: calc(85% - 5.4rem);
+			z-index: 9999;
+		}
 	}
 
 }

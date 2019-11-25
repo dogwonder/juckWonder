@@ -26,7 +26,7 @@
             }
         })();
     </script>
-    <link rel="stylesheet" href="./css/main.css?cache_bust=1.150.0">
+    <link rel="stylesheet" href="./css/main.css?cache_bust=1.151.0">
 
     <link rel="mask-icon" sizes="any" href="./images/logotype.svg" color="#14d5de">
     <link rel="icon" type="image/png" sizes="16x16" href="./images/fav/favicon-16x16.png">
@@ -83,12 +83,10 @@
 
 <body class="has-cookie jw jw-about" data-theme="default">
     <div id="cookieNotice" class="cookie-notice open" role="region">
-        <div class="container">
-            <p>🌵 juckWonder 🌵 uses cookies to give you the best experience. <a href="./privacy.html">Read our privacy policy</a>
-                <button id="cookieButton" class="cookieButton close" type="button" aria-label="Accept cookies">Accept cookies</button>
-                <a href="./cookies.html" class="cookieButton accept" type="button" aria-label="Change settings">Change settings</a>
-            </p>
-        </div>
+        <p class="cookie-notice__text">🌵 juckWonder 🌵 uses cookies to give you the best experience. <a href="./privacy.html">Read our privacy policy</a>
+        </p>
+        <p class="cookie-notice__accept"><button id="cookieButton" class="cookieButton close" type="button" aria-label="Accept cookies">Accept cookies</button></p>
+        <p class="cookie-notice__change"><a href="./cookies.html" class="cookieButton accept" type="button" aria-label="Change settings">Change settings</a></p>
     </div>
     <div class="jw-wrapper">
         <header class="jw-masthead">
@@ -191,6 +189,7 @@
                         <li>Update social images in <code>/images/og</code>, <code>/images/fav/</code>, <code>logotype.svg</code></li>
                         <li>Update form endpoint in <code>contact.html</code> - currently using <a href="https://formspree.io/">Formspree</a></li>
                         <li>Add your own analytics in <code>_analytics.njk</code></li>
+                        <li>There is a little service worker in <code>sw.njk.js</code> that caches the main files and serves them up if there is no network access</li>
                     </ul>
                     <h4 id="page-variables">Page variables</h4>
                     <p>Meta description (this also changes the twitter and facebook share text)</p>
