@@ -93,7 +93,7 @@ These macros will take a series of parameters, for example image path, title, li
 
 Hero macro - `hero('path/to/image.jpg', 'path/to/image-large.jpg', 'Block title', 'Block content', 'class')`
 Text macro - `text('#backgroundcolor', 'alignment', '#blockcolor', 'path/to/image.jpg', 'path/to/image-large.jpg', 'Block title', 'markdown.md', 'class')`
-
+Social macro (used in the footer) - `social('instagram', 'twitter', 'github', 'email', 'phone')`
 
 #### Cookies
 
