@@ -29,7 +29,7 @@ Edit `gulpfile.js` for varibales such as folder names
 ---------------
 
 ### Build Process
-`gulp` for devopment
+`gulp` for development
 `gulp build` for production (builds to /docs)
 
 ---------------

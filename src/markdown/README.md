@@ -29,7 +29,7 @@ Edit `gulpfile.js` for varibales such as folder names
 ---------------
 
 ### Build Process
-`gulp` for devopment
+`gulp` for development
 `gulp build` for production (builds to /docs)
 
 ---------------
@@ -92,7 +92,9 @@ I've created a bunch of custom macros (reusable chunks of content - [see Nunjuck
 These macros will take a series of parameters, for example image path, title, link to mardown file, classname etc. See `src/index.html` for examples and syntax order
 
 Hero macro - `hero('path/to/image.jpg', 'path/to/image-large.jpg', 'Block title', 'Block content', 'class')`
+
 Text macro - `text('#backgroundcolor', 'alignment', '#blockcolor', 'path/to/image.jpg', 'path/to/image-large.jpg', 'Block title', 'markdown.md', 'class')`
+
 Social macro (used in the footer) - `social('instagram', 'twitter', 'github', 'email', 'phone')`
 
 #### Cookies
