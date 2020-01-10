@@ -45,9 +45,8 @@
       cookieNotice.classList.remove('open');
       document.body.classList.remove('has-cookie');
     }
-  }
+  } //Equalize image heights inline with text blocks
 
-  ; //Equalize image heights inline with text blocks
 
   function equalizer(elem) {
     var blocks = document.querySelectorAll(elem);
@@ -65,9 +64,8 @@
         sibling.style.height = textHeight + "px";
       });
     });
-  }
+  } //Vanilla nav toggle button
 
-  ; //Vanilla nav toggle button
 
   function toggleNav(button, elem) {
     // HTML
@@ -94,9 +92,8 @@
       toggleMenu.setAttribute('aria-expanded', !open);
       menu.hidden = !menu.hidden;
     });
-  }
+  } // Handler when the DOM is fully loaded and after webfont's etc
 
-  ; // Handler when the DOM is fully loaded and after webfont's etc
 
   window.addEventListener("load", function () {
     //Cookie notice

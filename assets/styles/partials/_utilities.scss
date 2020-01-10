@@ -1,15 +1,26 @@
 //Accessibility
 /* Text meant only for screen readers */
-.sr-only {
-	clip: rect(1px, 1px, 1px, 1px);
-	height: 1px;
-	overflow: hidden;
-	position: absolute !important;
-	width: 1px;
-	/* many screen reader and browser combinations announce broken words as they would appear visually */
-	word-wrap: normal !important;
+.hidden-all {
+	display: none;
 }
 
+.hidden-visually, 
+.sr-only {
+	height: 1px;
+	width: 1px;
+	position: absolute !important;
+	overflow: hidden;
+	padding:0;
+	/* many screen reader and browser combinations announce broken words as they would appear visually */
+	word-wrap: normal !important;
+	white-space: nowrap;
+	clip: rect(0,0,0,0);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+    border: 0;
+}
+
+.hidden-visually:focus, 
 .sr-only:focus {
 	background-color: #f1f1f1;
 	border-radius: 3px;

@@ -3,7 +3,6 @@
     //remove no-js class
     document.documentElement.className = document.documentElement.className.replace("no-js","js");
 
-
     //Generic function for getting element siblings
     var getSiblings = function (elem) {
 
@@ -21,7 +20,7 @@
     
         return siblings;
     
-    };
+    }
 
     //🍪 notice
     function cookieNoticeSeen() {
@@ -49,7 +48,7 @@
             document.body.classList.remove('has-cookie');
         }
 
-    };
+    }
 
     //Equalize image heights inline with text blocks
     function equalizer(elem) {
@@ -78,7 +77,7 @@
         });
 
         
-    };
+    }
 
     //Vanilla nav toggle button
     function toggleNav(button, elem) {
@@ -116,7 +115,7 @@
         });
 
 
-    };
+    }
 
     // Handler when the DOM is fully loaded and after webfont's etc
     window.addEventListener("load", function(){
