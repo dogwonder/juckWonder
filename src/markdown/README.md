@@ -6,7 +6,7 @@ A starter kit to build websites using [Nunjucks](https://mozilla.github.io/nunju
 - 🐙 CMS free
 - 🐝 Minimal CSS
 - 🐬 Block based templating 
-- 🌈 Optimised for accessibility, speed and search engines
+- 🌈 Optimised for accessibility, speed and search engines, - [Lighthouse test](https://www.webpagetest.org/result/200122_KZ_b953489017e6ddb85c2d5d56a9d1fbda/)
 
 ## Requirements
 
