@@ -24,6 +24,7 @@ var JWCookies = (function () {
 //Cookies settings
 var defaults = {
     cookiename: 'jw_cookie_policy', 
+    cookieform: '[data-form="cookie-settings"]',
     cookietypes: {
         "essential":true,
         "analytics":true,
@@ -188,9 +189,11 @@ var Constructor = function () {
         if (settings.onSubmit) {
             // console.log('submit');
             document.addEventListener('submit', function (event) {
-                // event.preventDefault();
+                // console.log(event.target.matches(settings.cookieform));
+                //Check for the cookie form
+                if (!event.target.matches(settings.cookieform)) return;
+                // console.log(settings.cookieform);
                 updateCookie(settings.cookiename, settings.selector);
-
             }, false);
         }
         
@@ -199,6 +202,7 @@ var Constructor = function () {
             document.addEventListener('click', function (event) {
                 if (!event.target.matches(settings.selector)) return;
                 // console.log('click');
+                //Check for the cookie radio button
                 updateCookie(settings.cookiename, settings.selector);
             }, false);
         }
