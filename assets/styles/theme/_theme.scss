@@ -24,6 +24,10 @@
     --spacer: 2rem;
     
     --container: 70ch;
+
+    @each $key, $value in $measures {
+        --measure-#{$key}: #{$value};
+    }
 }
 
 //Global

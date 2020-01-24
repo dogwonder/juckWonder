@@ -24,12 +24,17 @@ $facebook:      #3b5998;
 $twitter:       #00aced;
 $whatsapp:      #25D366;
 $pinterest:     #CB2027;
-$google:        #dd4b39;
 $instagram:     #376489;
 $linkedin:      #007bb6;
 $youtube:       #bb0000;
 $email:         #333333;
 
+//Measures - for margin / padding
+$measures: (
+  large: 4em,
+  medium: 2em,
+  small:  1em
+);
 
 // Color functions
 //
@@ -132,3 +137,23 @@ $xxxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxxlarge-range)}) and 
     bottom: 0;
   }
 }
+
+//* + *
+@mixin owl($measure: small) {
+  & > * + * {
+    margin-top: var(--measure-#{$measure});
+  }
+}
+
+//Usage
+// body {
+//   @include owl(large);
+// }
+
+// main {
+//   @include owl(medium);
+// }
+
+// article {
+//   @include owl;
+// }
