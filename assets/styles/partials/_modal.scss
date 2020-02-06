@@ -10,7 +10,7 @@ dialog::backdrop {
     position: relative;
     z-index: 998;
     position: absolute;
-    top:2rem;
+    top:20px;
     max-width: 90%;
     @media #{$large-up} {
         max-width: 70ch;
@@ -18,13 +18,13 @@ dialog::backdrop {
     }
 
     .modal__close {
-        font-size: 4.4rem;
+        font-size: 44px;
         border:0;
         -webkit-appearance: none;
         appearance: none;
         position: absolute;
-        top:1rem;
-        right:1rem;
+        top:10px;
+        right:10px;
     }
 
 }

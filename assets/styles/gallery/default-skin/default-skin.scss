@@ -193,7 +193,7 @@
 	height: 100%;
 	top: 0;
 	left: 0;
-	padding: 10px;
+	padding: var(--gap-small);
 	position: absolute;
 	z-index: $pswp__root-z-index + 100;
 	opacity: 0;
@@ -321,7 +321,7 @@ a.pswp__share--download {
 	line-height: 44px;
 	color: #FFF;
 	opacity: 0.75;
-	padding: 0 10px;
+	padding: 0 var(--gap-small);
 }
 
 
@@ -349,7 +349,7 @@ a.pswp__share--download {
 	max-width: 420px;
 	margin: 0 auto;
 	font-size: 13px;
-	padding: 10px;
+	padding: var(--gap-small);
 	line-height: 20px;
 	color: #CCC;
 }

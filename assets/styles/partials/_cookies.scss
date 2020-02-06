@@ -4,23 +4,23 @@
     border:0;
     border-bottom: 2px solid #BCDFF1;
     @media #{$large-up} {
-        padding: 0.6rem;
+        padding: 6px;
     }
     display: none;
     text-align: center;
-    p {margin:0;font-size: 1.4rem;line-height: 1.2;}
+    p {margin:0;font-size: 80%;line-height: 1.2;}
     a {color: var(--highlight-dark);}
     .cookieButton {
-        font-size:1.2rem;
+        font-size: 80%;
         font-weight: bold;
         display: inline-block;
         background-color: transparent;
         border: 2px solid var(--highlight-dark);
         -webkit-appearance: none;
-        padding: 0.1rem 0.8rem;
-        margin:0.5rem 0 0 0.5rem;
+        padding: 1px 8px;
+        margin:5px 0 0 5px;
         @media #{$large-up} {
-            margin:0 0 0 0.5rem;
+            margin:0 0 0 5px;
         }
         color: inherit;
         text-decoration: none;
@@ -44,13 +44,13 @@
             border:0;
             margin:0;
             display: block;
-            padding:1rem;
+            padding:var(--gap-small);
             width: 100%;
             background-color: var(--highlight);
             color:white;
         }
         .cookie-notice__text {
-            padding: 1rem;   
+            padding: var(--gap-small);   
         }
         .cookie-notice__accept {
             
@@ -66,15 +66,15 @@
 [data-form="cookie-settings"] {    
 
     .cookies-radios {
-        padding:2rem 0;
+        padding:var(-spacer) 0;
         display:flex;
     }
     .cookies-radio {
-        margin:0 2rem 0 0;
+        margin:0 var(-spacer) 0 0;
     }
 
     label {
-        font-size:2rem;
+        font-size:1rem;
         font-weight:bold;
         display:flex;
         align-items: center;
@@ -83,13 +83,13 @@
     input[type="radio"] {
         vertical-align: middle;
         display:inline-block;
-        margin:0 0.7rem 0 0;
+        margin:0 7px 0 0;
     }
 
     // IF using SVGs but not here as fails tests
     // svg {
-    //     width:3rem;
-    //     height:3rem;
+    //     width:30px;
+    //     height:30px;
     //     display:inline-block;
     //     margin:0 1rem 0 0;
     // }

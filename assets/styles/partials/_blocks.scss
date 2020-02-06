@@ -1,6 +1,6 @@
 .block {
     width:100%;
-    padding: 4rem 2rem 2rem;
+    padding: var(--gap-large) var(--gap-medium) var(--gap-medium);
     overflow: hidden;
     position: relative;
     
@@ -39,7 +39,7 @@
 
 //Hero block - macros/hero.njk
 .block--media {
-    padding: 4rem 2rem 2rem;
+    padding: var(--gap-large) var(--gap-medium) var(--gap-medium);
     background-color: var(--masthead);
     color:white;
     z-index:1;
@@ -80,13 +80,12 @@
 
     .block__heading {
         color:inherit;
-        font-size: 2.4rem;
+        font-size: 2rem;
         letter-spacing: 1px;
-        margin:0 auto 1rem;
+        margin:0 auto var(--gap-small);
         @media #{$large-up} {
-            font-size: 4rem;
             max-width:80%;
-            margin:0 auto 1rem;
+            margin:0 auto var(--gap-medium);
         }
         
     }
@@ -131,8 +130,8 @@
         .block__text .inner {
             max-width: var(--container);
             margin:0 auto;
-            padding-top:4rem;
-            padding-bottom:4rem;
+            padding-top:40px;
+            padding-bottom:40px;
         }
     }
 }
@@ -141,11 +140,11 @@
 .block--float {
     padding:0;
     .inner {
-        margin:1rem;
-        width: calc(100% - 2rem);
+        margin:var(--gap-small);
+        width: calc(100% - 20px);
         @media #{$large-up} {
-            margin:2rem;
-            width: calc(100% - 4rem);
+            margin:20px;
+            width: calc(100% - 40px);
         }
         background-color: var(--background);
     }
@@ -161,7 +160,7 @@
         display: block;
         max-width: var(--container);
         margin:0 auto;
-        border-radius: 0.6rem;
+        border-radius: 6px;
     }
 }
 
@@ -170,7 +169,7 @@
     padding:0;
     #map {
         width:100%;
-        height:50rem;
+        height:500px;
         img {margin-top:0;}
     }
 }

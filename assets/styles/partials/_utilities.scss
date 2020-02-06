@@ -31,7 +31,7 @@
 	color: #21759b;
 	display: block;
 	font-size: 14px;
-	font-size: 0.875rem;
+	font-size: 80%;
 	font-weight: 700;
 	height: auto;
 	right: 5px;
@@ -45,8 +45,8 @@
 
 
 .skip-link {
-	left: -9999rem;
-	top: 2.5rem;
+	left: -9999px;
+	top: 25px;
 	z-index: 999999999;
 	text-decoration: underline;
 }
@@ -66,12 +66,12 @@
 
 //Utilities
 .alert {
-    padding:1rem;
+    padding:var(--gap-small);
     color: #c53030;
     border: 1px solid #fc8181;
     border-radius:2px;
     background-color: #fff5f5;
-    font-size:1.6rem;
+    font-size:80%;
     font-weight:bold;
 }
 .alert .a {
@@ -81,9 +81,9 @@
 
 //Padding
 .inner {
-	padding:2rem;
+	padding:var(--gap-medium);
 	@media #{$large-up} {
-		padding:4rem;
+		padding:var(--gap-large);
 	}
 }
 

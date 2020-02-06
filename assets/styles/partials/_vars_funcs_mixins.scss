@@ -1,5 +1,5 @@
 // Fonts
-$default-font-size: 2.2rem;
+$default-font-size: 1rem;
 $default-line-height: 1.5;
 
 //Variables
@@ -30,10 +30,12 @@ $youtube:       #bb0000;
 $email:         #333333;
 
 //Measures - for margin / padding
-$measures: (
-  large: 4em,
-  medium: 2em,
-  small:  1em
+$gaps: (
+  massive: 80px,
+  large: 40px,
+  medium: 20px,
+  small:  10px, 
+  tiny:  5px
 );
 
 // Color functions
@@ -141,7 +143,7 @@ $xxxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxxlarge-range)}) and 
 //* + *
 @mixin owl($measure: small) {
   & > * + * {
-    margin-top: var(--measure-#{$measure});
+    margin-top: var(--gap-#{$measure});
   }
 }
 

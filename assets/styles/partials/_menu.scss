@@ -64,7 +64,7 @@
 	.nav-toggle {display: none;}
 	.nav-menu, 
 	.nav-menu ul {padding:0;}
-	.nav-menu ul li {display: inline-block;width: auto;margin:0 1.5rem 0 0;font-size:2.2rem;line-height: 4.4rem;}
+	.nav-menu ul li {display: inline-block;width: auto;margin:0 var(--gap-medium) 0 0;line-height: 44px;}
 	.nav-menu ul li>a {color:var(--text);}
 }
 
@@ -72,7 +72,7 @@
 
    width:100%;
    margin:0;
-   padding:2rem;
+   padding:var(--gap-medium);
    
    ul {
 	   margin:0 auto;
@@ -81,10 +81,7 @@
    li {
 	   display: block;
 	   width: 100%;
-	   font-size: 3rem;
-	   @media #{$large-up} {
-		   font-size: 4rem;
-	   }
+	   font-size: 2rem;
 	   line-height: 1.5;
 	   > a {
 		   text-decoration: none;
@@ -104,8 +101,8 @@
 .nav-toggle {
 
 	margin-top:0;
-	.🍔 {width:4.4rem;height:4.4rem;}
-	.🚫 {width:4.4rem;height:4.4rem;fill:white;display: none;}
+	.🍔 {width:44px;height:44px;}
+	.🚫 {width:44px;height:44px;fill:white;display: none;}
 
 	&[aria\-expanded=true] {
 		.🍔 {display: none;}
@@ -114,7 +111,7 @@
 			display: block;
 			position: absolute;
 			//Offset menu width + a little extra
-			left: calc(85% - 5.4rem);
+			left: calc(85% - 54px);
 			z-index: 9999;
 		}
 	}
