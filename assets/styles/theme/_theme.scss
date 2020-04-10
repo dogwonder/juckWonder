@@ -96,12 +96,7 @@ a:link {
   }
 }
 
-//Siblings
-// h3 ~ h4 {margin-top:calc((var(--gap-20) / 2) * -1);}
-
 /*Layout*/
-.jw-wrapper {
-}
 @media only screen and (min-width: 64rem) {
   .jw-wrapper {
     display: flex;
@@ -133,10 +128,6 @@ a:link {
   color: white;
 }
 
-//Nav
-.jw-nav {
-}
-
 //Logo
 .jw-masthead__logo {
   svg {
@@ -155,7 +146,7 @@ a:link {
   margin: 0 auto 4rem;
   padding: var(--gap-20);
   @include mq($from: desktop) {
-    padding: var(--gap-20) 0;
+    padding: var(--gap-40) 0;
   }
 }
 
