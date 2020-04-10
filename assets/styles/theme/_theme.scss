@@ -49,6 +49,9 @@ a:link {
   em {
     font-style: italic;
   }
+  hr {
+    margin: var(--gap-40) 0;
+  }
   strong {
     font-weight: 700;
   }
@@ -148,11 +151,11 @@ a:link {
 }
 
 .jw-content__inner {
-  margin: 0 auto 4rem;
   max-width: 70ch;
-  padding: 0 2rem;
+  margin: 0 auto 4rem;
+  padding: var(--gap-20);
   @include mq($from: desktop) {
-    padding: 0;
+    padding: var(--gap-20) 0;
   }
 }
 
