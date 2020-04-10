@@ -1,52 +1,22 @@
-//CSS Vars - usage var(--background)
-:root {
-  --hue: 209;
-
-  --background: white;
-  --shade: #f6f8fa;
-  --masthead: #1e1e1e;
-
-  --border: #e5e7e9;
-
-  --text: hsl(209, 2%, 0%);
-  --heading: hsl(209, 20%, 0%);
-  --meta: hsl(209, 10%, 53%);
-
-  --highlight: hsl(209, 92%, 43%);
-  --highlight-dark: hsl(209, 61%, 14%);
-  --highlight-light: hsl(209, 31%, 80%);
-  --hover: hsl(209, 34%, 30%);
-
-  --button-background: hsl(209, 39%, 23%);
-  --button-background-hover: hsl(209, 61%, 16%);
-  --button-text-color: white;
-
-  --container: 70ch;
-
-  @each $key, $value in $gaps {
-    --gap-#{$key}: #{$value};
-  }
-}
-
 //Global
 html {
   font-size: 100%;
 } /* 1rem = 16px */
 
-@media screen and (min-width: 25em) {
-  html {
-    font-size: 112.5%;
-  } /* 1rem = 18px */
-}
-
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
     sans-serif;
+  font-size: $default-font-size;
   line-height: $default-line-height;
+  @include mq($from: tablet) {
+    @include rhythm(19, 25);
+  }
   font-weight: normal;
   background-color: var(--background);
   color: var(--text);
   text-align: left;
+  letter-spacing: 1rem * 0.02;
+  word-spacing: 1rem * 0.04;
 }
 
 @supports (font-variation-settings: normal) {
@@ -54,13 +24,6 @@ body {
     font-family: "Inter var", -apple-system, BlinkMacSystemFont,
       "Helvetica Neue", Helvetica, sans-serif;
   }
-}
-
-%jwTitle,
-.jwTitle {
-  font-size: 3rem;
-  color: var(--text);
-  margin: var(--gap-large) 0 var(--gap-medium) 0;
 }
 
 //Links
@@ -79,43 +42,9 @@ a:link {
   }
 }
 
-//Typography
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: $bold;
-  line-height: 1.33;
-  color: var(--heading);
-  margin: calc(var(--gap-medium) * 2) 0 var(--gap-medium);
-  letter-spacing: 0.1px;
-}
-
 .jw-content {
-  h1 {
-    @extend .jwTitle; //48px
-  }
-  h2 {
-    font-size: 2rem;
-  }
-  h3 {
-    font-size: 1.5rem;
-  }
-  h4 {
-    font-size: 1rem;
-  }
-  h5 {
-    font-size: 0.8rem;
-    font-weight: normal;
-  }
-  h6 {
-    font-size: 0.6rem;
-    font-weight: normal;
-  }
   p {
-    margin: 0 0 var(--gap-medium);
+    margin: 0 0 var(--gap-20);
   }
   em {
     font-style: italic;
@@ -124,15 +53,15 @@ h6 {
     font-weight: 700;
   }
   ul {
-    margin: 0 0 calc(var(--gap-medium) * 2) var(--gap-medium);
+    margin: 0 0 calc(var(--gap-20) * 2) var(--gap-20);
     padding: 0;
     list-style-type: disc;
   }
   ol {
     list-style-type: lower-alpha;
-    margin: 0 0 calc(var(--gap-medium) * 2) calc(var(--gap-medium) * 2);
+    margin: 0 0 calc(var(--gap-20) * 2) calc(var(--gap-20) * 2);
     ol {
-      margin-top: var(--gap-medium);
+      margin-top: var(--gap-20);
       list-style-type: lower-roman;
     }
   }
@@ -149,13 +78,13 @@ h6 {
     th,
     td {
       border: 1px solid var(--border);
-      padding: var(--gap-tiny) var(--gap-small);
+      padding: var(--gap-5) var(--gap-10);
     }
   }
   pre,
   code {
     font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
-    padding: var(--gap-tiny) var(--gap-small);
+    padding: var(--gap-5) var(--gap-10);
     overflow: auto;
     font-size: 80%;
     line-height: 1.45;
@@ -165,7 +94,7 @@ h6 {
 }
 
 //Siblings
-// h3 ~ h4 {margin-top:calc((var(--gap-medium) / 2) * -1);}
+// h3 ~ h4 {margin-top:calc((var(--gap-20) / 2) * -1);}
 
 /*Layout*/
 .jw-wrapper {
@@ -183,7 +112,7 @@ h6 {
   background-color: var(--border);
   line-height: 1;
   .jw-masthead__container {
-    padding: var(--gap-medium);
+    padding: var(--gap-20);
     display: flex;
     align-items: stretch;
     justify-content: space-between;
@@ -222,7 +151,7 @@ h6 {
   margin: 0 auto 4rem;
   max-width: 70ch;
   padding: 0 2rem;
-  @media #{$large-up} {
+  @include mq($from: desktop) {
     padding: 0;
   }
 }
@@ -233,7 +162,7 @@ h6 {
     margin: 0 0 5px;
   }
   [class^="fa"] {
-    margin-right: var(--gap-small);
+    margin-right: var(--gap-10);
   }
 }
 
@@ -242,10 +171,10 @@ h6 {
   padding: 4rem 0;
   color: var(--border);
   .nav-social {
-    margin: var(--gap-medium) auto;
+    margin: var(--gap-20) auto;
     padding: 0;
     max-width: 200px;
-    @media #{$large-up} {
+    @include mq($from: desktop) {
       max-width: 400px;
     }
     display: flex;
@@ -273,9 +202,9 @@ h6 {
   }
   p {
     color: inherit;
-    font-size: 12px;
+    @extend %jw-heading-xs;
     text-align: center;
-    margin: var(--gap-medium) 0;
+    margin: var(--gap-20) 0;
     > a {
       color: inherit;
       &:hover,

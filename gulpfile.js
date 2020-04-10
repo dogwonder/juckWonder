@@ -154,7 +154,6 @@ gulp.task('scripts', () => {
       'assets/vendor/photoswipe-ui-default.min.js',
       'assets/vendor/validate.js',  //Validation plugin - https://github.com/cferdinandi/validate
 		  'assets/vendor/validate.polyfills.min.js', //Validation plugin - polyfill
-      'assets/scripts/customSelect.js', //Accessible Custom Select Element https://bit.ly/2tJRRby     
       'assets/scripts/scripts.js'
     ])
     .pipe(concat('app.js'))
@@ -181,7 +180,6 @@ gulp.task('scripts-build', () => {
     'assets/vendor/photoswipe-ui-default.min.js',
     'assets/vendor/validate.js',  //Validation plugin - https://github.com/cferdinandi/validate
 		'assets/vendor/validate.polyfills.min.js', //Validation plugin - polyfill
-    'assets/scripts/customSelect.js', //Accessible Custom Select Element https://bit.ly/2tJRRby     
     'assets/scripts/babel/scripts.js'
   ])
   .pipe(concat('app.js'))

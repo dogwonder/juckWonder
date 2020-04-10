@@ -1,15 +1,16 @@
 // Fonts
 $default-font-size: 1rem;
-$default-line-height: 1.5;
+$default-line-height: 1.25;
 
 //Variables
-$typeface: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+$typeface: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+  Helvetica, sans-serif;
 
 //Themes
-$jw-light-grey: #F0F4F8;
+$jw-light-grey: #f0f4f8;
 $jw-coal: #111;
 $jw-dark-grey: #323232;
-$jw-yellow: #FECA30;
+$jw-yellow: #feca30;
 
 //Weights
 $light: 300;
@@ -20,107 +21,73 @@ $bold: 900;
 $text-color: hsl(257, 2%, 0%);
 
 //Social colors
-$facebook:      #3b5998;
-$twitter:       #00aced;
-$whatsapp:      #25D366;
-$pinterest:     #CB2027;
-$instagram:     #376489;
-$linkedin:      #007bb6;
-$youtube:       #bb0000;
-$email:         #333333;
+$facebook: #3b5998;
+$twitter: #00aced;
+$whatsapp: #25d366;
+$pinterest: #cb2027;
+$instagram: #376489;
+$linkedin: #007bb6;
+$youtube: #bb0000;
+$email: #333333;
 
 //Measures - for margin / padding
 $gaps: (
-  massive: 80px,
-  large: 40px,
-  medium: 20px,
-  small:  10px, 
-  tiny:  5px
+  50: 50px,
+  40: 40px,
+  30: 30px,
+  20: 20px,
+  15: 15px,
+  10: 10px,
+  5: 5px,
 );
+//Redeclare from vendor/_mq.scss -- https://github.com/sass-mq/sass-mq
+$mq-breakpoints: (
+  mobile: 320px,
+  tablet: 641px,
+  desktop: 769px,
+) !default;
 
-// Color functions
-//
-//
-//Color contrast
-@mixin text-contrast($n) {
-  $color-brightness: round((red($n) * 299) + (green($n) * 587) + (blue($n) * 114) / 1000);
-  $light-color: round((red(#ffffff) * 299) + (green(#ffffff) * 587) + (blue(#ffffff) * 114) / 1000);
+//CSS Vars - usage var(--background)
+:root {
+  --hue: 209;
 
-  @if abs($color-brightness) < ($light-color/2){
-    color: $white;
-    border-color: $white;
+  --background: white;
+  --shade: #f6f8fa;
+  --masthead: #1e1e1e;
+
+  --border: #e5e7e9;
+
+  --text: hsl(209, 2%, 0%);
+  --heading: hsl(209, 20%, 0%);
+  --meta: hsl(209, 10%, 53%);
+
+  --highlight: hsl(209, 92%, 43%);
+  --highlight-dark: hsl(209, 61%, 14%);
+  --highlight-light: hsl(209, 31%, 80%);
+  --hover: hsl(209, 34%, 30%);
+
+  --button-background: hsl(209, 39%, 23%);
+  --button-background-hover: hsl(209, 61%, 16%);
+  --button-text-color: white;
+
+  --container: 70ch;
+
+  @each $key, $value in $gaps {
+    --gap-#{$key}: #{$value};
   }
-
-  @else {
-    color: $text-color;
-    border-color: $text-color;
-  }
 }
 
-// Slightly lighten a color
-@function tint($color, $percentage) {
-  @return mix(white, $color, $percentage);
+//Font and line height calulation, with unitless line-height
+// Base font size of 16px and line-height of 1.25
+// Usage
+// @include rhythm(48, 50);
+@mixin rhythm($sizeValue: 16, $heightValue: 20) {
+  //Font sizes px + rem
+  font-size: $sizeValue + px; //fallback for old browsers
+  font-size: (0.0625 * $sizeValue) + rem;
+  //Line height - unitless
+  line-height: $heightValue / $sizeValue;
 }
-
-// Slightly darken a color
-@function shade($color, $percentage) {
-  @return mix(black, $color, $percentage);
-}
-
-// Media queries from Foundation framework by ZURB
-// http://foundation.zurb.com/
-// and on GitHub at https://github.com/zurb/foundation
-
-// functions
-// originally in https://github.com/zurb/foundation/blob/master/scss/foundation/_functions.scss
-@function lower-bound($range){
-  @if length($range) <= 0 {
-    @return 0;
-  }
-  @return nth($range,1);
-}
-
-@function upper-bound($range) {
-  @if length($range) < 2 {
-    @return 999999999999;
-  }
-  @return nth($range, 2);
-}
-
-// Here we define the lower and upper bounds for each media size
-$small-range: (0em, 40em); /* 0, 640px */
-$medium-range: (40.063em, 64em); /* 641px, 1024px */
-$large-range: (64.063em, 80em); /* 1025px, 1280px */
-$xlarge-range: (80.063em, 90em); /* 1281px, 1440px */
-$xxlarge-range: (90.063em, 120em); /* 1441px, 1920px */
-$xxxlarge-range: (120.063em); /* 1921px */
-
-// Media Queries
-$screen: "only screen" !default;
-
-$landscape: "#{$screen} and (orientation: landscape)" !default;
-$portrait: "#{$screen} and (orientation: portrait)" !default;
-
-$small-up: $screen !default;
-$small-only: "#{$screen} and (max-width: #{upper-bound($small-range)})" !default;
-
-$medium-up: "#{$screen} and (min-width:#{lower-bound($medium-range)})";
-$medium-only: "#{$screen} and (min-width:#{lower-bound($medium-range)}) and (max-width:#{upper-bound($medium-range)})";
-
-$medium-down: "#{$screen} and (max-width:#{upper-bound($medium-range)})";
-
-$large-up: "#{$screen} and (min-width:#{lower-bound($large-range)})" !default;
-$large-only: "#{$screen} and (min-width:#{lower-bound($large-range)}) and (max-width:#{upper-bound($large-range)})" !default;
-
-$xlarge-up: "#{$screen} and (min-width:#{lower-bound($xlarge-range)})" !default;
-$xlarge-only: "#{$screen} and (min-width:#{lower-bound($xlarge-range)}) and (max-width:#{upper-bound($xlarge-range)})" !default;
-
-$xxlarge-up: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)})" !default;
-$xxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (max-width:#{upper-bound($xxlarge-range)})" !default;
-
-$xxxlarge-up: "#{$screen} and (min-width:#{lower-bound($xxxlarge-range)})" !default;
-$xxxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxxlarge-range)}) and (max-width:#{upper-bound($xxxlarge-range)})" !default;
-
 
 //Aspect ratio
 @mixin aspect-ratio($width, $height) {
@@ -139,23 +106,3 @@ $xxxlarge-only: "#{$screen} and (min-width:#{lower-bound($xxxlarge-range)}) and 
     bottom: 0;
   }
 }
-
-//* + *
-@mixin owl($measure: small) {
-  & > * + * {
-    margin-top: var(--gap-#{$measure});
-  }
-}
-
-//Usage
-// body {
-//   @include owl(large);
-// }
-
-// main {
-//   @include owl(medium);
-// }
-
-// article {
-//   @include owl;
-// }

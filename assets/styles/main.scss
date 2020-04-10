@@ -1,44 +1,44 @@
 @charset 'utf-8';
 
-// RESET
+//RESET
 @import "partials/reset";
 
-// VARIBLES
+//MEDIA QUERIES -- https://github.com/sass-mq/sass-mq
+@import "../vendor/mq";
+
+//VARIBLES
 @import "partials/vars_funcs_mixins";
 
-// GALLERY
-@import 'gallery/main.scss';
-@import 'gallery/default-skin/default-skin.scss';
-
-// ANIMATION
-// @import "partials/animate";
+//GALLERY
+@import "gallery/main.scss";
+@import "gallery/default-skin/default-skin.scss";
 
 //FONTS
 @import "partials/fonts";
 
+//TYPOGRAPHY
+@import "partials/typography";
+
 //FORMS
 @import "partials/forms";
 
-//SELECT
-@import "partials/select"; 
-
-// COOKIES
+//COOKIES
 @import "partials/cookies";
 
-// GALLERY
+//GALLERY
 @import "partials/gallery";
 
-// MODAL
+//MODAL
 @import "partials/modal";
 
-// BLOCKS
+//BLOCKS
 @import "partials/blocks";
 
-// MENU
+//MENU
 @import "partials/menu";
 
-// THEME
+//THEME
 @import "theme/theme";
 
-// UTILITIES
+//UTILITIES
 @import "partials/utilities";

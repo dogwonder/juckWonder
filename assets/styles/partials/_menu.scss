@@ -70,7 +70,7 @@
   .nav-menu ul li {
     display: inline-block;
     width: auto;
-    margin: 0 var(--gap-medium) 0 0;
+    margin: 0 var(--gap-20) 0 0;
     line-height: 44px;
   }
   .nav-menu ul li > a {
@@ -81,7 +81,7 @@
 .nav-menu {
   width: 100%;
   margin: 0;
-  padding: var(--gap-medium);
+  padding: var(--gap-20);
 
   ul {
     margin: 0 auto;
@@ -90,15 +90,14 @@
   li {
     display: block;
     width: 100%;
-    font-size: 2rem;
-    line-height: 1.5;
+    @extend %jw-heading-m;
     > a {
       text-decoration: none;
       color: white;
       font-weight: bold;
       &:hover,
       &:focus {
-        color: var(--highlight);
+        color: var(--highlight-light);
       }
     }
   }
@@ -109,6 +108,9 @@
 */
 .nav-toggle {
   margin-top: 0;
+  appearance: none;
+  border: 0;
+  background-color: transparent;
   .🍔 {
     width: 44px;
     height: 44px;
