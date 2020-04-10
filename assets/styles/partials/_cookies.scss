@@ -17,7 +17,8 @@
     color: var(--highlight-dark);
   }
   .cookieButton {
-    @include rhythm(12, 20);
+    font-size: 12px;
+    line-height: 1;
     font-weight: bold;
     display: inline-block;
     background-color: transparent;
