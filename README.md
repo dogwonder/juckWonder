@@ -1,23 +1,24 @@
 ## juckWonder - Nunjucks starter kit (static site generator)
 
-A starter kit to build websites using [Nunjucks](https://mozilla.github.io/nunjucks/) a rich and powerful templating language for JavaScript. 
+A starter kit to build websites using [Nunjucks](https://mozilla.github.io/nunjucks/) a rich and powerful templating language for JavaScript.
 
 - 🐛 Framework free
 - 🐙 CMS free
 - 🐝 Minimal CSS
-- 🐬 Block based templating 
+- 🐬 Block based templating
 - 🌈 Optimised for accessibility, speed and search engines, - [Lighthouse report](https://www.webpagetest.org/result/200122_KZ_b953489017e6ddb85c2d5d56a9d1fbda/)
 
 ## Requirements
 
-| Prerequisite    | How to check | How to install
-| --------------- | ------------ | ------------- |
-| Node.js >= 10.0  | `node -v`    | [nodejs.org](http://nodejs.org/) |
-| gulp >= 4.0.0  | `gulp -v`    | `npm install -g gulp` |
+| Prerequisite    | How to check | How to install                   |
+| --------------- | ------------ | -------------------------------- |
+| Node.js >= 10.0 | `node -v`    | [nodejs.org](http://nodejs.org/) |
+| gulp >= 4.0.0   | `gulp -v`    | `npm install -g gulp`            |
 
----------------
+---
 
 ## Installation
+
 Install Node dependencies (Gulp 4.0.2, Nunjucks and a few others)
 
 `npm install gulp --save-dev`
@@ -26,33 +27,38 @@ Install Node dependencies (Gulp 4.0.2, Nunjucks and a few others)
 
 Edit `gulpfile.js` for varibales such as folder names
 
----------------
+---
 
 ### Build Process
+
 `gulp` for development
 `gulp build` for production (builds to /docs)
 
----------------
+---
 
 ### Testing
-Uses [cypress.io](https://www.cypress.io/) and test are located in `cypress/integration/tests` 
+
+Uses [cypress.io](https://www.cypress.io/) and test are located in `cypress/integration/tests`
 
 `./node_modules/.bin/cypress open`
 
----------------
+---
 
 ### Deployment
+
 This has been set up for deploying tpo GitHub pages but it's static so there are many options
 
----------------
+---
+
 ### Dependencies
-This uses a few libraries and open-source plugins, all MIT licensed. Apart from maybe the cookie notice (local law permitting) none are essential and can be removed.  
+
+This uses a few libraries and open-source plugins, all MIT licensed. Apart from maybe the cookie notice (local law permitting) none are essential and can be removed.
 
 - [JavaScript Cookie v2.2.0](https://github.com/js-cookie/js-cookie)
 - [Validate.js - A lightweight form validation script.](https://github.com/cferdinandi/validate)
 - [PhotoSwipe- JavaScript gallery, no dependencies](https://github.com/dimsemenov/photoswipe)
 
----------------
+---
 
 ### Customisation
 
@@ -65,17 +71,16 @@ There are some site variables that should be edited away from the boilerplate de
 - Add your own analytics in `_analytics.njk`
 - There is a little service worker in `sw.njk.js` that caches the main files and serves them up if there is no network access
 
-#### Page variables 
+#### Page variables
 
 Meta description (this also changes the twitter and facebook share text)
 
 ```
-siteDesc = "Blah blah blah"
+shortDesc = "Blah blah blah"
 ```
 
-Body class - `set body_class = "jw-gallery"`
-Page title - `set page_title = "Gallery"`
-
+Body class - `set bodyClass = "jw-gallery"`
+Page title - `set pageTitle = "Gallery"`
 
 #### Custom Macros
 
@@ -97,37 +102,8 @@ Text macro - `text('#backgroundcolor', 'alignment', '#blockcolor', 'path/to/imag
 
 Social macro (used in the footer) - `social('instagram', 'twitter', 'github', 'email', 'phone')`
 
-#### Cookies
-
-Users can control the cookies settings from `/cookies.html` this can then used to conditionally load scripts that include third party cookies, like Google Analytics, or in this instance [plauisble.io](https://plausible.io/). A cookie called jw_cookie_policy is created on first visit to the site. Currently the defaults are set as 
-
-`{"essential":true,"analytics":true,"marketing":false};`
-
-As such you can turn on or off scripts / cookies via the following conditional (currently set in the <head>)
-
-```
-//Get the 🍪 as a var
-let getCookie = Cookies.getJSON('jw_cookie_policy');
-
-//If analytics 🍪 is true 
-if(getCookie.analytics === true) {
-    console.log('Analytics 🍪 is set to true');   
-} else {
-    console.log('Analytics 🍪 is set to false');    
-}
-
-//If marketing 🍪 is true 
-if(getCookie.marketing === true) {
-    console.log('Marketing 🍪 is set to true');   
-} else {
-    console.log('Marketing 🍪 is set to false');   
-}
-```
-
----------------
+---
 
 ## License
 
-juckWonder is licensed under [MIT license](https://github.com/dogwonder/juckWonder/blob/master/LICENSE). 
-
-
+juckWonder is licensed under [MIT license](https://github.com/dogwonder/juckWonder/blob/master/LICENSE).

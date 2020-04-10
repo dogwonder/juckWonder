@@ -4,29 +4,18 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>🌵 juckWonder 🌵</title>
-    <meta name="description" content="Nunjucks starter kit (static site generator)" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <script src="./scripts/js.cookie.js"></script>
-    <script>
-        (function() {
-            //Set up our 🍪 vars
-            let cookies_vars = {
-                "essential": true,
-                "analytics": true,
-                "marketing": true
-            };
-            //If the 🍪 not set, set it 
-            let hasCookie = Cookies.get('jw_cookie_policy');
-            if (!hasCookie) {
-                Cookies.set('jw_cookie_policy', cookies_vars, {
-                    expires: 365,
-                    path: ''
-                });
-            }
-        })();
-    </script>
-    <link rel="stylesheet" href="./css/main.css?cache_bust=1.166.0">
+
+
+
+
+
+
+
+
+
+
+
 
     <link rel="mask-icon" sizes="any" href="./images/logotype.svg" color="#14d5de">
     <link rel="icon" type="image/png" sizes="16x16" href="./images/fav/favicon-16x16.png">
@@ -37,20 +26,37 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="white" />
     <meta name="msapplication-TileColor" content="#14d5de">
     <meta name="theme-color" content="#14d5de">
-    <meta property="og:url" content="https://juckwonder.com" />
-    <meta property="og:site_name" content="" />
+
+    <title>🌵 juckWonder 🌵</title>
+    <link rel="canonical" href="juckwonder.com" />
     <meta property="og:locale" content="en_GB" />
-    <meta property="og:title" content="🌵 juckWonder 🌵">
-    <meta property="og:description" content="Nunjucks starter kit (static site generator)">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="juckwonder.com" />
+    <meta property="og:site_name" content="🌵 juckWonder 🌵" />
+
+
+    <meta name="twitter:creator" content="@dogwonder" />
+
+
+
+    <meta name="description" content="Nunjucks starter kit (static site generator)" />
+    <meta name="twitter:description" content="Nunjucks starter kit (static site generator)" />
+    <meta property="og:description" content="Nunjucks starter kit (static site generator)" />
+
+
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="https://juckwonder.com/images/og/og-image.png" />
+    <meta name="twitter:image" content="https://juckwonder.com/images/og/og-image.png" />
+    <meta property="og:image:alt" content="Page image for 🌵 juckWonder 🌵" />
+    <meta name="twitter:image:alt" content="Page image for 🌵 juckWonder 🌵" />
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image" content="https://juckwonder.com/images/og/og-image.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@dogwonder">
-    <meta name="twitter:title" content="🌵 juckWonder 🌵">
-    <meta name="twitter:description" content="Nunjucks starter kit (static site generator)">
-    <meta name="twitter:image" content="https://juckwonder.com/images/og/og-image.png">
-    <meta property="twitter:url" content="https://juckwonder.com" />
+
+
+
+    <script src="./scripts/js.cookie.js"></script>
+    <link rel="stylesheet" href="./css/main.css?cache_bust=1.204.0">
     <script type='application/ld+json'>
         {
             "@context": "https://schema.org",
@@ -62,31 +68,25 @@
         }
     </script>
     <script>
-        //Get the 🍪
-        let getCookie = Cookies.getJSON('jw_cookie_policy');
-        //If analytics 🍪 is set to true (default) then load our analytics otheriwse don't load at all
-        if (getCookie.analytics === true) {
-            (function(w, d, s, o, f, js, fjs) {
-                w[o] = w[o] || function() {
-                    (w[o].q = w[o].q || []).push(arguments)
-                };
-                js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
-                js.id = o;
-                js.src = f;
-                js.async = 1;
-                fjs.parentNode.insertBefore(js, fjs);
-            }(window, document, 'script', 'plausible', 'https://plausible.io/js/p.js'));
-            plausible('page')
-        }
+        (function(w, d, s, o, f, js, fjs) {
+            w[o] = w[o] || function() {
+                (w[o].q = w[o].q || []).push(arguments)
+            };
+            js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+            js.id = o;
+            js.src = f;
+            js.async = 1;
+            fjs.parentNode.insertBefore(js, fjs);
+        }(window, document, 'script', 'plausible', 'https://plausible.io/js/p.js'));
+        plausible('page')
     </script>
 </head>
 
 <body class="has-cookie jw jw-about" data-theme="default">
-    <div id="cookieNotice" class="cookie-notice open" role="region">
-        <p class="cookie-notice__text">🌵 juckWonder 🌵 uses cookies to give you the best experience. <a href="./privacy.html">Read our privacy policy</a>
+    <div id="cookieNotice" class="cookie-notice" role="region">
+        <p class="cookie-notice__text">🌵 juckWonder 🌵 uses cookies to give you the best experience. <a href="./cookies.html">Read our cookie policy</a>
         </p>
         <p class="cookie-notice__accept"><button id="cookieButton" class="cookieButton close" type="button" aria-label="Accept cookies">Accept cookies</button></p>
-        <p class="cookie-notice__change"><a href="./cookies.html" class="cookieButton accept" type="button" aria-label="Change settings">Change settings</a></p>
     </div>
     <a class="skip-link sr-only" href="#content">Skip to content</a>
     <div class="jw-wrapper">
@@ -125,76 +125,29 @@
                 <div class="jw-content__inner">
                     <h1>Cookie Policy</h1>
 
-                    <noscript>
-                        <div class="alert">
-                            Sorry! This page needs JavaScript to be enabled in order to work properly. Please enable JavaScript and refresh the page. If you have disabled JavaScript as a preference, then only the cookies essential for the running of the site will be set (see 'Essential necessary cookies' below).
-                        </div>
-                    </noscript>
-
                     <p>We use cookies to help improve your experience of https://juckwonder.com. This cookie policy is part of Dogwonder Ltd <a href="./privacy.html">privacy policy</a>, and covers the use of cookies between your device and our site. We also provide basic information on third-party services we may use, who may also use cookies as part of their service, though they are not covered by our policy.</p>
 
-                    <h3>Cookie settings</h3>
-                    <p>We use 3 types of cookie. You can choose which cookies you're happy for us to use.</p>
+                    <h2>Types of cookies we use</h2>
 
-                    <form method="GET" data-form="cookie-settings">
-                        <h2>Essential cookies</h2>
-                        <p>Essential cookies are crucial to your experience of a website, enabling core features like user logins, account management, shopping carts and payment processing. We use essential cookies to enable certain functions on our website.</p>
-                        <p>They always need to be on.</p>
+                    <h3>Essential cookies</h3>
+                    <p>Essential cookies are crucial to your experience of a website, enabling core features like user logins, account management, shopping carts and payment processing. We use essential cookies to enable certain functions on our website.</p>
 
-                        <hr />
+                    <h3>Cookies that measure website use</h3>
+                    <p>Similar to most websites, we use analytics to improve user experience and JUCKWONDER.COM’s functionality. We use external services, including but not limited to Google Analytics, to provide real-time reporting of, among other things, your use and navigation of JUCKWONDER.COM such as</p>
+                    <ul>
+                        <li>how you got to the site</li>
+                        <li>the pages you visit on JUCKWONDER.COM and how long you spend on each page</li>
+                        <li>what you click on while you’re visiting the site</li>
+                    </ul>
 
-                        <h2>Cookies that measure website use</h2>
-                        <p>Similar to most websites, we use analytics to improve user experience and JUCKWONDER.COM’s functionality. We use external services, including but not limited to Google Analytics, to provide real-time reporting of, among other things, your use and navigation of JUCKWONDER.COM such as</p>
-                        <ul>
-                            <li>how you got to the site</li>
-                            <li>the pages you visit on JUCKWONDER.COM and how long you spend on each page</li>
-                            <li>what you click on while you’re visiting the site</li>
-                        </ul>
-                        <div class="cookies-radios">
-                            <div class="cookies-radio">
-                                <label for="radio-cookie__analytics-on" class="cookies-label cookies-radios__label">
-                                    <input type="radio" name="cookies-analytics" id="radio-cookie__analytics-on" value="true" class="cookies-radios__input" data-cookie="analytics">
+                    <h3>Cookies that help with our communications and marketing</h3>
+                    <p>These cookies may be set by third party websites like Facebook and YouTube and and do things like measure how you view videos that are on JUCKWONDER.COM.</p>
 
-                                    <span title="On">On</span>
-                                </label>
-                            </div>
-                            <div class="cookies-radio">
-                                <label for="radio-cookie__analytics-off" class="cookies-label cookies-radios__label">
-                                    <input type="radio" name="cookies-analytics" id="radio-cookie__analytics-off" value="false" class="cookies-radios__input" data-cookie="analytics">
+                    <hr />
 
-                                    <span title="Off">Off</span>
-                                </label>
-                            </div>
-                        </div>
+                    <h2>Managing your cookie settings</h2>
+                    <p>You can set your browser to control the cookies that are accepted on your device. For information on how to do this, visit the <a href="https://www.allaboutcookies.org/manage-cookies/" rel="noopener">All About Cookies website</a>.</p>
 
-                        <hr />
-
-                        <h2>Cookies that help with our communications and marketing</h2>
-                        <p>These cookies may be set by third party websites like Facebook and YouTube and and do things like measure how you view videos that are on JUCKWONDER.COM.</p>
-                        <div class="cookies-radios">
-                            <div class="cookies-radio">
-                                <label for="radio-cookie__marketing-on" class="cookies-label cookies-radios__label">
-                                    <input type="radio" name="cookies-marketing" id="radio-cookie__marketing-on" value="true" class="cookies-radios__input" data-cookie="marketing">
-
-                                    <span title="On">On</span>
-                                </label>
-                            </div>
-                            <div class="cookies-radio">
-                                <label for="radio-cookie__marketing-off" class="cookies-label cookies-radios__label">
-                                    <input type="radio" name="cookies-marketing" id="radio-cookie__marketing-off" value="false" class="cookies-radios__input" data-cookie="marketing">
-
-                                    <span title="Off">Off</span>
-                                </label>
-                            </div>
-                        </div>
-
-
-
-                        <hr />
-
-                        <button class="button" type="submit">Save changes</button>
-
-                    </form>
                 </div>
 
             </div>

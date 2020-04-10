@@ -1,6 +1,6 @@
-{% set body_class = "jw-gallery" %}
-{% set page_title = "Gallery" %}
-{% set page_name = "gallery.html" %}
+{% set bodyClass = "jw-gallery" %}
+{% set pageTitle = "Gallery" %}
+{% set pageName = "gallery.html" %}
 
 {% extends "layout/_layout.njk" %}
 {% from "macros/gallery.njk" import gallery %}
@@ -11,7 +11,7 @@
 <h1>Gallery</h1>
 <div class="jw-gallery">
     <div class="jw-gallery__grid gallerySwipe">
-        {% for image in images %}
+        {% for image in site.images %}
             {{ gallery(image.index, image.title, image.image, image.image_large, image.width, image.height) }}
         {% endfor %}
     </div>

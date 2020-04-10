@@ -25,19 +25,18 @@
     //🍪 notice
     function cookieNoticeSeen() {
 
-        var getCookie = function (name) {
-            var value = "; " + document.cookie;
-            var parts = value.split("; " + name + "=");
-            if (parts.length == 2) return parts.pop().split(";").shift();
-        };
-
         // Cookie vars
         var cookieNotice = document.getElementById('cookieNotice');
         var cookieButton = document.getElementById('cookieButton');
 
+        //If JS enabled then show the notice - falls back to noscipt if not present
+        cookieNotice.classList.add('open');
+
+        if(!cookieButton) return;
+
         // Set a cookie
         cookieButton.addEventListener('click', function (event) {
-            Cookies.set('jw_cookie_notice', 'closed', { expires: 365, path: '' });
+            Cookies.set('jw_cookie_notice', 'closed', { expires: 365, path: '', sameSite: 'lax' });
             cookieNotice.classList.remove('open');
             document.body.classList.remove('has-cookie');
         }, false);
@@ -128,13 +127,6 @@
 
         //Equal height columns
         equalizer('[data-col]');
-
-        //Load the cookie policy functionality
-        var cookie = new JWCookies();
-        cookie.init({
-            onClick: true,
-            onSubmit: false
-        });
         
     });
 

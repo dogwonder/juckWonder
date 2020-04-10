@@ -4,139 +4,155 @@
 
 //Menu
 .js {
+  //Hide menu if JS loads
+  [hidden] {
+    display: none;
+  }
 
-	//Hide menu if JS loads
-	[hidden] { display: none; }
+  .nav-menu {
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 998;
+    background-color: var(--highlight-dark);
+  }
 
-	.nav-menu {
-		height:100vh;
-		position: absolute;
-		left:0;
-		top:0;
-		z-index:998;
-		background-color:var(--highlight-dark);
-	}
+  //Overlay menu
+  .navigation-overlay {
+    .nav-menu {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      display: inline;
 
-	//Overlay menu
-   .navigation-overlay {
-	   .nav-menu {
+      &:not([hidden]) {
+        display: block;
+      }
+    }
+  }
 
-		   width:100%;
-		   display: flex;
-		   align-items: center;
-		   text-align:center;
-		   display: inline;
-		
-		   &:not([hidden]) {
-			   display: block;
-			}
-			
-	   }
-   }
+  //Sidebar menu
+  .navigation-sidebar {
+    .nav-menu {
+      width: 85%;
 
-   //Sidebar menu
-   .navigation-sidebar {
-	   .nav-menu {
+      &:not([hidden]) {
+        display: block;
+        pointer-events: all;
+      }
 
-		   width:85%;
-
-		   &:not([hidden]) {
-			   display: block;
-			   pointer-events: all;
-		   }
-
-		   ul {
-			margin:0;
-			padding: 0;
-				li {
-					line-height: 2;
-				}
-		 	}
-
-	   } 
+      ul {
+        margin: 0;
+        padding: 0;
+        li {
+          line-height: 2;
+        }
+      }
+    }
   }
 }
 
 //No-js users
 .no-js {
-	[hidden] { display: block; }
-	.jw-masthead__container {}
-	.nav-toggle {display: none;}
-	.nav-menu, 
-	.nav-menu ul {padding:0;}
-	.nav-menu ul li {display: inline-block;width: auto;margin:0 var(--gap-medium) 0 0;line-height: 44px;}
-	.nav-menu ul li>a {color:var(--text);}
+  [hidden] {
+    display: block;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+  .nav-menu,
+  .nav-menu ul {
+    padding: 0;
+  }
+  .nav-menu ul li {
+    display: inline-block;
+    width: auto;
+    margin: 0 var(--gap-medium) 0 0;
+    line-height: 44px;
+  }
+  .nav-menu ul li > a {
+    color: var(--text);
+  }
 }
 
 .nav-menu {
+  width: 100%;
+  margin: 0;
+  padding: var(--gap-medium);
 
-   width:100%;
-   margin:0;
-   padding:var(--gap-medium);
-   
-   ul {
-	   margin:0 auto;
-   }
-   
-   li {
-	   display: block;
-	   width: 100%;
-	   font-size: 2rem;
-	   line-height: 1.5;
-	   > a {
-		   text-decoration: none;
-		   color:white;
-		   font-weight: bold;
-		   &:hover, &:focus {
-			   color:var(--highlight);
-		   }
-	   }
-   }
+  ul {
+    margin: 0 auto;
+  }
+
+  li {
+    display: block;
+    width: 100%;
+    font-size: 2rem;
+    line-height: 1.5;
+    > a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      &:hover,
+      &:focus {
+        color: var(--highlight);
+      }
+    }
+  }
 }
-
 
 /**
 * Navigation Toggle
 */
 .nav-toggle {
+  margin-top: 0;
+  .🍔 {
+    width: 44px;
+    height: 44px;
+  }
+  .🚫 {
+    width: 44px;
+    height: 44px;
+    fill: white;
+    display: none;
+  }
 
-	margin-top:0;
-	.🍔 {width:44px;height:44px;}
-	.🚫 {width:44px;height:44px;fill:white;display: none;}
-
-	&[aria\-expanded=true] {
-		.🍔 {display: none;}
-		.🚫 {
-			//Make close icon appear in menu
-			display: block;
-			position: absolute;
-			//Offset menu width + a little extra
-			left: calc(85% - 54px);
-			z-index: 9999;
-		}
-	}
-
+  &[aria\-expanded="true"] {
+    .🍔 {
+      display: none;
+    }
+    .🚫 {
+      //Make close icon appear in menu
+      display: block;
+      position: absolute;
+      //Offset menu width + a little extra
+      left: calc(85% - 54px);
+      z-index: 9999;
+    }
+  }
 }
 
 /* Only stick if you can fit */
 @media (min-height: 300px) {
-	.jw-masthead {
-	  position: sticky;
-	  top: 0;
-	  z-index:99;
-	}
+  .jw-masthead {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+  }
 }
-
 
 /**
 * Clearfix
 */
 .nav-wrap:before,
 .nav-wrap:after {
-	display: table;
-	content: "";
+  display: table;
+  content: "";
 }
 
 .nav-wrap:after {
-	clear: both;
+  clear: both;
 }

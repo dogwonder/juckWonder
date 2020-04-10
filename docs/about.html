@@ -4,29 +4,19 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>🌵 juckWonder 🌵</title>
-    <meta name="description" content="Nunjucks starter kit (static site generator)" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <script src="./scripts/js.cookie.js"></script>
-    <script>
-        (function() {
-            //Set up our 🍪 vars
-            let cookies_vars = {
-                "essential": true,
-                "analytics": true,
-                "marketing": true
-            };
-            //If the 🍪 not set, set it 
-            let hasCookie = Cookies.get('jw_cookie_policy');
-            if (!hasCookie) {
-                Cookies.set('jw_cookie_policy', cookies_vars, {
-                    expires: 365,
-                    path: ''
-                });
-            }
-        })();
-    </script>
-    <link rel="stylesheet" href="./css/main.css?cache_bust=1.166.0">
+
+
+
+
+
+
+
+
+
+
+
+
 
     <link rel="mask-icon" sizes="any" href="./images/logotype.svg" color="#14d5de">
     <link rel="icon" type="image/png" sizes="16x16" href="./images/fav/favicon-16x16.png">
@@ -37,20 +27,37 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="white" />
     <meta name="msapplication-TileColor" content="#14d5de">
     <meta name="theme-color" content="#14d5de">
-    <meta property="og:url" content="https://juckwonder.com/about.html" />
-    <meta property="og:site_name" content="" />
+
+    <title>About - 🌵 juckWonder 🌵</title>
+    <link rel="canonical" href="juckwonder.com/about.html" />
     <meta property="og:locale" content="en_GB" />
-    <meta property="og:title" content="🌵 juckWonder 🌵">
-    <meta property="og:description" content="Nunjucks starter kit (static site generator)">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="juckwonder.com/about.html" />
+    <meta property="og:site_name" content="🌵 juckWonder 🌵" />
+
+
+    <meta name="twitter:creator" content="@dogwonder" />
+
+
+
+    <meta name="description" content="Nunjucks starter kit (static site generator)" />
+    <meta name="twitter:description" content="Nunjucks starter kit (static site generator)" />
+    <meta property="og:description" content="Nunjucks starter kit (static site generator)" />
+
+
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="https://juckwonder.com/images/og/og-image.png" />
+    <meta name="twitter:image" content="https://juckwonder.com/images/og/og-image.png" />
+    <meta property="og:image:alt" content="Page image for 🌵 juckWonder 🌵" />
+    <meta name="twitter:image:alt" content="Page image for 🌵 juckWonder 🌵" />
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image" content="https://juckwonder.com/images/og/og-image.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@dogwonder">
-    <meta name="twitter:title" content="🌵 juckWonder 🌵">
-    <meta name="twitter:description" content="Nunjucks starter kit (static site generator)">
-    <meta name="twitter:image" content="https://juckwonder.com/images/og/og-image.png">
-    <meta property="twitter:url" content="https://juckwonder.com/about.html" />
+
+
+
+    <script src="./scripts/js.cookie.js"></script>
+    <link rel="stylesheet" href="./css/main.css?cache_bust=1.204.0">
     <script type='application/ld+json'>
         {
             "@context": "https://schema.org",
@@ -62,31 +69,25 @@
         }
     </script>
     <script>
-        //Get the 🍪
-        let getCookie = Cookies.getJSON('jw_cookie_policy');
-        //If analytics 🍪 is set to true (default) then load our analytics otheriwse don't load at all
-        if (getCookie.analytics === true) {
-            (function(w, d, s, o, f, js, fjs) {
-                w[o] = w[o] || function() {
-                    (w[o].q = w[o].q || []).push(arguments)
-                };
-                js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
-                js.id = o;
-                js.src = f;
-                js.async = 1;
-                fjs.parentNode.insertBefore(js, fjs);
-            }(window, document, 'script', 'plausible', 'https://plausible.io/js/p.js'));
-            plausible('page')
-        }
+        (function(w, d, s, o, f, js, fjs) {
+            w[o] = w[o] || function() {
+                (w[o].q = w[o].q || []).push(arguments)
+            };
+            js = d.createElement(s), fjs = d.getElementsByTagName(s)[0];
+            js.id = o;
+            js.src = f;
+            js.async = 1;
+            fjs.parentNode.insertBefore(js, fjs);
+        }(window, document, 'script', 'plausible', 'https://plausible.io/js/p.js'));
+        plausible('page')
     </script>
 </head>
 
 <body class="has-cookie jw jw-about" data-theme="default">
-    <div id="cookieNotice" class="cookie-notice open" role="region">
-        <p class="cookie-notice__text">🌵 juckWonder 🌵 uses cookies to give you the best experience. <a href="./privacy.html">Read our privacy policy</a>
+    <div id="cookieNotice" class="cookie-notice" role="region">
+        <p class="cookie-notice__text">🌵 juckWonder 🌵 uses cookies to give you the best experience. <a href="./cookies.html">Read our cookie policy</a>
         </p>
         <p class="cookie-notice__accept"><button id="cookieButton" class="cookieButton close" type="button" aria-label="Accept cookies">Accept cookies</button></p>
-        <p class="cookie-notice__change"><a href="./cookies.html" class="cookieButton accept" type="button" aria-label="Change settings">Change settings</a></p>
     </div>
     <a class="skip-link sr-only" href="#content">Skip to content</a>
     <div class="jw-wrapper">
@@ -125,12 +126,12 @@
                 <div class="jw-content__inner">
                     <h1>About</h1>
                     <h2 id="juckwonder---nunjucks-starter-kit-static-site-generator">juckWonder - Nunjucks starter kit (static site generator)</h2>
-                    <p>A starter kit to build websites using <a href="https://mozilla.github.io/nunjucks/">Nunjucks</a> a rich and powerful templating language for JavaScript. </p>
+                    <p>A starter kit to build websites using <a href="https://mozilla.github.io/nunjucks/">Nunjucks</a> a rich and powerful templating language for JavaScript.</p>
                     <ul>
                         <li>🐛 Framework free</li>
                         <li>🐙 CMS free</li>
                         <li>🐝 Minimal CSS</li>
-                        <li>🐬 Block based templating </li>
+                        <li>🐬 Block based templating</li>
                         <li>🌈 Optimised for accessibility, speed and search engines, - <a href="https://www.webpagetest.org/result/200122_KZ_b953489017e6ddb85c2d5d56a9d1fbda/">Lighthouse report</a></li>
                     </ul>
                     <h2 id="requirements">Requirements</h2>
@@ -168,14 +169,14 @@
                         <code>gulp build</code> for production (builds to /docs)</p>
                     <hr>
                     <h3 id="testing">Testing</h3>
-                    <p>Uses <a href="https://www.cypress.io/">cypress.io</a> and test are located in <code>cypress/integration/tests</code> </p>
+                    <p>Uses <a href="https://www.cypress.io/">cypress.io</a> and test are located in <code>cypress/integration/tests</code></p>
                     <p><code>./node_modules/.bin/cypress open</code></p>
                     <hr>
                     <h3 id="deployment">Deployment</h3>
                     <p>This has been set up for deploying tpo GitHub pages but it&#39;s static so there are many options</p>
                     <hr>
                     <h3 id="dependencies">Dependencies</h3>
-                    <p>This uses a few libraries and open-source plugins, all MIT licensed. Apart from maybe the cookie notice (local law permitting) none are essential and can be removed. </p>
+                    <p>This uses a few libraries and open-source plugins, all MIT licensed. Apart from maybe the cookie notice (local law permitting) none are essential and can be removed.</p>
                     <ul>
                         <li><a href="https://github.com/js-cookie/js-cookie">JavaScript Cookie v2.2.0</a></li>
                         <li><a href="https://github.com/cferdinandi/validate">Validate.js - A lightweight form validation script.</a></li>
@@ -194,9 +195,9 @@
                     </ul>
                     <h4 id="page-variables">Page variables</h4>
                     <p>Meta description (this also changes the twitter and facebook share text)</p>
-                    <pre><code>siteDesc = &quot;Blah blah blah&quot;</code></pre>
-                    <p>Body class - <code>set body_class = &quot;jw-gallery&quot;</code>
-                        Page title - <code>set page_title = &quot;Gallery&quot;</code></p>
+                    <pre><code>shortDesc = &quot;Blah blah blah&quot;</code></pre>
+                    <p>Body class - <code>set bodyClass = &quot;jw-gallery&quot;</code>
+                        Page title - <code>set pageTitle = &quot;Gallery&quot;</code></p>
                     <h4 id="custom-macros">Custom Macros</h4>
                     <p>I&#39;ve created a bunch of custom macros (reusable chunks of content - <a href="https://mozilla.github.io/nunjucks/templating.html#macro">see Nunjucks guide</a>)</p>
                     <ul>
@@ -212,31 +213,9 @@
                     <p>Hero macro - <code>hero(&#39;path/to/image.jpg&#39;, &#39;path/to/image-large.jpg&#39;, &#39;Block title&#39;, &#39;Block content&#39;, &#39;class&#39;)</code></p>
                     <p>Text macro - <code>text(&#39;#backgroundcolor&#39;, &#39;alignment&#39;, &#39;#blockcolor&#39;, &#39;path/to/image.jpg&#39;, &#39;path/to/image-large.jpg&#39;, &#39;Block title&#39;, &#39;markdown.md&#39;, &#39;class&#39;)</code></p>
                     <p>Social macro (used in the footer) - <code>social(&#39;instagram&#39;, &#39;twitter&#39;, &#39;github&#39;, &#39;email&#39;, &#39;phone&#39;)</code></p>
-                    <h4 id="cookies">Cookies</h4>
-                    <p>Users can control the cookies settings from <code>/cookies.html</code> this can then used to conditionally load scripts that include third party cookies, like Google Analytics, or in this instance <a href="https://plausible.io/">plauisble.io</a>. A cookie called jw_cookie_policy is created on first visit to the site. Currently the defaults are set as </p>
-                    <p><code>{&quot;essential&quot;:true,&quot;analytics&quot;:true,&quot;marketing&quot;:false};</code></p>
-                    <p>As such you can turn on or off scripts / cookies via the following conditional (currently set in the
-
-                        <head>)</p>
-                    <pre><code>//Get the 🍪 as a var
-let getCookie = Cookies.getJSON(&#39;jw_cookie_policy&#39;);
-
-//If analytics 🍪 is true 
-if(getCookie.analytics === true) {
-console.log(&#39;Analytics 🍪 is set to true&#39;);   
-} else {
-console.log(&#39;Analytics 🍪 is set to false&#39;);    
-}
-
-//If marketing 🍪 is true 
-if(getCookie.marketing === true) {
-console.log(&#39;Marketing 🍪 is set to true&#39;);   
-} else {
-console.log(&#39;Marketing 🍪 is set to false&#39;);   
-}</code></pre>
                     <hr>
                     <h2 id="license">License</h2>
-                    <p>juckWonder is licensed under <a href="https://github.com/dogwonder/juckWonder/blob/master/LICENSE">MIT license</a>. </p>
+                    <p>juckWonder is licensed under <a href="https://github.com/dogwonder/juckWonder/blob/master/LICENSE">MIT license</a>.</p>
 
                 </div>
 

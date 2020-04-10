@@ -87,8 +87,11 @@ gulp.task('nunjucks', () => {
   return gulp
     .src(path.join(dir.src, '/*.html'))
     //Get some data
-    .pipe(data(function() {
-      return require('./data/data.json')
+    .pipe(data(function(file) {
+      //Set up a global variable site - e.g. site.name
+      // var site = require('./data/site.json');
+      // return site;
+      return { 'site': require('./data/site.json') }
     }))
     .pipe(gulpnunjucks.compile("", {env: env}))
     .pipe(gulp.dest(dir.dist))
@@ -151,7 +154,6 @@ gulp.task('scripts', () => {
       'assets/vendor/photoswipe-ui-default.min.js',
       'assets/vendor/validate.js',  //Validation plugin - https://github.com/cferdinandi/validate
 		  'assets/vendor/validate.polyfills.min.js', //Validation plugin - polyfill
-      'assets/scripts/cookiePolicy.js', //Cookie policy
       'assets/scripts/customSelect.js', //Accessible Custom Select Element https://bit.ly/2tJRRby     
       'assets/scripts/scripts.js'
     ])
@@ -179,7 +181,6 @@ gulp.task('scripts-build', () => {
     'assets/vendor/photoswipe-ui-default.min.js',
     'assets/vendor/validate.js',  //Validation plugin - https://github.com/cferdinandi/validate
 		'assets/vendor/validate.polyfills.min.js', //Validation plugin - polyfill
-    'assets/scripts/cookiePolicy.js', //Cookie policy
     'assets/scripts/customSelect.js', //Accessible Custom Select Element https://bit.ly/2tJRRby     
     'assets/scripts/babel/scripts.js'
   ])

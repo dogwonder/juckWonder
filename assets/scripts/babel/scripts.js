@@ -22,20 +22,18 @@
 
 
   function cookieNoticeSeen() {
-    var getCookie = function getCookie(name) {
-      var value = "; " + document.cookie;
-      var parts = value.split("; " + name + "=");
-      if (parts.length == 2) return parts.pop().split(";").shift();
-    }; // Cookie vars
-
-
+    // Cookie vars
     var cookieNotice = document.getElementById('cookieNotice');
-    var cookieButton = document.getElementById('cookieButton'); // Set a cookie
+    var cookieButton = document.getElementById('cookieButton'); //If JS enabled then show the notice - falls back to noscipt if not present
+
+    cookieNotice.classList.add('open');
+    if (!cookieButton) return; // Set a cookie
 
     cookieButton.addEventListener('click', function (event) {
       Cookies.set('jw_cookie_notice', 'closed', {
         expires: 365,
-        path: ''
+        path: '',
+        sameSite: 'lax'
       });
       cookieNotice.classList.remove('open');
       document.body.classList.remove('has-cookie');
@@ -101,12 +99,6 @@
 
     toggleNav('#nav-toggle', '#nav-menu'); //Equal height columns
 
-    equalizer('[data-col]'); //Load the cookie policy functionality
-
-    var cookie = new JWCookies();
-    cookie.init({
-      onClick: true,
-      onSubmit: false
-    });
+    equalizer('[data-col]');
   });
 })();
