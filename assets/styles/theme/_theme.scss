@@ -62,7 +62,7 @@ a:link {
   }
   ol {
     list-style-type: lower-alpha;
-    margin: 0 0 calc(var(--gap-20) * 2) calc(var(--gap-20) * 2);
+    margin: 0 0 calc(var(--gap-20) * 2) var(--gap-20);
     ol {
       margin-top: var(--gap-20);
       list-style-type: lower-roman;
