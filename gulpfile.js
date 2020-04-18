@@ -22,7 +22,7 @@ const marked = require('marked');
 const gulpnunjucks = require('gulp-nunjucks');
 const banner = require('gulp-banner');
 const htmlbeautify = require('gulp-html-beautify');
-
+const dateFilter = require('nunjucks-date-filter');
 
 //System and Utilities
 const extReplace = require("gulp-ext-replace");
@@ -81,6 +81,9 @@ env.addGlobal('pkgVersion', function (str) {
   var cbVersion = pkg.version;
     return cbVersion;
 });
+
+//Add date - {{ creation_date | date("YYYY") }}
+env.addFilter('date', dateFilter);
 
 //Nunjucks
 gulp.task('nunjucks', () => {
@@ -171,6 +174,7 @@ gulp.task('babel', () => {
    }))
   .pipe(gulp.dest('assets/scripts/babel/'))
 });
+
 
 // Build the production Scripts
 gulp.task('scripts-build', () => {  

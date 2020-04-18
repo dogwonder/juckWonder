@@ -1,0 +1,10 @@
+
+:root {
+  --gap-tiny: 5px;
+  --gap-small: 10px;
+  --gap-medium: 15px;
+  --gap-large: 20px;
+  --gap-huge: 30px;
+  --gap-massive: 40px;
+  --gap-biggest: 50px;
+}

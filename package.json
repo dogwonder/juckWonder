@@ -1,6 +1,6 @@
 {
   "name": "juckWonder",
-  "version": "1.216.0",
+  "version": "1.217.0",
   "description": "",
   "main": "gulpfile.js",
   "directories": {
@@ -8,7 +8,8 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "build-tokens": "node ./scripts/build-tokens.js"
   },
   "repository": {
     "type": "git",
@@ -53,13 +54,13 @@
     "gulp-terser": "^1.2.0",
     "marked": "^0.7.0",
     "merge-stream": "^2.0.0",
+    "nunjucks-date": "^1.5.0",
+    "nunjucks-date-filter": "^0.1.1",
     "nunjucks-markdown": "^2.0.1",
     "path": "^0.12.7",
     "postcss-clean": "^1.1.0",
     "postcss-custom-properties": "^9.0.2",
     "postcss-object-fit-images": "^1.1.2"
   },
-  "dependencies": {
-    "sharp": "^0.23.1"
-  }
+  "dependencies": {}
 }

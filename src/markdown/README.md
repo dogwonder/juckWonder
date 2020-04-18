@@ -71,6 +71,10 @@ There are some site variables that should be edited away from the boilerplate de
 - Add your own analytics in `_analytics.njk`
 - There is a little service worker in `sw.njk.js` that caches the main files and serves them up if there is no network access
 
+#### Design tokens
+
+npm run build-tokens
+
 #### Page variables
 
 Meta description (this also changes the twitter and facebook share text)
