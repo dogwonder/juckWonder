@@ -195,6 +195,7 @@ a:link {
     fill: url(#rg);
   }
   p {
+    font-weight: normal;
     color: inherit;
     @extend %jw-heading-xs;
     text-align: center;
