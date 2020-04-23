@@ -37,6 +37,10 @@ const browserSync = require('browser-sync').create();
 const log = require('fancy-log');
 const colors = require('ansi-colors');
 
+//Compression
+const gulpBrotli = require("gulp-brotli");
+const zlib = require('zlib');
+
 //Ger package vars
 const pkg = require('./package.json');
 
@@ -300,6 +304,13 @@ gulp.task('serve', () => {
     server: dir.dist
   });
 
+});
+
+gulp.task('compressBrotli', () => {  
+  return gulp
+    .src(path.join(dir.dist, 'css/main.css'))
+    .pipe(gulpBrotli.compress())
+    .pipe(gulp.dest(path.join(dir.dist, 'css')));
 });
 
 //  Testing
