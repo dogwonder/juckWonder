@@ -38,9 +38,25 @@ Edit `gulpfile.js` for varibales such as folder names
 
 ### Testing
 
+### Testing
+
 Uses [cypress.io](https://www.cypress.io/) and test are located in `cypress/integration/tests`
 
 `./node_modules/.bin/cypress open`
+
+or via the command line
+
+`$(npm bin)/cypress run`
+
+or via npm [via this method](https://www.26brains.com/2019/02/the-holy-grail-cypress-io-browser-sync-automatically-rerun-tests/)
+
+GUI:
+
+`npm run test`
+
+Command line:
+
+`npm run testCmd`
 
 ---
 

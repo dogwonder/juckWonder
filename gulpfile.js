@@ -306,6 +306,7 @@ gulp.task('serve', () => {
 
 });
 
+//Brotli compression -- need to change server first - https://www.tezify.com/how-to/use-brotli-compression/#apache
 gulp.task('compressBrotli', () => {  
   return gulp
     .src(path.join(dir.dist, 'css/main.css'))
@@ -317,12 +318,57 @@ gulp.task('compressBrotli', () => {
 //===========================================
 gulp.task('tests', shell.task('$(npm bin)/cypress run'))
 
+
+//Parallel tasks
+gulp.task('compile', gulp.parallel(
+  'sass',
+  'scripts',
+  'serve', 
+  'watch'
+))
+
+gulp.task('build', gulp.parallel(
+  'sass-build', 
+  'scripts-build',
+  'fonts', 
+  'images', 
+  'responsive'
+))
+
+
+gulp.task('tidy', gulp.parallel(
+  'bump', 
+  'serviceworker',
+  'banner',
+  'move-files',
+  'htmlbeautify'
+))
+
+const dev = gulp.series(
+  'nunjucks',
+ 'compile'
+);
+
+const build = gulp.series(
+  'clean',
+  'babel', 
+  'nunjucks',
+  'build', 
+  'tidy'
+);
+
+//gulp dev
+exports.dev = dev;
+
+//gulp build
+exports.build = build;
+
 // Init
 // -----------------
-const dev = gulp.series('nunjucks', gulp.parallel('sass', 'scripts', 'serve', 'watch'));
-const build = gulp.series('clean', 'babel', 'nunjucks', gulp.parallel('sass-build', 'scripts-build', 'fonts', 'images', 'responsive'), gulp.parallel('bump', 'serviceworker', 'banner'), 'move-files', 'htmlbeautify');
-exports.default = dev;
-exports.build = build;
+// const dev = gulp.series('nunjucks', gulp.parallel('sass', 'scripts', 'serve', 'watch'));
+// const build = gulp.series('clean', 'babel', 'nunjucks', gulp.parallel('sass-build', 'scripts-build', 'fonts', 'images', 'responsive'), gulp.parallel('bump', 'serviceworker', 'banner'), 'move-files', 'htmlbeautify');
+// exports.default = dev;
+// exports.build = build;
 
 //dev: `gulp`
 //build for production: `gulp build`
