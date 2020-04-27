@@ -31,10 +31,12 @@ Edit `gulpfile.js` for varibales such as folder names
 
 ### Build Process
 
-`gulp dev` for development
+`gulp` for development
 `gulp build` for production (builds to /docs)
 
 ---
+
+### Testing
 
 ### Testing
 

@@ -22,6 +22,7 @@ const marked = require('marked');
 const gulpnunjucks = require('gulp-nunjucks');
 const banner = require('gulp-banner');
 const htmlbeautify = require('gulp-html-beautify');
+const htmlmin = require('gulp-htmlmin');
 const dateFilter = require('nunjucks-date-filter');
 
 //System and Utilities
@@ -36,10 +37,6 @@ const shell = require('gulp-shell');
 const browserSync = require('browser-sync').create();
 const log = require('fancy-log');
 const colors = require('ansi-colors');
-
-//Compression
-const gulpBrotli = require("gulp-brotli");
-const zlib = require('zlib');
 
 //Ger package vars
 const pkg = require('./package.json');
@@ -268,6 +265,13 @@ gulp.task('htmlbeautify', () => {
       .pipe(gulp.dest(dir.dist));
 });
 
+gulp.task('htmlminify', () => {
+  return gulp
+    .src(path.join(dir.dist, '*.html'))
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest(dir.dist));
+});
+
 // Versioning
 gulp.task('bump', () => {
   return gulp
@@ -306,14 +310,6 @@ gulp.task('serve', () => {
 
 });
 
-//Brotli compression -- need to change server first - https://www.tezify.com/how-to/use-brotli-compression/#apache
-gulp.task('compressBrotli', () => {  
-  return gulp
-    .src(path.join(dir.dist, 'css/main.css'))
-    .pipe(gulpBrotli.compress())
-    .pipe(gulp.dest(path.join(dir.dist, 'css')));
-});
-
 //  Testing
 //===========================================
 gulp.task('tests', shell.task('$(npm bin)/cypress run'))
@@ -341,12 +337,12 @@ gulp.task('tidy', gulp.parallel(
   'serviceworker',
   'banner',
   'move-files',
-  'htmlbeautify'
+  'htmlminify'
 ))
 
 const dev = gulp.series(
   'nunjucks',
- 'compile'
+  'compile'
 );
 
 const build = gulp.series(

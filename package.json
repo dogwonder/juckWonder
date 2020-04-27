@@ -1,6 +1,6 @@
 {
   "name": "juckWonder",
-  "version": "1.223.0",
+  "version": "1.227.0",
   "description": "",
   "main": "gulpfile.js",
   "directories": {
@@ -43,13 +43,13 @@
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-banner": "^0.1.3",
-    "gulp-brotli": "^2.0.2",
     "gulp-bump": "^3.1.3",
     "gulp-concat": "^2.6.1",
     "gulp-data": "^1.3.1",
     "gulp-ext-replace": "^0.3.0",
     "gulp-file-include": "^2.1.0",
     "gulp-html-beautify": "^1.0.1",
+    "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^6.1.0",
     "gulp-nunjucks": "^5.0.0",
     "gulp-plumber": "^1.2.1",
