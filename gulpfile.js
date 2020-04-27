@@ -21,7 +21,6 @@ const markdown = require('nunjucks-markdown');
 const marked = require('marked');
 const gulpnunjucks = require('gulp-nunjucks');
 const banner = require('gulp-banner');
-const htmlbeautify = require('gulp-html-beautify');
 const htmlmin = require('gulp-htmlmin');
 const dateFilter = require('nunjucks-date-filter');
 
@@ -257,14 +256,7 @@ gulp.task('banner', () => {
     .pipe(gulp.dest(path.join(dir.dist, 'css')));
 });
 
-// Beautify HTML
-gulp.task('htmlbeautify', () => {
-  return gulp
-      .src(path.join(dir.dist, '*.html'))
-      .pipe(htmlbeautify({indentSize: 2}))
-      .pipe(gulp.dest(dir.dist));
-});
-
+// Minify HTML
 gulp.task('htmlminify', () => {
   return gulp
     .src(path.join(dir.dist, '*.html'))
@@ -358,13 +350,3 @@ exports.dev = dev;
 
 //gulp build
 exports.build = build;
-
-// Init
-// -----------------
-// const dev = gulp.series('nunjucks', gulp.parallel('sass', 'scripts', 'serve', 'watch'));
-// const build = gulp.series('clean', 'babel', 'nunjucks', gulp.parallel('sass-build', 'scripts-build', 'fonts', 'images', 'responsive'), gulp.parallel('bump', 'serviceworker', 'banner'), 'move-files', 'htmlbeautify');
-// exports.default = dev;
-// exports.build = build;
-
-//dev: `gulp`
-//build for production: `gulp build`

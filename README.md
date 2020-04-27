@@ -22,8 +22,6 @@ A starter kit to build websites using [Nunjucks](https://mozilla.github.io/nunju
 Install Node dependencies (Gulp 4.0.2, Nunjucks and a few others)
 
 `npm install gulp --save-dev`
-`npm install nunjucks`
-`npm install`
 
 Edit `gulpfile.js` for varibales such as folder names
 
@@ -31,12 +29,10 @@ Edit `gulpfile.js` for varibales such as folder names
 
 ### Build Process
 
-`gulp` for development
+`gulp dev` for development
 `gulp build` for production (builds to /docs)
 
 ---
-
-### Testing
 
 ### Testing
 
@@ -76,6 +72,28 @@ This uses a few libraries and open-source plugins, all MIT licensed. Apart from 
 
 ---
 
+### VSCode
+
+Based on improvements from this [CSS Tricks article](https://css-tricks.com/some-little-improvements-to-my-vs-code-workflow-workspaces-icons-tasks/)
+
+- Creation of workspace file `juckWonder.code-workspace`
+- Custom Workspace icon - `+i` then paste image
+- Launch terminal commands when opening a project `.vscode/tasks.json` e.g. `gulp dev` run once in Terminal >> Run task
+- Exclude .css files from global search in `.vscode/settings.json`:
+  ```
+  "search.exclude": {
+      "**/*.css": true
+  }
+  ```
+
+---
+
+### Design tokens (exerimental)
+
+`npm run build-tokens`
+
+---
+
 ### Customisation
 
 There are some site variables that should be edited away from the boilerplate defaults
@@ -86,10 +104,6 @@ There are some site variables that should be edited away from the boilerplate de
 - Update form endpoint in `contact.html` - currently using [Formspree](https://formspree.io/)
 - Add your own analytics in `_analytics.njk`
 - There is a little service worker in `sw.njk.js` that caches the main files and serves them up if there is no network access
-
-#### Design tokens
-
-npm run build-tokens
 
 #### Page variables
 
