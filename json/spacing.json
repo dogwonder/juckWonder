@@ -1,0 +1,44 @@
+[
+  {
+    "name": "gap-tiny",
+    "value": "5px",
+    "type": "number",
+    "category": "spacing"
+  },
+  {
+    "name": "gap-small",
+    "value": "10px",
+    "type": "number",
+    "category": "spacing"
+  },
+  {
+    "name": "gap-medium",
+    "value": "15px",
+    "type": "number",
+    "category": "spacing"
+  },
+  {
+    "name": "gap-large",
+    "value": "20px",
+    "type": "number",
+    "category": "spacing"
+  },
+  {
+    "name": "gap-huge",
+    "value": "30px",
+    "type": "number",
+    "category": "spacing"
+  },
+  {
+    "name": "gap-massive",
+    "value": "40px",
+    "type": "number",
+    "category": "spacing"
+  },
+  {
+    "name": "gap-biggest",
+    "value": "50px",
+    "type": "number",
+    "category": "spacing"
+  }
+]

@@ -1,0 +1,4 @@
+name,value,type,category
+mobile,320px,number,media-query
+tablet,641px,number,media-query
+desktop,769px,number,media-query

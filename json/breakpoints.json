@@ -1,0 +1,20 @@
+[
+  {
+    "name": "mobile",
+    "value": "320px",
+    "type": "number",
+    "category": "media-query"
+  },
+  {
+    "name": "tablet",
+    "value": "641px",
+    "type": "number",
+    "category": "media-query"
+  },
+  {
+    "name": "desktop",
+    "value": "769px",
+    "type": "number",
+    "category": "media-query"
+  }
+]

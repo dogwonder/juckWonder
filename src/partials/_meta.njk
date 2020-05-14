@@ -1,9 +1,9 @@
 {% set siteTitle = site.name %}
-{% set currentUrl = site.url %}
+{% set currentUrl = site.siteUrl %}
 {% set socialImage = site.socialImage %}
 
 {% if pageName %}
-    {% set currentUrl = site.url + '/' + pageName %}
+    {% set currentUrl = site.siteUrl + '/' + pageName %}
     {% set metaTitle = pageTitle + ' - ' + site.name %}
 {% else %}
     {% set metaTitle = site.name %}
@@ -33,7 +33,12 @@
 <meta property="og:site_name" content="{{ siteTitle }}" />
 
 {% if site.authorHandle %}
-    <meta name="twitter:creator" content="@{{ site.authorHandle | replace('@', '') }}" />
+<meta name="twitter:creator" content="@{{ site.authorHandle | replace('@', '') }}" />
+{% endif %}
+
+{% if metaTitle %}
+<meta name="twitter:title" content="{{ metaTitle }}" />
+<meta property="og:title" content="{{ metaTitle }}" />
 {% endif %}
 
 {% if metaDesc %}

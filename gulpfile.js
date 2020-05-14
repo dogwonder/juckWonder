@@ -260,7 +260,11 @@ gulp.task('banner', () => {
 gulp.task('htmlminify', () => {
   return gulp
     .src(path.join(dir.dist, '*.html'))
-    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(htmlmin({ 
+      collapseWhitespace: true, 
+      preserveLineBreaks: true,
+      removeComments: true
+    }))
     .pipe(gulp.dest(dir.dist));
 });
 

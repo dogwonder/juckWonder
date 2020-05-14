@@ -1,0 +1,23 @@
+[
+  {
+    "name": "color-primary",
+    "value": "red",
+    "preview": null,
+    "type": "color",
+    "category": "background-color"
+  },
+  {
+    "name": "color-secondary",
+    "value": "#ff00ff",
+    "preview": null,
+    "type": "color",
+    "category": "background-color"
+  },
+  {
+    "name": "color-tertiary",
+    "value": "green",
+    "preview": null,
+    "type": "color",
+    "category": "background-color"
+  }
+]
