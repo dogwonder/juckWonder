@@ -1,6 +1,6 @@
 {
   "name": "juckWonder",
-  "version": "1.231.0",
+  "version": "1.236.0",
   "description": "",
   "main": "gulpfile.js",
   "directories": {
@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "build-tokens": "node ./scripts/build-tokens.js",
+    "build-sheets": "ruby ./scripts/update_data.rb",
     "serve": "browser-sync start -s src -w --no-open",
     "cypressOpen": "cypress open",
     "cypressRun": "cypress run",
@@ -50,6 +50,7 @@
     "gulp-file-include": "^2.1.0",
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^6.1.0",
+    "gulp-merge-json": "^2.1.0",
     "gulp-nunjucks": "^5.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^8.0.0",

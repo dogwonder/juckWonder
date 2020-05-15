@@ -1,4 +1,9 @@
-name,value,type,category
-mobile,320px,number,media-query
-tablet,641px,number,media-query
-desktop,769px,number,media-query
+id,image,image_large,url,title,width,height
+1,./images/blocks/block-1-640w.jpg,./images/blocks/block-1-1536w.jpg,,wildlife gallery,1536,924
+2,./images/blocks/block-2-640w.jpg,./images/blocks/block-2-1536w.jpg,,wildlife gallery,1536,924
+3,./images/blocks/block-3-640w.jpg,./images/blocks/block-3-1536w.jpg,,wildlife gallery,1536,924
+4,./images/blocks/block-4-640w.jpg,./images/blocks/block-4-1536w.jpg,,wildlife gallery,1536,924
+5,./images/blocks/block-5-640w.jpg,./images/blocks/block-5-1536w.jpg,,wildlife gallery,1536,924
+6,./images/blocks/block-6-640w.jpg,./images/blocks/block-6-1536w.jpg,,wildlife gallery,1536,924
+7,./images/blocks/block-7-640w.jpg,./images/blocks/block-7-1536w.jpg,,wildlife gallery,1536,924
+8,./images/blocks/block-8-640w.jpg,./images/blocks/block-8-1536w.jpg,,wildlife gallery,1536,924

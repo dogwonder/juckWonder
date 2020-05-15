@@ -32,7 +32,9 @@ const plumber = require('gulp-plumber');
 const rename = require('gulp-rename');
 const bump = require('gulp-bump');
 const merge = require('merge-stream');
+const mergeJson = require('gulp-merge-json');
 const shell = require('gulp-shell');
+const exec = require('child_process').exec;
 const browserSync = require('browser-sync').create();
 const log = require('fancy-log');
 const colors = require('ansi-colors');
@@ -306,6 +308,41 @@ gulp.task('serve', () => {
 
 });
 
+//Get data from google sheets
+
+// JSON
+gulp.task('parsedata', function (cb) {
+  //Clean the folder
+  del('./json/**')
+  //Run the command
+  exec('ruby scripts/update_data.rb', function (err, stdout, stderr) {
+    console.log(stdout);
+    console.log(stderr);
+    cb(err);
+  });
+})
+
+// JSON combine
+gulp.task('combine', () => {
+  return gulp
+    .src('./json/*.json')
+    .pipe(mergeJson({
+      fileName: 'data.json',
+      edit: (json, file) => {
+        // Extract the filename and strip the extension
+        var filename = path.basename(file.path),
+            primaryKey = filename.replace(path.extname(filename), '');
+
+        // Set the filename as the primary key for our JSON data
+        var data = {};
+        data[primaryKey] = json;
+
+        return data;
+     }
+    }))
+    .pipe(gulp.dest('./data/'))
+})
+
 //  Testing
 //===========================================
 gulp.task('tests', shell.task('$(npm bin)/cypress run'))
@@ -317,6 +354,11 @@ gulp.task('compile', gulp.parallel(
   'scripts',
   'serve', 
   'watch'
+))
+
+gulp.task('data', gulp.series(
+  'parsedata',
+  'combine'
 ))
 
 gulp.task('build', gulp.parallel(
@@ -344,6 +386,7 @@ const dev = gulp.series(
 const build = gulp.series(
   'clean',
   'babel', 
+  'data', 
   'nunjucks',
   'build', 
   'tidy'

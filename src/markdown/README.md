@@ -88,9 +88,23 @@ Based on improvements from this [CSS Tricks article](https://css-tricks.com/some
 
 ---
 
-### Design tokens (exerimental)
+### Google sheets (experimental)
 
-`npm run build-tokens`
+`npm run build-sheets`
+`ruby update_data.rb`
+
+Data sources
+
+https://docs.google.com/spreadsheets/d/17nWfAGie5xNjZVckqqTBhxH2LRzGyRDDikUag2zbOQU/edit#gid=0
+
+Site data
+`set global = data.site[0]`
+
+In files
+`global.socialImage`
+
+Gallery images
+`for image in data.gallery`
 
 ---
 
