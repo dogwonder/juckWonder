@@ -33,7 +33,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <script src="./scripts/js.cookie.js"></script>
-<link rel="stylesheet" href="./css/main.css?cache_bust=1.235.0">
+<link rel="stylesheet" href="./css/main.css?cache_bust=1.236.0">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://juckwonder.com#website","url":"https://juckwonder.com","name":"Dogwonder Ltd","logo":"https://juckwonder.com/images/og/logo-160x60.png"}</script>
 <script async defer="defer" data-domain="juckwonder.com" src="https://plausible.io/js/plausible.js"></script>
 </head>
@@ -147,6 +147,16 @@
 </ul>
 <hr>
 <h3 id="google-sheets-experimental">Google sheets (experimental)</h3>
+<p><code>npm run build-sheets</code>
+<code>ruby update_data.rb</code></p>
+<p>Data sources</p>
+<p><a href="https://docs.google.com/spreadsheets/d/17nWfAGie5xNjZVckqqTBhxH2LRzGyRDDikUag2zbOQU/edit#gid=0">https://docs.google.com/spreadsheets/d/17nWfAGie5xNjZVckqqTBhxH2LRzGyRDDikUag2zbOQU/edit#gid=0</a></p>
+<p>Site data
+<code>set global = data.site[0]</code></p>
+<p>In files
+<code>global.socialImage</code></p>
+<p>Gallery images
+<code>for image in data.gallery</code></p>
 <hr>
 <h3 id="customisation">Customisation</h3>
 <p>There are some site variables that should be edited away from the boilerplate defaults</p>

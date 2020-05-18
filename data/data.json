@@ -1,64 +1,256 @@
 {
-	"gallery": [
+	"cottage_gardens": [
 		{
 			"id": "1",
-			"image": "./images/blocks/block-1-640w.jpg",
+			"title": "Cottage Gardens",
+			"caption": null,
+			"url": null,
+			"image": "1-640w.jpg",
 			"image_large": null,
-			"url": "1.html",
-			"title": "index",
 			"width": "1536",
-			"height": "924"
+			"height": "1106"
 		},
 		{
 			"id": "2",
-			"image": "./images/blocks/block-2-640w.jpg",
+			"title": "Cottage Gardens",
+			"caption": null,
+			"url": null,
+			"image": "2-640w.jpg",
 			"image_large": null,
-			"url": "2.html",
-			"title": "index",
 			"width": "1536",
-			"height": "924"
+			"height": "1106"
 		},
 		{
 			"id": "3",
-			"image": "./images/blocks/block-3-640w.jpg",
+			"title": "Cottage Gardens",
+			"caption": null,
+			"url": null,
+			"image": "3-640w.jpg",
 			"image_large": null,
-			"url": "3.html",
-			"title": "index",
 			"width": "1536",
-			"height": "924"
+			"height": "1106"
 		},
 		{
 			"id": "4",
-			"image": "./images/blocks/block-4-640w.jpg",
+			"title": "Cottage Gardens",
+			"caption": null,
+			"url": null,
+			"image": "4-640w.jpg",
 			"image_large": null,
-			"url": "4.html",
-			"title": "index",
 			"width": "1536",
-			"height": "924"
+			"height": "1106"
 		},
 		{
 			"id": "5",
-			"image": "./images/blocks/block-5-640w.jpg",
+			"title": "Cottage Gardens",
+			"caption": null,
+			"url": null,
+			"image": "5-640w.jpg",
 			"image_large": null,
-			"url": "5.html",
-			"title": "index",
 			"width": "1536",
-			"height": "924"
+			"height": "1106"
 		},
 		{
 			"id": "6",
-			"image": "./images/blocks/block-6-640w.jpg",
+			"title": "Cottage Gardens",
+			"caption": null,
+			"url": null,
+			"image": "6-640w.jpg",
 			"image_large": null,
-			"url": "6.html",
-			"title": "index",
 			"width": "1536",
-			"height": "924"
+			"height": "1106"
+		}
+	],
+	"gallery_index": [
+		{
+			"id": "1",
+			"title": "Shady Spaces",
+			"caption": "Shade loving plants that will thrive in your garden",
+			"url": "gallery-shady-spaces.html",
+			"image": "shady-spaces.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		},
+		{
+			"id": "2",
+			"title": "Cottage Gardens",
+			"caption": "A fresh take on the traditional English garden",
+			"url": "gallery-cottage-gardens.html",
+			"image": "cottage-gardens.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		},
+		{
+			"id": "3",
+			"title": "Small Spaces",
+			"caption": "An oasis can be made in the smallest of spaces",
+			"url": "gallery-small-spaces.html",
+			"image": "small-spaces.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		},
+		{
+			"id": "4",
+			"title": "Wildlife Gardens",
+			"caption": "A speciality and a passion. Visit our wildlife page",
+			"url": "gallery-wildlife-gardens.html",
+			"image": "wildlife-gardens.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		},
+		{
+			"id": "5",
+			"title": "Timber landscapes with Luna Projects",
+			"caption": "Let your imagination run wild",
+			"url": "gallery-timber-landscapes.html",
+			"image": "timber-landscapes.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		},
+		{
+			"id": "6",
+			"title": "Garden Maintenance",
+			"caption": "Caring for your garden year round to keep it thriving",
+			"url": "gallery-garden-maintenance.html",
+			"image": "garden-maintenance.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		}
+	],
+	"garden_maintenance": [
+		{
+			"id": "1",
+			"title": "Garden Maintenance ",
+			"caption": null,
+			"url": null,
+			"image": "1-640w.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		},
+		{
+			"id": "2",
+			"title": "Garden Maintenance ",
+			"caption": null,
+			"url": null,
+			"image": "2-640w.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		},
+		{
+			"id": "3",
+			"title": "Garden Maintenance ",
+			"caption": null,
+			"url": null,
+			"image": "3-640w.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		},
+		{
+			"id": "4",
+			"title": "Garden Maintenance ",
+			"caption": null,
+			"url": null,
+			"image": "4-640w.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		},
+		{
+			"id": "5",
+			"title": "Garden Maintenance ",
+			"caption": null,
+			"url": null,
+			"image": "5-640w.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		},
+		{
+			"id": "6",
+			"title": "Garden Maintenance ",
+			"caption": null,
+			"url": null,
+			"image": "6-640w.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		}
+	],
+	"shady_spaces": [
+		{
+			"id": "1",
+			"title": "Shady Spaces",
+			"caption": null,
+			"url": null,
+			"image": "1-640w.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		},
+		{
+			"id": "2",
+			"title": "Shady Spaces",
+			"caption": null,
+			"url": null,
+			"image": "2-640w.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		},
+		{
+			"id": "3",
+			"title": "Shady Spaces",
+			"caption": null,
+			"url": null,
+			"image": "3-640w.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		},
+		{
+			"id": "4",
+			"title": "Shady Spaces",
+			"caption": null,
+			"url": null,
+			"image": "4-640w.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		},
+		{
+			"id": "5",
+			"title": "Shady Spaces",
+			"caption": null,
+			"url": null,
+			"image": "5-640w.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		},
+		{
+			"id": "6",
+			"title": "Shady Spaces",
+			"caption": null,
+			"url": null,
+			"image": "6-640w.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
 		}
 	],
 	"site": [
 		{
-			"name": "🌱 Churchmans of Hove",
-			"shortDesc": "Garden Transformation & Maintenance",
+			"name": "Churchmans of Hove",
+			"shortDesc": "Garden Transformations & Maintenance",
 			"siteUrl": "https://churchmansofhove.co.uk/",
 			"socialImage": "https://churchmansofhove.co.uk/images/og/og-image.png",
 			"companyName": "Churchmans of Hove",
@@ -70,78 +262,190 @@
 			"ownerEmail": "info@churchmansofhove.co.uk"
 		}
 	],
-	"wildlife": [
+	"small_spaces": [
 		{
 			"id": "1",
-			"image": "./images/blocks/block-1-640w.jpg",
-			"image_large": "./images/blocks/block-1-1536w.jpg",
+			"title": "Small Spaces",
+			"caption": null,
 			"url": null,
-			"title": "wildlife gallery",
+			"image": "1-640w.jpg",
+			"image_large": null,
 			"width": "1536",
-			"height": "924"
+			"height": "1106"
 		},
 		{
 			"id": "2",
-			"image": "./images/blocks/block-2-640w.jpg",
-			"image_large": "./images/blocks/block-2-1536w.jpg",
+			"title": "Small Spaces",
+			"caption": null,
 			"url": null,
-			"title": "wildlife gallery",
+			"image": "2-640w.jpg",
+			"image_large": null,
 			"width": "1536",
-			"height": "924"
+			"height": "1106"
 		},
 		{
 			"id": "3",
-			"image": "./images/blocks/block-3-640w.jpg",
-			"image_large": "./images/blocks/block-3-1536w.jpg",
+			"title": "Small Spaces",
+			"caption": null,
 			"url": null,
-			"title": "wildlife gallery",
+			"image": "3-640w.jpg",
+			"image_large": null,
 			"width": "1536",
-			"height": "924"
+			"height": "1106"
 		},
 		{
 			"id": "4",
-			"image": "./images/blocks/block-4-640w.jpg",
-			"image_large": "./images/blocks/block-4-1536w.jpg",
+			"title": "Small Spaces",
+			"caption": null,
 			"url": null,
-			"title": "wildlife gallery",
+			"image": "4-640w.jpg",
+			"image_large": null,
 			"width": "1536",
-			"height": "924"
+			"height": "1106"
 		},
 		{
 			"id": "5",
-			"image": "./images/blocks/block-5-640w.jpg",
-			"image_large": "./images/blocks/block-5-1536w.jpg",
+			"title": "Small Spaces",
+			"caption": null,
 			"url": null,
-			"title": "wildlife gallery",
+			"image": "5-640w.jpg",
+			"image_large": null,
 			"width": "1536",
-			"height": "924"
+			"height": "1106"
 		},
 		{
 			"id": "6",
-			"image": "./images/blocks/block-6-640w.jpg",
-			"image_large": "./images/blocks/block-6-1536w.jpg",
+			"title": "Small Spaces",
+			"caption": null,
 			"url": null,
-			"title": "wildlife gallery",
+			"image": "6-640w.jpg",
+			"image_large": null,
 			"width": "1536",
-			"height": "924"
+			"height": "1106"
+		}
+	],
+	"timber_landscapes": [
+		{
+			"id": "1",
+			"title": "Timber landscapes",
+			"caption": null,
+			"url": null,
+			"image": "1-640w.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
 		},
 		{
-			"id": "7",
-			"image": "./images/blocks/block-7-640w.jpg",
-			"image_large": "./images/blocks/block-7-1536w.jpg",
+			"id": "2",
+			"title": "Timber landscapes",
+			"caption": null,
 			"url": null,
-			"title": "wildlife gallery",
+			"image": "2-640w.jpg",
+			"image_large": null,
 			"width": "1536",
-			"height": "924"
+			"height": "1106"
 		},
 		{
-			"id": "8",
-			"image": "./images/blocks/block-8-640w.jpg",
-			"image_large": "./images/blocks/block-8-1536w.jpg",
+			"id": "3",
+			"title": "Timber landscapes",
+			"caption": null,
 			"url": null,
-			"title": "wildlife gallery",
+			"image": "3-640w.jpg",
+			"image_large": null,
 			"width": "1536",
-			"height": "924"
+			"height": "1106"
+		},
+		{
+			"id": "4",
+			"title": "Timber landscapes",
+			"caption": null,
+			"url": null,
+			"image": "4-640w.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		},
+		{
+			"id": "5",
+			"title": "Timber landscapes",
+			"caption": null,
+			"url": null,
+			"image": "5-640w.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		},
+		{
+			"id": "6",
+			"title": "Timber landscapes",
+			"caption": null,
+			"url": null,
+			"image": "6-640w.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		}
+	],
+	"wildlife_gardens": [
+		{
+			"id": "1",
+			"title": "Wildlife Gardens",
+			"caption": null,
+			"url": null,
+			"image": "1-640w.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		},
+		{
+			"id": "2",
+			"title": "Wildlife Gardens",
+			"caption": null,
+			"url": null,
+			"image": "2-640w.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		},
+		{
+			"id": "3",
+			"title": "Wildlife Gardens",
+			"caption": null,
+			"url": null,
+			"image": "3-640w.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		},
+		{
+			"id": "4",
+			"title": "Wildlife Gardens",
+			"caption": null,
+			"url": null,
+			"image": "4-640w.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		},
+		{
+			"id": "5",
+			"title": "Wildlife Gardens",
+			"caption": null,
+			"url": null,
+			"image": "5-640w.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
+		},
+		{
+			"id": "6",
+			"title": "Wildlife Gardens",
+			"caption": null,
+			"url": null,
+			"image": "6-640w.jpg",
+			"image_large": null,
+			"width": "1536",
+			"height": "1106"
 		}
 	]
 }
