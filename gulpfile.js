@@ -203,6 +203,42 @@ gulp.task('images', () => {
     .pipe(gulp.dest(path.join(dir.dist, 'images')))
 });
 
+
+// Favicon
+gulp.task('favicon', () => {
+  return gulp
+    .src('assets/images/fav/favicon.png')
+    .pipe(
+      responsive(
+        {
+          // Resize all JPG images to three different sizes: 180, and 512 pixels
+          '**/*.png': [
+            {
+              width: 180,
+              rename: { suffix: '-180x180' }
+            },
+            {
+              width: 192,
+              rename: { suffix: '-192x192' }
+            },
+            {
+              width: 512,
+              rename: { suffix: '-512x512' }
+            }
+          ]
+        },
+        {
+          // Global configuration for all images
+          // Use progressive (interlace) scan for JPEG and PNG output
+          progressive: true,
+          // Strip all metadata
+          withMetadata: false
+        }
+      )
+    )
+    .pipe(gulp.dest('assets/images/fav'))
+});
+
 gulp.task('responsive', () => {
   return gulp
     // assets/images/**/*.jpg
@@ -361,11 +397,16 @@ gulp.task('data', gulp.series(
   'combine'
 ))
 
+gulp.task('imageassets', gulp.series(
+  'favicon',
+  'images'
+))
+
 gulp.task('build', gulp.parallel(
   'sass-build', 
   'scripts-build',
   'fonts', 
-  'images', 
+  'imageassets', 
   'responsive'
 ))
 

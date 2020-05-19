@@ -3,17 +3,19 @@
     "name": "Nunjucks starter",
     "icons": [
       {
-        "src": "/images/fav/android-chrome-192x192.png",
+        "src": "/images/fav/favicon-192x192.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "/images/fav/android-chrome-512x512.png",
+        "src": "/images/fav/favicon-512x512.png",
         "type": "image/png",
         "sizes": "512x512"
       }
     ],
+    "start_url": "/?source=pwa",
     "background_color": "#ffffff",
     "display": "standalone",
+    "scope": "/",
     "theme_color": "#3367D6"
 }
