@@ -10,6 +10,8 @@
     "privacyUrl": "./privacy.html",
     "cookieUrl": "./cookies.html",
     "ownerName": "Rich Holman",
-    "ownerEmail": "dogwonder@gmail.com"
+    "ownerEmail": "dogwonder@gmail.com",
+    "authorHandle": "@dogwonder",
+    "authorName": "Rich Holman"
   }
 ]
