@@ -1,18 +1,18 @@
-{% set siteTitle = site.name %}
-{% set currentUrl = site.siteUrl %}
-{% set socialImage = site.socialImage %}
+{% set siteTitle = global.name %}
+{% set currentUrl = global.siteUrl %}
+{% set socialImage = global.socialImage %}
 
 {% if pageName %}
-    {% set currentUrl = site.siteUrl + '/' + pageName %}
-    {% set metaTitle = pageTitle + ' - ' + site.name %}
+    {% set currentUrl = global.siteUrl + '/' + pageName %}
+    {% set metaTitle = pageTitle + ' - ' + global.name %}
 {% else %}
-    {% set metaTitle = site.name %}
+    {% set metaTitle = global.name %}
 {% endif %}
 
 {% if pageDesc %}
     {% set metaDesc = pageDesc %}
 {% else %}
-    {% set metaDesc = site.shortDesc %}
+    {% set metaDesc = global.shortDesc %}
 {% endif %}
 
 <!-- Firefox, Chrome, Safari, IE 11+ and Opera. 192x192 pixels in size. -->
@@ -35,8 +35,8 @@
 <meta property="og:url" content="{{ currentUrl }}" />
 <meta property="og:site_name" content="{{ siteTitle }}" />
 
-{% if site.authorHandle %}
-<meta name="twitter:creator" content="@{{ site.authorHandle | replace('@', '') }}" />
+{% if global.authorHandle %}
+<meta name="twitter:creator" content="@{{ global.authorHandle | replace('@', '') }}" />
 {% endif %}
 
 {% if metaTitle %}
@@ -54,12 +54,12 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:image" content="{{ socialImage }}" />
 <meta name="twitter:image" content="{{ socialImage }}" />
-<meta property="og:image:alt" content="Page image for {{ site.name }}" />
-<meta name="twitter:image:alt" content="Page image for {{ site.name }}" />
+<meta property="og:image:alt" content="Page image for {{ global.name }}" />
+<meta name="twitter:image:alt" content="Page image for {{ global.name }}" />
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 {% endif %}
 
-{% if site.paymentPointer %}
-  <meta name="monetization" content="{{ site.paymentPointer }}" />
+{% if global.paymentPointer %}
+  <meta name="monetization" content="{{ global.paymentPointer }}" />
 {% endif %}

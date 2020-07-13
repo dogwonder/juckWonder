@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
@@ -8,37 +9,36 @@
 <link rel="apple-touch-icon" href="./images/fav/favicon-180x180.png">
 <link rel="mask-icon" href="./images/fav/favicon.svg" color="#ffffff">
 <link rel="manifest" href="./images/fav/manifest.json">
-<meta name="apple-mobile-web-app-title" content="🌵 juckWonder 🌵">
+<meta name="apple-mobile-web-app-title" content="🧱 juckWonder 🧱">
 <meta name="apple-mobile-web-app-status-bar-style" content="white">
 <meta name="msapplication-TileColor" content="#14d5de">
 <meta name="theme-color" content="#14d5de">
-<title>About - 🌵 juckWonder 🌵</title>
+<title>About - 🧱 juckWonder 🧱</title>
 <link rel="canonical" href="https://juckwonder.com/about.html">
 <meta property="og:locale" content="en_GB">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://juckwonder.com/about.html">
-<meta property="og:site_name" content="🌵 juckWonder 🌵">
-<meta name="twitter:creator" content="@dogwonder">
-<meta name="twitter:title" content="About - 🌵 juckWonder 🌵">
-<meta property="og:title" content="About - 🌵 juckWonder 🌵">
+<meta property="og:site_name" content="🧱 juckWonder 🧱">
+<meta name="twitter:title" content="About - 🧱 juckWonder 🧱">
+<meta property="og:title" content="About - 🧱 juckWonder 🧱">
 <meta name="description" content="Nunjucks starter kit (static site generator)">
 <meta name="twitter:description" content="Nunjucks starter kit (static site generator)">
 <meta property="og:description" content="Nunjucks starter kit (static site generator)">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:image" content="https://juckwonder.com/images/og/og-image.png">
 <meta name="twitter:image" content="https://juckwonder.com/images/og/og-image.png">
-<meta property="og:image:alt" content="Page image for 🌵 juckWonder 🌵">
-<meta name="twitter:image:alt" content="Page image for 🌵 juckWonder 🌵">
+<meta property="og:image:alt" content="Page image for 🧱 juckWonder 🧱">
+<meta name="twitter:image:alt" content="Page image for 🧱 juckWonder 🧱">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <script src="./scripts/js.cookie.js"></script>
-<link rel="stylesheet" href="./css/main.css?cache_bust=1.239.0">
+<link rel="stylesheet" href="./css/main.css?cache_bust=1.257.0">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","@id":"https://juckwonder.com#website","url":"https://juckwonder.com","name":"Dogwonder Ltd","logo":"https://juckwonder.com/images/og/logo-160x60.png"}</script>
 <script async defer="defer" data-domain="juckwonder.com" src="https://plausible.io/js/plausible.js"></script>
 </head>
 <body class="has-cookie jw jw-about" data-theme="default">
 <div id="cookieNotice" class="cookie-notice" role="region">
-<p class="cookie-notice__text">🌵 juckWonder 🌵 uses cookies to give you the best experience. <a href="./cookies.html">Read our cookie policy</a>
+<p class="cookie-notice__text">🧱 juckWonder 🧱 uses cookies to give you the best experience. <a href="./cookies.html">Read our cookie policy</a>
 </p>
 <p class="cookie-notice__accept"><button id="cookieButton" class="cookieButton close" type="button" aria-label="Accept cookies">Accept cookies</button></p>
 </div>
@@ -108,9 +108,10 @@
 <p><code>npm install gulp --save-dev</code></p>
 <p>Edit <code>gulpfile.js</code> for varibales such as folder names</p>
 <hr>
-<h3 id="build-process">Build Process</h3>
+<h3 id="build-process">Build process</h3>
 <p><code>gulp dev</code> for development
-<code>gulp build</code> for production (builds to /docs)</p>
+<code>gulp build</code> for production (builds to /docs)
+<code>cd docs &amp;&amp; npx serve</code> to see built files locally</p>
 <hr>
 <h3 id="testing">Testing</h3>
 <p>Uses <a href="https://www.cypress.io/">cypress.io</a> and test are located in <code>cypress/integration/tests</code></p>
@@ -146,16 +147,18 @@
 </ul>
 <hr>
 <h3 id="google-sheets-experimental">Google sheets (experimental)</h3>
-<p><code>npm run build-sheets</code>
-<code>ruby update_data.rb</code></p>
-<p>Data sources</p>
-<p><a href="https://docs.google.com/spreadsheets/d/17nWfAGie5xNjZVckqqTBhxH2LRzGyRDDikUag2zbOQU/edit#gid=0">https://docs.google.com/spreadsheets/d/17nWfAGie5xNjZVckqqTBhxH2LRzGyRDDikUag2zbOQU/edit#gid=0</a></p>
+<p><code>npm run build-sheets</code></p>
+<p>or</p>
+<p><code>ruby update_data.rb</code></p>
+<p>or</p>
+<p><code>gulp data</code></p>
+<p>Uses a <a href="https://docs.google.com/spreadsheets/d/1oB3KRCP_zk2AyaQf92VaCdWmkjO9r1qbZyn0ZmD-Hm8/edit#gid=0">google spreadsheet</a> to manae site data, this is pulled down via <code>gulp data</code> (part of the build process). A ruby script <code>update_data.rb</code> is used to transform the CSV into JSON files</p>
 <p>Site data
 <code>set global = data.site[0]</code></p>
 <p>In files
 <code>global.socialImage</code></p>
 <p>Gallery images
-<code>for image in data.gallery</code></p>
+<code>for gallery in data.gallery</code></p>
 <hr>
 <h3 id="customisation">Customisation</h3>
 <p>There are some site variables that should be edited away from the boilerplate defaults</p>

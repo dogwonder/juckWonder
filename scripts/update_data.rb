@@ -3,7 +3,7 @@ require 'open-uri'
 require 'csv'
 require 'json'
 
-url =  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQX1Fh4NHKIAGJSE9ev0ycV2RYmH2YQlCjVjvECX1u8dd-Hnh9Yv254QqicKpkcE9LsrIE1mywOijLD/pub?output=csv"
+url =  "https://docs.google.com/spreadsheets/d/e/2PACX-1vTrd67BGb9FMpxJeK_OiZfZo6UxYikHW6D7shfna7Z7dp5DdbqA5VSvLCjwlXF2jPpJxETsyt2DeHRM/pub?output=csv"
 
 download = open(url)
 IO.copy_stream(download, './json/sources.csv')

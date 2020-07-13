@@ -27,10 +27,11 @@ Edit `gulpfile.js` for varibales such as folder names
 
 ---
 
-### Build Process
+### Build process
 
 `gulp dev` for development
 `gulp build` for production (builds to /docs)
+`cd docs && npx serve` to see built files locally
 
 ---
 
@@ -91,11 +92,16 @@ Based on improvements from this [CSS Tricks article](https://css-tricks.com/some
 ### Google sheets (experimental)
 
 `npm run build-sheets`
+
+or
+
 `ruby update_data.rb`
 
-Data sources
+or
 
-https://docs.google.com/spreadsheets/d/17nWfAGie5xNjZVckqqTBhxH2LRzGyRDDikUag2zbOQU/edit#gid=0
+`gulp data`
+
+Uses a [google spreadsheet](https://docs.google.com/spreadsheets/d/1oB3KRCP_zk2AyaQf92VaCdWmkjO9r1qbZyn0ZmD-Hm8/edit#gid=0) to manae site data, this is pulled down via `gulp data` (part of the build process). A ruby script `update_data.rb` is used to transform the CSV into JSON files
 
 Site data
 `set global = data.site[0]`
@@ -104,7 +110,7 @@ In files
 `global.socialImage`
 
 Gallery images
-`for image in data.gallery`
+`for gallery in data.gallery`
 
 ---
 

@@ -1,15 +1,15 @@
 [
   {
-    "name": "Churchmans of Hove",
-    "shortDesc": "Garden Transformations & Maintenance",
-    "siteUrl": "https://churchmansofhove.co.uk/",
-    "socialImage": "https://churchmansofhove.co.uk/images/og/og-image.png",
-    "companyName": "Churchmans of Hove",
-    "companyPhone": "07812167907",
-    "companyEmail": "info@churchmansofhove.co.uk",
+    "name": "🧱 juckWonder 🧱",
+    "shortDesc": "Nunjucks starter kit (static site generator)",
+    "siteUrl": "https://juckwonder.com",
+    "socialImage": "https://juckwonder.com/images/og/og-image.png",
+    "companyName": "Dogwonder Ltd",
+    "companyPhone": "07967835097",
+    "companyEmail": "dogwonder@gmail.com",
     "privacyUrl": "./privacy.html",
     "cookieUrl": "./cookies.html",
-    "ownerName": "Hannah Churchman",
-    "ownerEmail": "info@churchmansofhove.co.uk"
+    "ownerName": "Rich Holman",
+    "ownerEmail": "dogwonder@gmail.com"
   }
 ]

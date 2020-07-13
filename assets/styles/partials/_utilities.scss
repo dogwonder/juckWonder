@@ -85,6 +85,11 @@
 }
 
 //Utilities
+.flow > * + * {
+  margin-top: var(--gap-20, 2em);
+}
+
+//Alerts
 .alert {
   padding: var(--gap-10);
   color: #c53030;
@@ -139,4 +144,13 @@
   object-fit: cover;
   object-position: 50% 50%;
   margin: 0;
+}
+
+
+//Exceptions
+
+// Usage <article class="card" data-state="reversed"></article> -- https://piccalil.li/blog/cube-css/
+.card[data-state='reversed'] {
+  display: flex;
+  flex-direction: column-reverse;
 }

@@ -94,9 +94,8 @@ gulp.task('nunjucks', () => {
     //Get some data
     .pipe(data(function(file) {
       //Set up a global variable site - e.g. site.name
-      // var site = require('./data/site.json');
-      // return site;
-      return { 'site': require('./data/site.json') }
+      //Redfined in layout.njk {% set global = data.site[0] %} - allows for global.name, get the first item in the object e.g. [0]
+      return { 'data': require('./data/data.json') }
     }))
     .pipe(gulpnunjucks.compile("", {env: env}))
     .pipe(gulp.dest(dir.dist))
@@ -146,8 +145,8 @@ gulp.task('sass-build', () => {
 gulp.task('watch', () => {
   gulp.watch(path.join(dir.styles, '**/*.scss'), gulp.series('sass'));
   gulp.watch(path.join(dir.scripts, '**/*.js'), gulp.series('scripts'));
-  gulp.watch(path.join(dir.src, '**/*.+(html|njk)'), gulp.series('nunjucks'));
-  gulp.watch(path.join(dir.dist, '*.+(html|njk)')).on('change', browserSync.reload);
+  gulp.watch(path.join(dir.src, '**/*.+(html|njk|md)'), gulp.series('nunjucks'));
+  gulp.watch(path.join(dir.dist, '*.+(html|njk|md)')).on('change', browserSync.reload);
 });
 
 

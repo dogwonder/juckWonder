@@ -1,451 +1,119 @@
 {
-	"cottage_gardens": [
+	"images": [
 		{
 			"id": "1",
-			"title": "Cottage Gardens",
+			"title": "Lego people",
 			"caption": null,
 			"url": null,
-			"image": "1-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
+			"image": "block-1-640w.jpg",
+			"image_large": "block-1-1920w.jpg",
+			"width": "1920",
+			"height": "1280"
 		},
 		{
 			"id": "2",
-			"title": "Cottage Gardens",
+			"title": "Lego people",
 			"caption": null,
 			"url": null,
-			"image": "2-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
+			"image": "block-2-640w.jpg",
+			"image_large": "block-2-1920w.jpg",
+			"width": "1920",
+			"height": "1280"
 		},
 		{
 			"id": "3",
-			"title": "Cottage Gardens",
+			"title": "Lego people",
 			"caption": null,
 			"url": null,
-			"image": "3-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
+			"image": "block-3-640w.jpg",
+			"image_large": "block-3-1920w.jpg",
+			"width": "1920",
+			"height": "1280"
 		},
 		{
 			"id": "4",
-			"title": "Cottage Gardens",
+			"title": "Lego people",
 			"caption": null,
 			"url": null,
-			"image": "4-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
+			"image": "block-4-640w.jpg",
+			"image_large": "block-4-1920w.jpg",
+			"width": "1920",
+			"height": "1280"
 		},
 		{
 			"id": "5",
-			"title": "Cottage Gardens",
+			"title": "Lego people",
 			"caption": null,
 			"url": null,
-			"image": "5-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
+			"image": "block-5-640w.jpg",
+			"image_large": "block-5-1920w.jpg",
+			"width": "1920",
+			"height": "1280"
 		},
 		{
 			"id": "6",
-			"title": "Cottage Gardens",
+			"title": "Lego people",
 			"caption": null,
 			"url": null,
-			"image": "6-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		}
-	],
-	"gallery_index": [
-		{
-			"id": "1",
-			"title": "Shady Spaces",
-			"caption": "Shade loving plants that will thrive in your garden",
-			"url": "gallery-shady-spaces.html",
-			"image": "shady-spaces.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
+			"image": "block-5-640w.jpg",
+			"image_large": "block-5-1920w.jpg",
+			"width": "1920",
+			"height": "1280"
 		},
 		{
-			"id": "2",
-			"title": "Cottage Gardens",
-			"caption": "A fresh take on the traditional English garden",
-			"url": "gallery-cottage-gardens.html",
-			"image": "cottage-gardens.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "3",
-			"title": "Small Spaces",
-			"caption": "An oasis can be made in the smallest of spaces",
-			"url": "gallery-small-spaces.html",
-			"image": "small-spaces.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "4",
-			"title": "Wildlife Gardens",
-			"caption": "A speciality and a passion. Visit our wildlife page",
-			"url": "gallery-wildlife-gardens.html",
-			"image": "wildlife-gardens.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "5",
-			"title": "Timber landscapes with Luna Projects",
-			"caption": "Let your imagination run wild",
-			"url": "gallery-timber-landscapes.html",
-			"image": "timber-landscapes.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "6",
-			"title": "Garden Maintenance",
-			"caption": "Caring for your garden year round to keep it thriving",
-			"url": "gallery-garden-maintenance.html",
-			"image": "garden-maintenance.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		}
-	],
-	"garden_maintenance": [
-		{
-			"id": "1",
-			"title": "Garden Maintenance ",
+			"id": "7",
+			"title": "Lego people",
 			"caption": null,
 			"url": null,
-			"image": "1-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
+			"image": "block-6-640w.jpg",
+			"image_large": "block-6-1920w.jpg",
+			"width": "1920",
+			"height": "1280"
 		},
 		{
-			"id": "2",
-			"title": "Garden Maintenance ",
+			"id": "8",
+			"title": "Lego people",
 			"caption": null,
 			"url": null,
-			"image": "2-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
+			"image": "block-7-640w.jpg",
+			"image_large": "block-7-1920w.jpg",
+			"width": "1920",
+			"height": "1280"
 		},
 		{
-			"id": "3",
-			"title": "Garden Maintenance ",
+			"id": "9",
+			"title": "Lego people",
 			"caption": null,
 			"url": null,
-			"image": "3-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
+			"image": "block-8-640w.jpg",
+			"image_large": "block-8-1920w.jpg",
+			"width": "1920",
+			"height": "1280"
 		},
 		{
-			"id": "4",
-			"title": "Garden Maintenance ",
+			"id": "10",
+			"title": "Lego people",
 			"caption": null,
 			"url": null,
-			"image": "4-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "5",
-			"title": "Garden Maintenance ",
-			"caption": null,
-			"url": null,
-			"image": "5-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "6",
-			"title": "Garden Maintenance ",
-			"caption": null,
-			"url": null,
-			"image": "6-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		}
-	],
-	"shady_spaces": [
-		{
-			"id": "1",
-			"title": "Shady Spaces",
-			"caption": null,
-			"url": null,
-			"image": "1-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "2",
-			"title": "Shady Spaces",
-			"caption": null,
-			"url": null,
-			"image": "2-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "3",
-			"title": "Shady Spaces",
-			"caption": null,
-			"url": null,
-			"image": "3-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "4",
-			"title": "Shady Spaces",
-			"caption": null,
-			"url": null,
-			"image": "4-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "5",
-			"title": "Shady Spaces",
-			"caption": null,
-			"url": null,
-			"image": "5-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "6",
-			"title": "Shady Spaces",
-			"caption": null,
-			"url": null,
-			"image": "6-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
+			"image": "block-10-640w.jpg",
+			"image_large": "block-10-1920w.jpg",
+			"width": "1920",
+			"height": "1280"
 		}
 	],
 	"site": [
 		{
-			"name": "Churchmans of Hove",
-			"shortDesc": "Garden Transformations & Maintenance",
-			"siteUrl": "https://churchmansofhove.co.uk/",
-			"socialImage": "https://churchmansofhove.co.uk/images/og/og-image.png",
-			"companyName": "Churchmans of Hove",
-			"companyPhone": "07812167907",
-			"companyEmail": "info@churchmansofhove.co.uk",
+			"name": "🧱 juckWonder 🧱",
+			"shortDesc": "Nunjucks starter kit (static site generator)",
+			"siteUrl": "https://juckwonder.com",
+			"socialImage": "https://juckwonder.com/images/og/og-image.png",
+			"companyName": "Dogwonder Ltd",
+			"companyPhone": "07967835097",
+			"companyEmail": "dogwonder@gmail.com",
 			"privacyUrl": "./privacy.html",
 			"cookieUrl": "./cookies.html",
-			"ownerName": "Hannah Churchman",
-			"ownerEmail": "info@churchmansofhove.co.uk"
-		}
-	],
-	"small_spaces": [
-		{
-			"id": "1",
-			"title": "Small Spaces",
-			"caption": null,
-			"url": null,
-			"image": "1-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "2",
-			"title": "Small Spaces",
-			"caption": null,
-			"url": null,
-			"image": "2-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "3",
-			"title": "Small Spaces",
-			"caption": null,
-			"url": null,
-			"image": "3-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "4",
-			"title": "Small Spaces",
-			"caption": null,
-			"url": null,
-			"image": "4-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "5",
-			"title": "Small Spaces",
-			"caption": null,
-			"url": null,
-			"image": "5-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "6",
-			"title": "Small Spaces",
-			"caption": null,
-			"url": null,
-			"image": "6-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		}
-	],
-	"timber_landscapes": [
-		{
-			"id": "1",
-			"title": "Timber landscapes",
-			"caption": null,
-			"url": null,
-			"image": "1-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "2",
-			"title": "Timber landscapes",
-			"caption": null,
-			"url": null,
-			"image": "2-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "3",
-			"title": "Timber landscapes",
-			"caption": null,
-			"url": null,
-			"image": "3-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "4",
-			"title": "Timber landscapes",
-			"caption": null,
-			"url": null,
-			"image": "4-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "5",
-			"title": "Timber landscapes",
-			"caption": null,
-			"url": null,
-			"image": "5-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "6",
-			"title": "Timber landscapes",
-			"caption": null,
-			"url": null,
-			"image": "6-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		}
-	],
-	"wildlife_gardens": [
-		{
-			"id": "1",
-			"title": "Wildlife Gardens",
-			"caption": null,
-			"url": null,
-			"image": "1-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "2",
-			"title": "Wildlife Gardens",
-			"caption": null,
-			"url": null,
-			"image": "2-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "3",
-			"title": "Wildlife Gardens",
-			"caption": null,
-			"url": null,
-			"image": "3-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "4",
-			"title": "Wildlife Gardens",
-			"caption": null,
-			"url": null,
-			"image": "4-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "5",
-			"title": "Wildlife Gardens",
-			"caption": null,
-			"url": null,
-			"image": "5-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
-		},
-		{
-			"id": "6",
-			"title": "Wildlife Gardens",
-			"caption": null,
-			"url": null,
-			"image": "6-640w.jpg",
-			"image_large": null,
-			"width": "1536",
-			"height": "1106"
+			"ownerName": "Rich Holman",
+			"ownerEmail": "dogwonder@gmail.com"
 		}
 	]
 }
