@@ -35,6 +35,12 @@ Edit `gulpfile.js` for varibales such as folder names
 
 ---
 
+### Localhost
+
+cd docs && npx serve
+
+---
+
 ### Testing
 
 Uses [cypress.io](https://www.cypress.io/) and test are located in `cypress/integration/tests`

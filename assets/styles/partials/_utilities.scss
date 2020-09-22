@@ -154,3 +154,11 @@
   display: flex;
   flex-direction: column-reverse;
 }
+
+//Create a line break while maintaining inline status
+//This is especially useful in <form> contexts, like the following example shows.
+// https://piccalil.li/quick-tip/create-a-line-break-while-maintaining-inline-status/
+.inline-element::after {
+  content: '\A';
+  white-space: pre;
+}
