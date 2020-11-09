@@ -37,7 +37,7 @@ Edit `gulpfile.js` for varibales such as folder names
 
 ### Localhost
 
-cd docs && npx serve
+`cd docs && npx serve`
 
 ---
 

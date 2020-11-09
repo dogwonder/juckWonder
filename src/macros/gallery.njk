@@ -3,7 +3,7 @@
         itemtype="http://schema.org/ImageObject">
             <a class="frame" href="{{ imageUrlLarge }}" itemprop="contentUrl" 
                 data-size="{{ imageWidth }}x{{ imageHeight }}">
-                <img src="{{ imageUrl }}" alt="{{ imageTitle }}" loading="lazy" />
+                <img width="640" height="427" src="{{ imageUrl }}" alt="{{ imageTitle }}" loading="lazy" />
             </a>
             <figcaption class="jw-gallery__details" itemprop="caption description">
             {{ imageTitle }}{% if imageCaption|length %}<span class="caption">{{ imageCaption }}</span>{% endif %}
