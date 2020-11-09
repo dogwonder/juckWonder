@@ -3,52 +3,49 @@
  */
 
 //Menu
-.js {
-  //Hide menu if JS loads
-  [hidden] {
-    display: none;
-  }
+[hidden] {
+  display: none;
+}
 
+.nav-menu {
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 998;
+  background-color: var(--highlight-dark);
+}
+
+//Overlay menu
+.navigation-overlay {
   .nav-menu {
-    height: 100vh;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 998;
-    background-color: var(--highlight-dark);
-  }
+    width: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    display: inline;
 
-  //Overlay menu
-  .navigation-overlay {
-    .nav-menu {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      text-align: center;
-      display: inline;
-
-      &:not([hidden]) {
-        display: block;
-      }
+    &:not([hidden]) {
+      display: block;
     }
   }
+}
 
-  //Sidebar menu
-  .navigation-sidebar {
-    .nav-menu {
-      width: 85%;
+//Sidebar menu
+.navigation-sidebar {
+  .nav-menu {
+    width: 85%;
 
-      &:not([hidden]) {
-        display: block;
-        pointer-events: all;
-      }
+    &:not([hidden]) {
+      display: block;
+      pointer-events: all;
+    }
 
-      ul {
-        margin: 0;
-        padding: 0;
-        li {
-          line-height: 2;
-        }
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        line-height: 2;
       }
     }
   }
@@ -59,7 +56,6 @@
   [hidden] {
     display: block;
   }
-
   .nav-toggle {
     display: none;
   }
