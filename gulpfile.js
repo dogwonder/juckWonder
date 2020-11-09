@@ -116,7 +116,7 @@ gulp.task('sass', () => {
     .pipe(sourcemaps.init())
     .pipe(sass())
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest(path.join(dir.dist, 'css'))) // Outputs it in the css folder
+    .pipe(gulp.dest(path.join(dir.src, 'css'))) // Outputs it in the css folder
     .pipe(browserSync.stream()); // reload
 });
 
@@ -138,7 +138,7 @@ gulp.task('sass-build', () => {
     .pipe(postcss([postcssCustomProperties()]))
     //Minify
     .pipe(postcss([postcssclean()]))
-    .pipe(gulp.dest(path.join(dir.dist, 'css')))
+    .pipe(gulp.dest(path.join(dir.src, 'css')))
 });
 
 // Watchers
@@ -286,7 +286,7 @@ gulp.task('fonts', () => {
 // Banner
 gulp.task('banner', () => {
   return gulp
-    .src(path.join(dir.dist, 'css/main.css'))
+    .src(path.join(dir.src, 'css/main.css'))
     .pipe(banner(comment, {
         pkg: pkg
     }))
