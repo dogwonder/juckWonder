@@ -94,9 +94,9 @@
 
 
   window.addEventListener("load", function () {
-    //Cookie notice
-    cookieNoticeSeen(); //Toggle nav
-
+    //Cookie notice - not being used right now
+    // cookieNoticeSeen();
+    //Toggle nav
     toggleNav('#nav-toggle', '#nav-menu'); //Equal height columns
 
     equalizer('[data-col]');

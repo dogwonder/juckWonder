@@ -77,6 +77,8 @@ This uses a few libraries and open-source plugins, all MIT licensed. Apart from 
 - [Validate.js - A lightweight form validation script.](https://github.com/cferdinandi/validate)
 - [PhotoSwipe- JavaScript gallery, no dependencies](https://github.com/dimsemenov/photoswipe)
 
+NOTE: this site uses Plausible.io for analytics (which doesn't place a cookie on the user's machine) so the cookie JS is not being used in this build (although it's commented out if you wish to see how this might work)
+
 ---
 
 ### VSCode
@@ -107,7 +109,7 @@ or
 
 `gulp data`
 
-Uses a [google spreadsheet](https://docs.google.com/spreadsheets/d/1oB3KRCP_zk2AyaQf92VaCdWmkjO9r1qbZyn0ZmD-Hm8/edit#gid=0) to manae site data, this is pulled down via `gulp data` (part of the build process). A ruby script `update_data.rb` is used to transform the CSV into JSON files
+Uses a [google spreadsheet](https://docs.google.com/spreadsheets/d/1oB3KRCP_zk2AyaQf92VaCdWmkjO9r1qbZyn0ZmD-Hm8/edit#gid=0) to manage site data, this is pulled down via `gulp data` (part of the build process). A ruby script `update_data.rb` is used to transform the CSV into JSON files
 
 Site data
 `set global = data.site[0]`

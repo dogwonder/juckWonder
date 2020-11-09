@@ -119,8 +119,8 @@
     // Handler when the DOM is fully loaded and after webfont's etc
     window.addEventListener("load", function(){
 
-        //Cookie notice
-        cookieNoticeSeen();
+        //Cookie notice - not being used right now
+        // cookieNoticeSeen();
 
         //Toggle nav
         toggleNav('#nav-toggle', '#nav-menu');
