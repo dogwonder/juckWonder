@@ -1,6 +1,7 @@
 {% set bodyClass = "jw-home" %}
 
 {% extends "layout/_layout.njk" %}
+
 {% from "macros/hero.njk" import hero %}
 {% from "macros/text.njk" import text %}
 {% from "macros/float.njk" import float %}
@@ -11,27 +12,96 @@
 
 {% block content %}
 
-{# {{ modal('#efefef', 'Open', 'markdown/lorem.md', '') }} #}
+{# {{ modal({
+    bg_color: '', 
+    button_text: '', 
+    file: '', 
+    class: ''
+ }) }} #}
 
-{# {{ hero('path/to/image.jpg', 'path/to/image-large.jpg', 'Block title', 'markdown.md', 'class') }} #}
-{{ hero('./images/blocks/block-7-640w.jpg', './images/blocks/block-7-1920w.jpg', '🧱 juckWonder 🧱', 'markdown/intro.md', '') }}
+{# {{ hero({
+    image: 'path/to/image.jpg', 
+    image_large: 'path/to/image-large.jpg', 
+    heading: 'Block title', 
+    file: 'markdown.md', 
+    class: 'class'
+ }) }} #}
 
-{# {{ text('#backgroundcolor', 'alignment', '#blockcolor', 'path/to/image.jpg', 'path/to/image-large.jpg', 'Block title', 'markdown.md', 'class') }} #}
-{{ text('', 'right', '', './images/blocks/block-2-640w.jpg', './images/blocks/block-2-1920w.jpg', 'Text block -- with image', 'markdown/1.md') }}
-{{ text('#efefef','left', '#9A9FA2', '', '', 'Another text block -- with solid colour', 'markdown/2.md') }}
-{{ text('', 'center', '', '', '', 'Center text block', 'markdown/ipsum.md') }}
+ {{ hero({
+    image: './images/blocks/block-7-640w.jpg', 
+    image_large: './images/blocks/block-7-1920w.jpg', 
+    heading: '🧱 juckWonder 🧱', 
+    file: 'markdown/intro.md'
+ }) }}
 
-{# {{ float('#backgroundcolor', 'Block title', 'markdown.md', 'class') }} #}
-{{ float('#e5e7e9', 'Floating block', 'markdown/lorem.md', '') }}
+{# {{ text({
+  color: '',
+  bg_color: '',
+  alignment: '',
+  image: '',
+  image_large: '',
+  heading: '', 
+  file: ''
+}) }} #}
 
-{# {{ cta('#backgroundcolor', 'Block title', 'url', 'class') }} #}
-{{ cta('', 'About juckWonder', './about.html', '') }}
+{{ text({
+  alignment: 'right',
+  image: './images/blocks/block-2-640w.jpg',
+  image_large: './images/blocks/block-2-1920w.jpg',
+  heading: 'Text block -- with image', 
+  file: 'markdown/1.md'
+}) }}
 
-{# {{ map('address') }} #}
-{# {{ map('47 George Downing Estate, London') }} #}
+{{ text({
+  color: '#9A9FA2',
+  bg_color: '#efefef',
+  alignment: 'left',
+  heading: 'Another text block -- with solid colour', 
+  file: 'markdown/2.md'
+}) }} 
 
-{{ image('./images/blocks/block-8-640w.jpg', './images/blocks/block-8-1920w.jpg', 'Alttext', '') }}
+{{ text({
+  alignment: 'center',
+  heading: 'Center text block', 
+  file: 'markdown/ipsum.md'
+}) }} 
 
-{# {{ image('path/to/image.jpg', 'path/to/imageLarge.jpg', 'Alttext', 'class') }} #}
 
-{% endblock %} 
+{# {{ float({
+    bg_color: '', 
+    heading: '', 
+    file: '', 
+    class: ''
+ }) }} #}
+
+ {{ float({
+    bg_color: '#e5e7e9', 
+    heading: 'Floating block', 
+    file: 'markdown/lorem.md'
+ }) }}
+
+ {# {{ cta({
+    bg_color: '', 
+    heading: '', 
+    url: '', 
+    class: ''
+ }) }} #}
+
+{{ cta({
+    heading: 'About juckWonder', 
+    url: './about.html'
+ }) }}
+
+ {# {{ map({
+    address: ''
+ }) }} #}
+
+
+ {{ image({
+    image: './images/blocks/block-8-640w.jpg', 
+    image_large: './images/blocks/block-8-1920w.jpg', 
+    alt: 'Alttext'
+ }) }}
+
+
+ {% endblock %} 

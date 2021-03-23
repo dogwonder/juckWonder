@@ -15,7 +15,15 @@
         {% for image in images %}
             {% set galleryImage = './images/blocks/' + image.image %}
             {% set galleryImageLarge = './images/blocks/' + image.image_large %}
-            {{ gallery(image.index, image.title, image.caption, galleryImage, galleryImageLarge, image.width, image.height) }}
+            {{ gallery({
+                image_id: image.index, 
+                image_title: image.title,
+                image_caption: image.caption, 
+                image_url: galleryImage, 
+                image_url_large: galleryImageLarge, 
+                image_width: image.width,
+                image_height: image.height
+            }) }}
         {% endfor %}
     </div>
 </div>

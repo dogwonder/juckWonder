@@ -1,11 +1,11 @@
-{% macro modal(bgColor, buttonText, file, class) %}
-<div class="block block--modal{% if class %} {{ class }}{% endif %}"{% if bgColor %} style="background-color: {{ bgColor }};"{% endif %}>
-    <button class="button" onclick="window.dialog.show();">{% if buttonText %}{{ buttonText }}{% else %}open{% endif %}</button>
+{% macro modal() %}
+<div class="block block--modal{% if params.class %} {{ params.class }}{% endif %}"{% if params.bg_color %} style="background-color: {{ params.bg_color }};"{% endif %}>
+    <button class="button" onclick="window.dialog.show();">{% if params.button_text %}{{ params.button_text }}{% else %}open{% endif %}</button>
 </div><!--/block-->
 <dialog id="dialog" class="modal">
-    {% if file %}
+    {% if params.file %}
     {% markdown %}
-    {% include file %}
+    {% include params.file %}
     {% endmarkdown %}
     {% endif %}
     <button class="modal__close" onclick="window.dialog.close();">&#10006;</button>

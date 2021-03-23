@@ -1,13 +1,13 @@
 
-{% macro map(address) %}
+{% macro map(params) %}
     <script src="//maps.googleapis.com/maps/api/js?v=3.exp&key=[YOURKEY]"></script>
     <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function(){
 
         var geocoder = new google.maps.Geocoder();
-        var address = "{{ address }}";
+        var address = "{{ params.address }}";
 
-        geocoder.geocode( { 'address': address}, function(results, status) {
+        geocoder.geocode( { 'address': params.address}, function(results, status) {
 
         if (status == google.maps.GeocoderStatus.OK) {
 

@@ -1,27 +1,27 @@
-{% macro text(bgColor, alignment, color, image, image_large, heading, file, class) %}
-  <div class="block block--text{% if class %} {{ class }}{% endif %}{% if (alignment == 'right') %} right{% elif (alignment == 'left') %} left{% else %} center{% endif %}"{% if bgColor %} style="background-color: {{ bgColor }};"{% endif %}>
-    <div class="block__text"{% if (alignment == 'center') %} style="background-color: {{ color }};"{% endif %}{% if (alignment == 'left') or (alignment == 'right') %} data-col{% endif %}>
+{% macro text(params) %}
+  <div class="block block--text{% if params.class %} {{ params.class }}{% endif %}{% if (params.alignment == 'right') %} right{% elif (params.alignment == 'left') %} left{% else %} center{% endif %}"{% if params.bg_color %} style="background-color: {{ params.bg_color }};"{% endif %}>
+    <div class="block__text"{% if (params.alignment == 'center') %} style="background-color: {{ params.color }};"{% endif %}{% if (params.alignment == 'left') or (params.alignment == 'right') %} data-col{% endif %}>
         <div class="inner">
-          {% if heading %}
-          <h2 class="block__heading">{{ heading }}</h2>
+          {% if params.heading %}
+          <h2 class="block__heading">{{ params.heading }}</h2>
           {% endif %}
-          {% if file %}
+          {% if params.file %}
           {% markdown %}
-          {% include file %}
+          {% include params.file %}
           {% endmarkdown %}
           {% endif %}
         </div><!--/inner-->
     </div><!--/block__text-->
-    {% if (alignment == 'left') or (alignment == 'right') %}
+    {% if (params.alignment == 'left') or (params.alignment == 'right') %}
     {% if color %}
     <div class="block__color" style="background-color: {{ color }};" data-equal></div>
     {% endif %}
-    {% if image %}
+    {% if params.image %}
     <div class="block__image" data-equal>
       <figure class="block__background">
           <picture>
-            <source media="(min-width: 900px)" srcset="{% if image_large %}{{ image_large }}{% else %}{{ image }}{% endif %}">
-            <img width="640" height="427" src="{{ image }}" alt="{{ heading }}" loading="lazy" />
+            <source media="(min-width: 900px)" srcset="{% if params.image_large %}{{ params.image_large }}{% else %}{{ params.image }}{% endif %}">
+            <img width="640" height="427" src="{{ params.image }}" alt="{{ params.heading }}" loading="lazy" />
           </picture>
       </figure><!--/block__background-->
     </div>

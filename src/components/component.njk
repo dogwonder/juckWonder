@@ -1,0 +1,21 @@
+{# 
+From this article https://www.trysmudford.com/blog/encapsulated-11ty-components/ 
+You can choose to add an ignore missing flag to suppress errors when including a partial.
+
+This macro also assumes the ‘name’ of the .njk file matches the folder, but this could always be overwritten with optional folder parameter.
+#}
+
+{% macro component(name, params) %}
+  {% include "../macros/" + name + ".njk" ignore missing %}
+{% endmacro %}
+
+{# {% from "components/component.njk" import component %} #}
+{# {{ component('text') }} #}
+
+{# {{ component('text', {
+  alignment: 'right',
+  image: './images/blocks/block-2-640w.jpg',
+  image_large: './images/blocks/block-2-1920w.jpg',
+  heading: 'Text block -- with image', 
+  file: 'markdown/1.md'
+}) }} #}

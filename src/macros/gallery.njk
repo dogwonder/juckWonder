@@ -1,12 +1,12 @@
-{% macro gallery(imageID, imageTitle, imageCaption, imageUrl, imageUrlLarge, imageWidth, imageHeight) %}
-  <figure id="image-{{ imageID}}" class="jw-gallery__item" itemprop="associatedMedia" itemscope
+{% macro gallery(params) %}
+  <figure id="image-{{ params.image_id}}" class="jw-gallery__item" itemprop="associatedMedia" itemscope
         itemtype="http://schema.org/ImageObject">
-            <a class="frame" href="{{ imageUrlLarge }}" itemprop="contentUrl" 
-                data-size="{{ imageWidth }}x{{ imageHeight }}">
-                <img width="640" height="427" src="{{ imageUrl }}" alt="{{ imageTitle }}" loading="lazy" />
+            <a class="frame" href="{{ params.image_url_large }}" itemprop="contentUrl" 
+                data-size="{{ params.image_width }}x{{ params.image_height }}">
+                <img width="640" height="427" src="{{ params.image_url }}" alt="{{ params.image_title }}" loading="lazy" />
             </a>
             <figcaption class="jw-gallery__details" itemprop="caption description">
-            {{ imageTitle }}{% if imageCaption|length %}<span class="caption">{{ imageCaption }}</span>{% endif %}
+            {{ params.image_title }}{% if params.image_caption|length %}<span class="caption">{{ params.image_caption }}</span>{% endif %}
             </figcaption>
     </figure><!--/gallery__item-->
 {% endmacro %}
