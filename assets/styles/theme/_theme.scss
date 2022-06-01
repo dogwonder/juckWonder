@@ -19,13 +19,6 @@ body {
   word-spacing: 1rem * 0.04;
 }
 
-@supports (font-variation-settings: normal) {
-  body {
-    font-family: "Inter var", -apple-system, BlinkMacSystemFont,
-      "Helvetica Neue", Helvetica, sans-serif;
-  }
-}
-
 //Links
 a,
 a:link {

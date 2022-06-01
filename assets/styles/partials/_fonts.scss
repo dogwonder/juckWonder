@@ -1,15 +1,21 @@
 @font-face {
-  font-family: "Inter var";
-  font-weight: 100 900; /* stylelint-disable-line font-weight-notation */
+  font-family: 'Söhne Extrafett';
+  font-weight: 900;
   font-style: normal;
   font-display: swap;
-  src: url("../fonts/Inter-upright-var.woff2") format("woff2");
+  src: url("../fonts/soehne/soehne-extrafett.woff2") format('woff2');
 }
-
 @font-face {
-  font-family: "Inter var";
-  font-weight: 100 900; /* stylelint-disable-line font-weight-notation */
-  font-style: italic;
+  font-family: 'Söhne Dreiviertelfett';
+  font-weight: 700;
+  font-style: normal;
   font-display: swap;
-  src: url("../fonts/Inter-italic-var.woff2") format("woff2");
+  src: url("../fonts/soehne/soehne-dreiviertelfett.woff2") format('woff2');
+}
+@font-face {
+  font-family: 'Söhne Kraftig';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/soehne/soehne-kraftig.woff2") format('woff2');
 }

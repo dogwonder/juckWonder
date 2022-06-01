@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 
 //Styles, scripts and optimisation there of
-const sass = require('gulp-sass');
+const sassProcessor = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps');
 const terser = require('gulp-terser');
 const babel = require('gulp-babel');
@@ -11,7 +11,6 @@ const postcssCustomProperties = require('postcss-custom-properties');
 const postcssclean = require('postcss-clean');
 
 //Images
-const imagemin = require('gulp-imagemin');
 const responsive = require('gulp-responsive');
 
 //Build tools
@@ -25,7 +24,6 @@ const htmlmin = require('gulp-htmlmin');
 const dateFilter = require('nunjucks-date-filter');
 
 //System and Utilities
-const extReplace = require("gulp-ext-replace");
 const del = require('del');
 const path = require('path');
 const plumber = require('gulp-plumber');
@@ -114,7 +112,7 @@ gulp.task('sass', () => {
     })
     )
     .pipe(sourcemaps.init())
-    .pipe(sass())
+    .pipe(sassProcessor())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.join(dir.src, 'css'))) // Outputs it in the css folder
     .pipe(browserSync.stream()); // reload
@@ -131,7 +129,7 @@ gulp.task('sass-build', () => {
       this.emit('end');
     })
     )
-    .pipe(sass())
+    .pipe(sassProcessor())
     //Polyfill for object fit
     .pipe(postcss([require('postcss-object-fit-images')]))
     //Polyfill for css vars
@@ -433,7 +431,7 @@ const build = gulp.series(
 );
 
 //gulp dev
-exports.dev = dev;
+exports.default = dev;
 
 //gulp build
-exports.build = build;
+exports.prod = build;
