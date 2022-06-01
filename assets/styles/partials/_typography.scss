@@ -26,6 +26,7 @@ h1 {
 %jw-heading-l,
 .jw-heading-l,
 h2 {
+  font-family: $soehne-extrafett;
   @include rhythm(24, 25);
   @include mq($from: tablet) {
     @include rhythm(36, 40);
