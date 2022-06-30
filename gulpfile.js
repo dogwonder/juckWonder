@@ -325,9 +325,12 @@ gulp.task('serviceworker', () => {
 gulp.task('move-files', () => {  
   let readme = gulp.src(['README.md'])
     .pipe(gulp.dest(path.join(dir.src, 'markdown')));
+  let cname = gulp.src(['CNAME'])
+    .pipe(gulp.dest(dir.dist));
   let scripts = gulp.src(['assets/scripts/gallery.js', 'assets/vendor/js.cookie.js'])
     .pipe(gulp.dest(path.join(dir.dist, 'scripts')));
-    return merge(readme, scripts);
+    
+    return merge(readme, cname, scripts);
 });
 
 // Static Server + watching scss/html files
